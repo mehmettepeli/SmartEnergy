@@ -18,7 +18,7 @@ class DB
 		if ($this->conn->connect_error) {
 		    die("Connection failed: " . $conn->connect_error);
 		}
-		$this->file = fopen('sql_log.txt','a');
+		$this->file = fopen('../sql_log.txt','a');
 		return $this->conn;
 	}
 	function replace($val){

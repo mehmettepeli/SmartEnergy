@@ -14,34 +14,37 @@
 
 	//$datetime = new DateTime('tomorrow');
 	
- 
-	$dateToday = date("Y-m-d H:i:s");
+ 	$dateTime = explode(" ", date("Y-m-d H"));
+	$dateToday = $dateTime[0];
+	$timeToday = $dateTime[1];
 	$tempToday = $windturbine->temCel;
 	$energyToday = $windturbine-> WindTurbineCurrentEnergy();
 	$energySolarToday = $photovoltaic->CurrentSoloarEnergy();
-	WindDataLoad($dateToday, $tempToday, $energyToday, "today");
-	SolarDataLoad($dateToday, $tempToday, $energySolarToday, "today");
+	WindDataLoad($dateToday, $timeToday, $tempToday, $energyToday, "today");
+	SolarDataLoad($dateToday, $timeToday, $tempToday, $energySolarToday, "today");
 
-	$dateNextDay = $windturbine->dateFcast; //$datetime->format('Y-m-d H:i:s');
+	$dateTimeNextDay= explode(" ", $windturbine->dateFcast);
+	$dateNextDay = $dateTimeNextDay[0];
+	$timeNextDay = (int)explode(":", $dateTimeNextDay[1])[0]; 
 	$tempNextDay = $windturbine->temCelFcast;
 	$energyNextDay = $windturbine-> WindTurbineForecastEnergy();
 	$energySolarNextDay = $photovoltaic->ForecastSoloarEnergy();
-	WindDataLoad($dateNextDay, $tempNextDay, $energyNextDay, "tomorrow");
-	SolarDataLoad($dateNextDay, $tempNextDay, $energySolarNextDay, "tomorrow");
+	WindDataLoad($dateNextDay, $timeNextDay, $tempNextDay,  $energyNextDay, "tomorrow");
+	SolarDataLoad($dateNextDay, $timeNextDay, $tempNextDay, $energySolarNextDay, "tomorrow");
 	
-	function WindDataLoad($date, $temp, $energy, $track)
+	function WindDataLoad($date, $time, $temp, $energy, $track)
 	{
 		global $db;
-		 $sql = "INSERT INTO `winddb` (Date, Temp,ProducedEnergy, track) 
-	 		   VALUES ('".$date ."',". $temp .",". $energy .",'". $track ."') 
+		 $sql = "INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('".$date ."',". $time .",". $temp .",". $energy .",'". $track ."') 
 	 		 ";
 	 	$db->executeQuery($sql);
 	}
-	function SolarDataLoad($date, $temp, $energy, $track)
+	function SolarDataLoad($date, $time, $temp, $energy, $track)
 	{
 		global $db;
-		 $sql = "INSERT INTO `solardb` (Date, Temp, ProducedEnergy, track) 
-	 		   VALUES ('". $date ."',". $temp .",". $energy .",'". $track ."') 
+		 $sql = "INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('". $date ."',". $time .",". $temp .",". $energy .",'". $track ."') 
 	 		 ";
 	 	$db->executeQuery($sql);
 	}

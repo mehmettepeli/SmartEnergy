@@ -1,9 +1,0 @@
-INSERT INTO `winddb` (Date, Temp,ProducedEnergy, track) 
-	 		   VALUES ('2018-11-13 20:51:58',6,0.0607,'today') 
-	 		 INSERT INTO `solardb` (Date, Temp, ProducedEnergy, track) 
-	 		   VALUES ('2018-11-13 20:51:58',6,1.1886,'today') 
-	 		 INSERT INTO `winddb` (Date, Temp,ProducedEnergy, track) 
-	 		   VALUES ('2018-11-13 21:00:00',3.11,0.0118,'tomorrow') 
-	 		 INSERT INTO `solardb` (Date, Temp, ProducedEnergy, track) 
-	 		   VALUES ('2018-11-13 21:00:00',3.11,1.1886,'tomorrow') 
-	 		 

@@ -53,6 +53,39 @@
 			//echo $sql_office ."<br>";
 		}
 		fclose($handle);
+		UpdateTable("householddb");
+		UpdateTable("commercialdb");
+	}
+	function UpdateTable($tabeName)
+	{
+		global $db;
+		$tab =[
+			"hour" => [],
+			"eng"  => [],
+			"newEng" => []
+		];
+		$sql = "SELECT * FROM ". $tabeName;
+		$result = $db->executeQuery($sql);
+	    while($row = $result->fetch_assoc()) 
+	    {
+	      array_push($tab["eng"],$row["energy"]);
+	      array_push($tab["hour"],$row["hour"]);
+	    }
+	    for ($i=0; $i < count($tab["eng"]) ; $i++) { 
+	    	if ($i == count($tab["eng"])-1) {
+	    		$locRes = round($tab["eng"][$i] - $tab["eng"][1], 4);
+	    		array_push($tab["newEng"],$locRes);
+	    	}
+	    	else {
+	    		$locRes = round($tab["eng"][$i+1] - $tab["eng"][$i],4);
+	    		array_push($tab["newEng"],$locRes);
+	    	}
+	    }
+	    for ($i=0; $i < count($tab["hour"]) ; $i++) { 
+	    	$sql = "UPDATE ". $tabeName ." SET energy =". $tab["newEng"][$i]. "WHERE hour = ".$i;
+	    	$db->execute($sql);
+	    }
+
 	}
 	//importFile();
 

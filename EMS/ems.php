@@ -69,10 +69,10 @@ class ems
 	}
 	public function Profilt($date, $time)
 	{
-		$deman = $this->DemandPower($time);
+		$demand = $this->DemandPower($time);
 		$supply = $this->SupplerPower($date, $time);
 		$bat = $this->StorageStatus();
-		$this->mainGridPower = round($deman - ( $supply + $bat),4);
+		$this->mainGridPower = round($demand - ( $supply + $bat),4);
 		$profilt = $this->mainGridPower * $this->cost;
 		return $profilt;
 	}

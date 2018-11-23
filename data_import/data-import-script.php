@@ -7,7 +7,7 @@
 
 	function importFile(){
 		
-		$file = "data/household_data_60min_singleindex_filtered.csv";
+		$file = "../data/household_data_60min_singleindex_filtered.csv";
         $sql1 = "INSERT INTO `householddb` (hour, energy) VALUES ";
         $sql2 = "INSERT INTO `commercialdb` (hour, energy) VALUES ";
         dataBinding($file, $sql1, $sql2);
@@ -73,7 +73,7 @@
 	    }
 	    for ($i=0; $i < count($tab["eng"]) ; $i++) { 
 	    	if ($i == count($tab["eng"])-1) {
-	    		$locRes = round($tab["eng"][$i] - $tab["eng"][1], 4);
+	    		$locRes = round($tab["eng"][$i] - $tab["eng"][0], 4);
 	    		array_push($tab["newEng"],$locRes);
 	    	}
 	    	else {

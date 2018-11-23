@@ -25,7 +25,7 @@
 
 	$dateTimeNextDay= explode(" ", $windturbine->dateFcast);
 	$dateNextDay = $dateTimeNextDay[0];
-	$timeNextDay = (int)explode(":", $dateTimeNextDay[1])[0]; 
+	$timeNextDay = $timeToday;//(int)explode(":", $dateTimeNextDay[1])[0]; 
 	$tempNextDay = $windturbine->temCelFcast;
 	$energyNextDay = $windturbine-> WindTurbineForecastEnergy();
 	$energySolarNextDay = $photovoltaic->ForecastSoloarEnergy();

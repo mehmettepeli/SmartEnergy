@@ -18,12 +18,46 @@ class ems
 		$this->db = new DB();
 	 	$this->db->connectDB();
 	}
-	public function SupplerPower($hour)
+	public function SupplerPower($date, $time)
 	{
-		# to be implemented soon...
+		$sql1 = "
+				SELECT `ProducedEnergy` 
+				FROM `solardb` 
+				WHERE `Date` = '". $date ."' AND `Hour` =". $time ."
+		";
+		$result1 = $db->executeQuery($sql1);
+		$row = $result1->fetch_array(MYSQLI_NUM);
+		$solar = $row["ProducedEnergy"];
+		$sql2 = "
+				SELECT `ProducedEnergy` 
+				FROM `winddb` 
+				WHERE `Date` = '". $date ."' AND `Hour` =". $time ."
+		";
+		$result2 = $db->executeQuery($sql2);
+		$row = $result2->fetch_array(MYSQLI_NUM);
+		$wind = $row["ProducedEnergy"];
+
+		return $solar + $wind;
 	}
-	public function DemandPower($hour){
-		# to be implemented soon...
+	public function DemandPower($time){
+		$sql1 = "
+				SELECT `energy` 
+				FROM `householddb` 
+				WHERE `Hour` =". $time ."
+		";
+		$result1 = $db->executeQuery($sql1);
+		$row = $result1->fetch_array(MYSQLI_NUM);
+		$house = $row["energy"];
+		$sql2 = "
+				SELECT `energy` 
+				FROM `commercialdb` 
+				WHERE `Hour` =". $time ."
+		";
+		$result2 = $db->executeQuery($sql2);
+		$row = $result2->fetch_array(MYSQLI_NUM);
+		$commercial = $row["energy"];
+
+		return $house + $commercial;
 	}
 	public function StorageStatus()
 	{
@@ -33,12 +67,12 @@ class ems
 	{
 		return $this->mainGridPower;
 	}
-	public function Profilt($hour)
+	public function Profilt($date, $time)
 	{
-		$deman = $this->DemandPower($hour);
-		$supply = $this->SupplerPower($hour);
+		$deman = $this->DemandPower($time);
+		$supply = $this->SupplerPower($date, $time);
 		$bat = $this->StorageStatus();
-		$this->mainGridPower = $deman - ( $supply + $bat);
+		$this->mainGridPower = round($deman - ( $supply + $bat),4);
 		$profilt = $this->mainGridPower * $this->cost;
 		return $profilt;
 	}

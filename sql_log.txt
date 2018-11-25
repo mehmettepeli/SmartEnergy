@@ -104,4 +104,12 @@ INSERT INTO `winddb` (Date, Temp,ProducedEnergy)
 	 		   VALUES ('2018-11-23',21,-1.35,0.0104,'tomorrow') 
 	 		 INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
 	 		   VALUES ('2018-11-23',21,-1.35,1.2321,'tomorrow') 
-	 		 
+	 		 INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2018-11-25',10,0,0.0144,'today') 
+	 		 INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2018-11-25',10,0,1.2398,'today') 
+	 		 INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2018-11-25',10,7.35,0.0404,'tomorrow') 
+	 		 INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2018-11-25',10,7.35,1.2398,'tomorrow') 
+	 		 SELECT * FROM householddbSELECT * FROM commercialdb

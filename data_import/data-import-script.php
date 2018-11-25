@@ -72,12 +72,12 @@
 	      array_push($tab["hour"],$row["hour"]);
 	    }
 	    for ($i=0; $i < count($tab["eng"]) ; $i++) { 
-	    	if ($i == count($tab["eng"])-1) {
-	    		$locRes = round($tab["eng"][$i] - $tab["eng"][0], 4);
+	    	if ($i == 0) {
+	    		$locRes = round($tab["eng"][count($tab["eng"])-1] - $tab["eng"][$i], 4);
 	    		array_push($tab["newEng"],$locRes);
 	    	}
 	    	else {
-	    		$locRes = round($tab["eng"][$i+1] - $tab["eng"][$i],4);
+	    		$locRes = round($tab["eng"][$i] - $tab["eng"][$i-1],4);
 	    		array_push($tab["newEng"],$locRes);
 	    	}
 	    }

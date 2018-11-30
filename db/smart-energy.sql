@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 30. Nov 2018 um 20:01
+-- Erstellungszeit: 30. Nov 2018 um 20:26
 -- Server-Version: 10.1.37-MariaDB
 -- PHP-Version: 7.2.12
 
@@ -98,7 +98,8 @@ CREATE TABLE `shifted_energydb` (
   `id` int(11) NOT NULL,
   `shifted_hour` int(11) NOT NULL,
   `shifted_energy` double NOT NULL,
-  `actual_hour` int(11) NOT NULL
+  `actual_hour` int(11) NOT NULL,
+  `sender` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

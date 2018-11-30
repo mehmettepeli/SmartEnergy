@@ -12,7 +12,7 @@ class ems
 	public $battery = NULL;
 	public $db = NULL;
 	
-	function __construct(argument)
+	function __construct()
 	{
 		$this->battery = new Battery();
 		$this->db = new DB();
@@ -57,11 +57,47 @@ class ems
 		$row = $result2->fetch_array(MYSQLI_NUM);
 		$commercial = $row["energy"];
 
-		return $house + $commercial;
+		$sql_shift_energy = 0;
+		$sql_shiftHour ="
+			SELECT SUM(shifted_energy)
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =". $time ."
+			AND `sender` = 'H'
+		"; 
+		$sql_shiftHour_res = $db->executeQuery($sql_shiftHour);
+		if(mysqli_num_rows($sql_shiftHour_res) >= 1){
+			$row_shifted = $sql_shiftHour_res->fetch_array(MYSQLI_NUM);
+			$sql_shift_energy =  $row_shifted["shifted_energy"];
+		}
+
+		$sql_actual_energy = 0;
+		$sql_actualHour ="
+			SELECT SUM(shifted_energy)
+			FROM `shifted_energydb` 
+			WHERE `actual_hour` =". $time ."
+			AND `sender` = 'F'
+		"; 
+		$sql_actualtHour_res = $db->executeQuery($sql_actualHour);
+		if(mysqli_num_rows($sql_actualtHour_res) >= 1){
+			$row_actual = $sql_actualtHour_res->fetch_array(MYSQLI_NUM);
+			$sql_actual_energy =  $row_actual["shifted_energy"];
+		} 
+
+		return round($house + $commercial + $sql_shift_energy - $sql_actual_energy,4);
 	}
 	public function StorageStatus()
 	{
-		$this->battery->CurrentState();
+		return $this->battery->CurrentState();
+	}
+	public function BatteryCharging()
+	{
+		$this->battery->Charging();
+		$this->StorageStatus();
+	}
+	public function BatteryDisCharging()
+	{
+		$this->battery->Discharging
+		$this->StorageStatus;
 	}
 	public function MainGridPower()
 	{
@@ -76,5 +112,33 @@ class ems
 		$profilt = $this->mainGridPower * $this->cost;
 		return $profilt;
 	}
+	public function PowerShifting($actualHour, $shiftedHour, $energy, $sender)
+	{
+		$sql = "
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =". $shiftedHour ." 
+			AND `actual_hour` = ". $actualHour ."
+			AND `sender` = ". $sender ."
+		";
+		$result = $db->executeQuery($sql);
+		if(mysqli_num_rows($result) == 1){
+			$sql = "
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = ".  $energy ."
+				WHERE `shifted_hour` =". $shiftedHour ." 
+				AND `actual_hour` = ". $actualHour ."
+				AND `sender` = ". $sender ." 
+			";
+			$db->executeQuery($sql);
+		}
+		else{
+			$sql = "
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`,) 
+				VALUES ( ". $shiftedHour .", ". $energy .",". $actualHour ." )";
+			$db->executeQuery($sql);
+		}
+	}
+
 }
 ?>

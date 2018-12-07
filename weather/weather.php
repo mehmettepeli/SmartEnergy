@@ -6,7 +6,9 @@
 class weather 
 {
     public $jsonurl = "http://api.openweathermap.org/data/2.5/weather?APPID=87edff00832715a2e419b5184ce0b243&q=Stuttgart,de";
-    public $forcastUrl = "http://api.openweathermap.org/data/2.5/forecast?q=Stuttgart,de&appid=c0c4a4b4047b97ebc5948ac9c48c0559";
+    public $forcastUrl = "http://api.openweathermap.org/data/2.5/forecast?q=Stuttgart,de&appid=87edff00832715a2e419b5184ce0b243";
+
+    // c0c4a4b4047b97ebc5948ac9c48c0559 key expired
 
     public $dateFcast;   
     public $temCelFcast;
@@ -27,13 +29,29 @@ class weather
         $jsonFcast = file_get_contents($this->forcastUrl);
         $weatherFcast = json_decode($jsonFcast);
         //echo '<pre>'; print_r($weatherFcast); echo '</pre>';
-        $this->kelvinFcast = $weatherFcast->list[0]->main->temp;
-        $this->temCelFcast = $this->kelvinFcast - 273.15;
-        $this->windSpeedFcast = $weatherFcast->list[0]->wind->speed;
-        $this->airPressureFcast = $weatherFcast->list[0]->main->pressure;
-        $this->humidityFcast = $weatherFcast->list[0]->main->humidity;
-        $this->dateFcast = $weatherFcast->list[0]->dt_txt;
+        $nextDay = date('Y-m-d');
+        $nextDay = date("Y-m-d", strtotime('+1 days', strtotime($nextDay)));
+        $hour = (int)date('H');
+        for ($i=0; $i < count($weatherFcast->list) ; $i++) {
 
+                $string = trim($weatherFcast->list[$i]->dt_txt);
+                $string = explode(" ", $string);
+                $date = $string[0];
+                $time = (int)explode(":",$string[1])[0];
+
+                if(($time <= $hour && $hour <= $time+2) && ($nextDay == $date)){
+                    $this->kelvinFcast = $weatherFcast->list[$i]->main->temp;
+                    $this->temCelFcast = $this->kelvinFcast - 273.15;
+                    $this->windSpeedFcast = $weatherFcast->list[$i]->wind->speed;
+                    $this->airPressureFcast = $weatherFcast->list[$i]->main->pressure;
+                    $this->humidityFcast = $weatherFcast->list[$i]->main->humidity;
+                    $this->dateFcast = $weatherFcast->list[$i]->dt_txt;
+
+                    break;
+                }
+
+        }
+        
 
 
         $json = file_get_contents($this->jsonurl);

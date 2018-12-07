@@ -112,4 +112,2470 @@ INSERT INTO `winddb` (Date, Temp,ProducedEnergy)
 	 		   VALUES ('2018-11-25',10,7.35,0.0404,'tomorrow') 
 	 		 INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
 	 		   VALUES ('2018-11-25',10,7.35,1.2398,'tomorrow') 
-	 		 SELECT * FROM householddbSELECT * FROM commercialdb
+	 		 SELECT * FROM householddbSELECT * FROM commercialdbSELECT * FROM householddbSELECT * FROM commercialdb
+			SELECT 
+				hour,
+			    MAX(`energy`) AS peak_energy,
+			    ROUND(AVG(`energy`),4) AS avg_engery
+			    
+			FROM
+				 `householddb` 
+		
+			SELECT *
+			FROM
+				 `householddb`
+			WHERE energy < (SELECT
+			    				ROUND(AVG(`energy`),4) 
+							FROM
+			    				`householddb`
+			               )
+			ORDER BY energy ASC 
+		
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =23 
+			AND `actual_hour` = 0
+			AND `sender` = H
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`,) 
+				VALUES ( 23, 0.0211,0 )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =17 
+			AND `actual_hour` = 0
+			AND `sender` = H
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`,) 
+				VALUES ( 17, 0.0211,0 )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =3 
+			AND `actual_hour` = 0
+			AND `sender` = H
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`,) 
+				VALUES ( 3, 0.0211,0 )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =8 
+			AND `actual_hour` = 0
+			AND `sender` = H
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`,) 
+				VALUES ( 8, 0.0211,0 )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =2 
+			AND `actual_hour` = 0
+			AND `sender` = H
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`,) 
+				VALUES ( 2, 0.0211,0 )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =20 
+			AND `actual_hour` = 0
+			AND `sender` = H
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`,) 
+				VALUES ( 20, 0.0211,0 )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =5 
+			AND `actual_hour` = 0
+			AND `sender` = H
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`,) 
+				VALUES ( 5, 0.0211,0 )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =4 
+			AND `actual_hour` = 0
+			AND `sender` = H
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`,) 
+				VALUES ( 4, 0.0211,0 )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =19 
+			AND `actual_hour` = 0
+			AND `sender` = H
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`,) 
+				VALUES ( 19, 0.0211,0 )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9 
+			AND `actual_hour` = 0
+			AND `sender` = H
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`,) 
+				VALUES ( 9, 0.0211,0 )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =6 
+			AND `actual_hour` = 0
+			AND `sender` = H
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`,) 
+				VALUES ( 6, 0.0211,0 )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =7 
+			AND `actual_hour` = 0
+			AND `sender` = H
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`,) 
+				VALUES ( 7, 0.0211,0 )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =18 
+			AND `actual_hour` = 0
+			AND `sender` = H
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`,) 
+				VALUES ( 18, 0.0211,0 )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =1 
+			AND `actual_hour` = 0
+			AND `sender` = H
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`,) 
+				VALUES ( 1, 0.0211,0 )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =22 
+			AND `actual_hour` = 0
+			AND `sender` = H
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`,) 
+				VALUES ( 22, 0.0211,0 )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =12 
+			AND `actual_hour` = 0
+			AND `sender` = H
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`,) 
+				VALUES ( 12, 0.0211,0 )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =16 
+			AND `actual_hour` = 0
+			AND `sender` = H
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`,) 
+				VALUES ( 16, 0.0211,0 )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =11 
+			AND `actual_hour` = 0
+			AND `sender` = H
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`,) 
+				VALUES ( 11, 0.0211,0 )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =14 
+			AND `actual_hour` = 0
+			AND `sender` = H
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`,) 
+				VALUES ( 14, 0.0211,0 )
+			SELECT 
+				hour,
+			    MAX(`energy`) AS peak_energy,
+			    ROUND(AVG(`energy`),4) AS avg_engery
+			    
+			FROM
+				 `householddb` 
+		
+			SELECT *
+			FROM
+				 `householddb`
+			WHERE energy < (SELECT
+			    				ROUND(AVG(`energy`),4) 
+							FROM
+			    				`householddb`
+			               )
+			ORDER BY energy ASC 
+		
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =23 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 23, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =17 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 17, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =3 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 3, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =8 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 8, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =2 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 2, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =20 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 20, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =5 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 5, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =4 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 4, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =19 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 19, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 9, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =6 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 6, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =7 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 7, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =18 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 18, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =1 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 1, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =22 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 22, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =12 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 12, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =16 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 16, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =11 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 11, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =14 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 14, 0.0211,0, `sender` = 'H' )
+			SELECT 
+				hour,
+			    MAX(`energy`) AS peak_energy,
+			    ROUND(AVG(`energy`),4) AS avg_engery
+			    
+			FROM
+				 `householddb` 
+		
+			SELECT *
+			FROM
+				 `householddb`
+			WHERE energy < (SELECT
+			    				ROUND(AVG(`energy`),4) 
+							FROM
+			    				`householddb`
+			               )
+			ORDER BY energy ASC 
+		
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =23 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 23, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =17 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 17, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =3 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 3, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =8 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 8, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =2 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 2, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =20 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 20, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =5 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 5, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =4 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 4, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =19 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 19, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 9, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =6 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 6, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =7 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 7, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =18 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 18, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =1 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 1, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =22 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 22, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =12 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 12, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =16 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 16, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =11 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 11, 0.0211,0, `sender` = 'H' )
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =14 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`,  `actual_hour`, `sender`) 
+				VALUES ( 14, 0.0211,0, `sender` = 'H' )
+			SELECT 
+				hour,
+			    MAX(`energy`) AS peak_energy,
+			    ROUND(AVG(`energy`),4) AS avg_engery
+			    
+			FROM
+				 `householddb` 
+		
+			SELECT *
+			FROM
+				 `householddb`
+			WHERE energy < (SELECT
+			    				ROUND(AVG(`energy`),4) 
+							FROM
+			    				`householddb`
+			               )
+			ORDER BY energy ASC 
+		
+			SELECT 
+				hour,
+			    MAX(`energy`) AS peak_energy,
+			    ROUND(AVG(`energy`),4) AS avg_engery
+			    
+			FROM
+				 `householddb` 
+		
+			SELECT *
+			FROM
+				 `householddb`
+			WHERE energy < (SELECT
+			    				ROUND(AVG(`energy`),4) 
+							FROM
+			    				`householddb`
+			               )
+			ORDER BY energy ASC 
+		
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =23 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '23', '0.0211', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =17 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '17', '0.0211', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =3 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '3', '0.0211', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =8 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '8', '0.0211', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =2 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '2', '0.0211', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =20 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '20', '0.0211', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =5 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '5', '0.0211', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =4 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '4', '0.0211', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =19 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '19', '0.0211', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '9', '0.0211', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =6 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '6', '0.0211', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =7 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '7', '0.0211', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =18 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '18', '0.0211', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =1 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '1', '0.0211', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =22 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '22', '0.0211', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =12 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '12', '0.0211', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =16 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '16', '0.0211', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =11 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '11', '0.0211', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =14 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '14', '0.0211', '0', 'H')
+			SELECT 
+				hour,
+			    MAX(`energy`) AS peak_energy,
+			    ROUND(AVG(`energy`),4) AS avg_engery
+			    
+			FROM
+				 `householddb` 
+		
+			SELECT *
+			FROM
+				 `householddb`
+			WHERE energy < (SELECT
+			    				ROUND(AVG(`energy`),4) 
+							FROM
+			    				`householddb`
+			               )
+			ORDER BY energy ASC 
+		
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =23 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =23 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =17 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =17 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =3 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =3 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =8 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =8 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =2 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =2 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =20 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =20 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =5 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =5 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =4 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =4 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =19 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =19 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =9 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =6 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =6 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =7 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =7 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =18 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =18 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =1 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =1 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =22 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =22 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =12 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =12 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =16 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =16 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =11 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =11 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =14 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =14 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2018-12-07',09,10.44,0.2971,'today') 
+	 		 INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2018-12-07',09,10.44,1.2762,'today') 
+	 		 INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2018-12-07',09,9.98,1.2567,'tomorrow') 
+	 		 INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2018-12-07',09,9.98,1.2762,'tomorrow') 
+	 		 
+				SELECT `energy` 
+				FROM `householddb` 
+				WHERE `Hour` =9
+		
+			SELECT SUM(shifted_energy)
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9
+			AND `sender` = 'H'
+		
+			SELECT SUM(shifted_energy)
+			FROM `shifted_energydb` 
+			WHERE `actual_hour` =9
+			AND `sender` = 'H'
+		
+				SELECT `energy` 
+				FROM `commercialdb` 
+				WHERE `Hour` =9
+		
+			SELECT SUM(shifted_energy)
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9
+			AND `sender` = 'F'
+		
+			SELECT SUM(shifted_energy)
+			FROM `shifted_energydb` 
+			WHERE `actual_hour` =9
+			AND `sender` = 'F'
+		
+				SELECT `ProducedEnergy` 
+				FROM `solardb` 
+				WHERE `Date` = '2018-12-07' AND `Hour` =9
+		
+				SELECT `ProducedEnergy` 
+				FROM `winddb` 
+				WHERE `Date` = '2018-12-07' AND `Hour` =9
+		
+				SELECT `energy` 
+				FROM `householddb` 
+				WHERE `Hour` =9
+		
+			SELECT SUM(shifted_energy)
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9
+			AND `sender` = 'H'
+		
+			SELECT SUM(shifted_energy)
+			FROM `shifted_energydb` 
+			WHERE `actual_hour` =9
+			AND `sender` = 'H'
+		
+				SELECT `energy` 
+				FROM `commercialdb` 
+				WHERE `Hour` =9
+		
+			SELECT SUM(shifted_energy)
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9
+			AND `sender` = 'F'
+		
+			SELECT SUM(shifted_energy)
+			FROM `shifted_energydb` 
+			WHERE `actual_hour` =9
+			AND `sender` = 'F'
+		
+				SELECT `ProducedEnergy` 
+				FROM `solardb` 
+				WHERE `Date` = '2018-12-07' AND `Hour` =9
+		
+				SELECT `ProducedEnergy` 
+				FROM `winddb` 
+				WHERE `Date` = '2018-12-07' AND `Hour` =9
+		
+				SELECT `energy` 
+				FROM `householddb` 
+				WHERE `Hour` =9
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9
+			AND `sender` = 'H'
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `actual_hour` =9
+			AND `sender` = 'H'
+		
+				SELECT `energy` 
+				FROM `commercialdb` 
+				WHERE `Hour` =9
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9
+			AND `sender` = 'F'
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `actual_hour` =9
+			AND `sender` = 'F'
+		
+				SELECT `ProducedEnergy` 
+				FROM `solardb` 
+				WHERE `Date` = '2018-12-07' AND `Hour` =9
+		
+				SELECT `ProducedEnergy` 
+				FROM `winddb` 
+				WHERE `Date` = '2018-12-07' AND `Hour` =9
+		
+				SELECT `energy` 
+				FROM `householddb` 
+				WHERE `Hour` =9
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9
+			AND `sender` = 'H'
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `actual_hour` =9
+			AND `sender` = 'H'
+		
+				SELECT `energy` 
+				FROM `commercialdb` 
+				WHERE `Hour` =9
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9
+			AND `sender` = 'F'
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `actual_hour` =9
+			AND `sender` = 'F'
+		
+				SELECT `ProducedEnergy` 
+				FROM `solardb` 
+				WHERE `Date` = '2018-12-07' AND `Hour` =9
+		
+				SELECT `ProducedEnergy` 
+				FROM `winddb` 
+				WHERE `Date` = '2018-12-07' AND `Hour` =9
+		
+			SELECT 
+				hour,
+			    MAX(`energy`) AS peak_energy,
+			    ROUND(AVG(`energy`),4) AS avg_engery
+			    
+			FROM
+				 `householddb` 
+		
+			SELECT *
+			FROM
+				 `householddb`
+			WHERE energy < (SELECT
+			    				ROUND(AVG(`energy`),4) 
+							FROM
+			    				`householddb`
+			               )
+			ORDER BY energy ASC 
+		
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =23 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '23', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =17 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '17', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =3 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '3', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =8 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '8', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =2 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '2', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =20 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '20', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =5 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '5', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =4 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '4', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =19 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '19', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '9', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =6 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '6', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =7 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '7', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =18 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '18', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =1 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '1', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =22 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '22', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =12 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '12', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =16 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '16', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =11 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '11', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =14 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '14', '0.0422', '0', 'H')
+				SELECT `energy` 
+				FROM `householddb` 
+				WHERE `Hour` =9
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9
+			AND `sender` = 'H'
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `actual_hour` =9
+			AND `sender` = 'H'
+		
+				SELECT `energy` 
+				FROM `commercialdb` 
+				WHERE `Hour` =9
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9
+			AND `sender` = 'F'
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `actual_hour` =9
+			AND `sender` = 'F'
+		
+				SELECT `ProducedEnergy` 
+				FROM `solardb` 
+				WHERE `Date` = '2018-12-07' AND `Hour` =9
+		
+				SELECT `ProducedEnergy` 
+				FROM `winddb` 
+				WHERE `Date` = '2018-12-07' AND `Hour` =9
+		
+				SELECT `energy` 
+				FROM `householddb` 
+				WHERE `Hour` =9
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9
+			AND `sender` = 'H'
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `actual_hour` =9
+			AND `sender` = 'H'
+		
+				SELECT `energy` 
+				FROM `commercialdb` 
+				WHERE `Hour` =9
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9
+			AND `sender` = 'F'
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `actual_hour` =9
+			AND `sender` = 'F'
+		
+				SELECT `ProducedEnergy` 
+				FROM `solardb` 
+				WHERE `Date` = '2018-12-07' AND `Hour` =9
+		
+				SELECT `ProducedEnergy` 
+				FROM `winddb` 
+				WHERE `Date` = '2018-12-07' AND `Hour` =9
+		
+			SELECT 
+				hour,
+			    MAX(`energy`) AS peak_energy,
+			    ROUND(AVG(`energy`),4) AS avg_engery
+			    
+			FROM
+				 `householddb` 
+		
+			SELECT *
+			FROM
+				 `householddb`
+			WHERE energy < (SELECT
+			    				ROUND(AVG(`energy`),4) 
+							FROM
+			    				`householddb`
+			               )
+			ORDER BY energy ASC 
+		
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =23 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =23 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =17 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =17 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =3 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =3 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =8 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =8 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =2 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =2 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =20 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =20 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =5 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =5 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =4 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =4 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =19 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =19 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =9 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =6 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =6 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =7 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =7 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =18 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =18 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =1 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =1 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =22 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =22 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =12 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =12 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =16 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =16 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =11 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =11 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =14 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0422
+				WHERE `shifted_hour` =14 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+				SELECT `energy` 
+				FROM `householddb` 
+				WHERE `Hour` =9
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9
+			AND `sender` = 'H'
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `actual_hour` =9
+			AND `sender` = 'H'
+		
+				SELECT `energy` 
+				FROM `commercialdb` 
+				WHERE `Hour` =9
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9
+			AND `sender` = 'F'
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `actual_hour` =9
+			AND `sender` = 'F'
+		
+				SELECT `ProducedEnergy` 
+				FROM `solardb` 
+				WHERE `Date` = '2018-12-07' AND `Hour` =9
+		
+				SELECT `ProducedEnergy` 
+				FROM `winddb` 
+				WHERE `Date` = '2018-12-07' AND `Hour` =9
+		
+			SELECT 
+				hour,
+			    MAX(`energy`) AS peak_energy,
+			    ROUND(AVG(`energy`),4) AS avg_engery
+			    
+			FROM
+				 `householddb` 
+		
+			SELECT *
+			FROM
+				 `householddb`
+			WHERE energy < (SELECT
+			    				ROUND(AVG(`energy`),4) 
+							FROM
+			    				`householddb`
+			               )
+			ORDER BY energy ASC 
+		
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =23 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =23 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =17 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =17 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =3 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =3 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =8 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =8 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =2 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =2 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =20 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =20 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =5 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =5 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =4 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =4 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =19 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =19 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =9 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =6 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =6 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =7 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =7 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =18 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =18 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =1 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =1 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =22 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =22 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =12 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =12 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =16 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =16 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =11 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =11 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =14 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =14 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+				SELECT `energy` 
+				FROM `householddb` 
+				WHERE `Hour` =9
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9
+			AND `sender` = 'H'
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `actual_hour` =9
+			AND `sender` = 'H'
+		
+				SELECT `energy` 
+				FROM `commercialdb` 
+				WHERE `Hour` =9
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9
+			AND `sender` = 'F'
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `actual_hour` =9
+			AND `sender` = 'F'
+		
+				SELECT `ProducedEnergy` 
+				FROM `solardb` 
+				WHERE `Date` = '2018-12-07' AND `Hour` =9
+		
+				SELECT `ProducedEnergy` 
+				FROM `winddb` 
+				WHERE `Date` = '2018-12-07' AND `Hour` =9
+		
+				SELECT `energy` 
+				FROM `householddb` 
+				WHERE `Hour` =9
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9
+			AND `sender` = 'H'
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `actual_hour` =9
+			AND `sender` = 'H'
+		
+				SELECT `energy` 
+				FROM `commercialdb` 
+				WHERE `Hour` =9
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9
+			AND `sender` = 'F'
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `actual_hour` =9
+			AND `sender` = 'F'
+		
+				SELECT `ProducedEnergy` 
+				FROM `solardb` 
+				WHERE `Date` = '2018-12-07' AND `Hour` =9
+		
+				SELECT `ProducedEnergy` 
+				FROM `winddb` 
+				WHERE `Date` = '2018-12-07' AND `Hour` =9
+		
+			SELECT 
+				hour,
+			    MAX(`energy`) AS peak_energy,
+			    ROUND(AVG(`energy`),4) AS avg_engery
+			    
+			FROM
+				 `householddb` 
+		
+			SELECT *
+			FROM
+				 `householddb`
+			WHERE energy < (SELECT
+			    				ROUND(AVG(`energy`),4) 
+							FROM
+			    				`householddb`
+			               )
+			ORDER BY energy ASC 
+		
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =23 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '23', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =17 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '17', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =3 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '3', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =8 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '8', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =2 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '2', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =20 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '20', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =5 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '5', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =4 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '4', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =19 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '19', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '9', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =6 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '6', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =7 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '7', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =18 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '18', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =1 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '1', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =22 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '22', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =12 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '12', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =16 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '16', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =11 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '11', '0.0422', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =14 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '14', '0.0422', '0', 'H')
+				SELECT `energy` 
+				FROM `householddb` 
+				WHERE `Hour` =9
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9
+			AND `sender` = 'H'
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `actual_hour` =9
+			AND `sender` = 'H'
+		
+				SELECT `energy` 
+				FROM `commercialdb` 
+				WHERE `Hour` =9
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9
+			AND `sender` = 'F'
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `actual_hour` =9
+			AND `sender` = 'F'
+		
+				SELECT `ProducedEnergy` 
+				FROM `solardb` 
+				WHERE `Date` = '2018-12-07' AND `Hour` =9
+		
+				SELECT `ProducedEnergy` 
+				FROM `winddb` 
+				WHERE `Date` = '2018-12-07' AND `Hour` =9
+		
+			SELECT 
+				hour,
+			    MAX(`energy`) AS peak_energy,
+			    ROUND(AVG(`energy`),4) AS avg_engery
+			    
+			FROM
+				 `householddb` 
+		
+			SELECT *
+			FROM
+				 `householddb`
+			WHERE energy < (SELECT
+			    				ROUND(AVG(`energy`),4) 
+							FROM
+			    				`householddb`
+			               )
+			ORDER BY energy ASC 
+		
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =23 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =23 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =17 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =17 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =3 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =3 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =8 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =8 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =2 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =2 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =20 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =20 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =5 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =5 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =4 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =4 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =19 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =19 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =9 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =6 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =6 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =7 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =7 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =18 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =18 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =1 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =1 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =22 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =22 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =12 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =12 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =16 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =16 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =11 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =11 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =14 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 0.0844
+				WHERE `shifted_hour` =14 
+				AND `actual_hour` = 0
+				AND `sender` = 'H'
+			
+				SELECT `energy` 
+				FROM `householddb` 
+				WHERE `Hour` =9
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9
+			AND `sender` = 'H'
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `actual_hour` =9
+			AND `sender` = 'H'
+		
+				SELECT `energy` 
+				FROM `commercialdb` 
+				WHERE `Hour` =9
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9
+			AND `sender` = 'F'
+		
+			SELECT SUM(shifted_energy) AS shifted_energy
+			FROM `shifted_energydb` 
+			WHERE `actual_hour` =9
+			AND `sender` = 'F'
+		
+				SELECT `ProducedEnergy` 
+				FROM `solardb` 
+				WHERE `Date` = '2018-12-07' AND `Hour` =9
+		
+				SELECT `ProducedEnergy` 
+				FROM `winddb` 
+				WHERE `Date` = '2018-12-07' AND `Hour` =9
+		INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2018-12-07',11,11.45,0.8421,'today') 
+	 		 INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2018-12-07',11,11.45,1.2762,'today') 
+	 		 INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('',11,,NAN,'tomorrow') 
+	 		 INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('',11,,1.2762,'tomorrow') 
+	 		 INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2018-12-07',11,11.45,0.8421,'today') 
+	 		 INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2018-12-07',11,11.45,1.2762,'today') 
+	 		 INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('',11,,NAN,'tomorrow') 
+	 		 INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('',11,,1.2762,'tomorrow') 
+	 		 INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2018-12-07',11,11.45,0.8421,'today') 
+	 		 INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2018-12-07',11,11.45,1.2762,'today') 
+	 		 INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2018-12-07',11,11.72,1.7431,'tomorrow') 
+	 		 INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2018-12-07',11,11.72,1.2762,'tomorrow') 
+	 		 INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2018-12-07',11,11.45,0.8421,'today') 
+	 		 INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2018-12-07',11,11.45,1.2762,'today') 
+	 		 INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2018-12-08',11,4.616,4.2354,'tomorrow') 
+	 		 INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2018-12-08',11,4.616,1.2762,'tomorrow') 
+	 		 INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2018-12-07',11,11.45,0.8421,'today') 
+	 		 INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2018-12-07',11,11.45,1.2762,'today') 
+	 		 INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2018-12-08',11,4.616,4.2354,'tomorrow') 
+	 		 INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2018-12-08',11,4.616,1.2762,'tomorrow') 
+	 		 

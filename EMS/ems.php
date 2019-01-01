@@ -85,7 +85,10 @@ class ems
 			$row_actual = $sql_actualtHour_res->fetch_assoc();
 			$sql_actual_energy =  $row_actual["shifted_energy"];
 		}
-		return round($house + $sql_shift_energy - $sql_actual_energy,4);
+
+		$totHouse = round($house + $sql_shift_energy - $sql_actual_energy,4);
+
+		return $totHouse;
 
 	}
 	public function DemandPowerCommercial($time){
@@ -124,11 +127,15 @@ class ems
 			$row_actual = $sql_actualtHour_res->fetch_assoc();
 			$sql_actual_energy =  $row_actual["shifted_energy"];
 		}
-		return round($commercial + $sql_shift_energy - $sql_actual_energy,4);
+
+		$totCommercial = round($commercial + $sql_shift_energy - $sql_actual_energy,4);
+
+		return $totCommercial;
 
 	}
 	public function StorageStatus()
 	{
+
 		return $this->battery->CurrentState();
 	}
 	public function BatteryCharging()
@@ -150,8 +157,9 @@ class ems
 		$demand = $this->DemandPower($time);
 		$supply = $this->SupplerPower($date, $time);
 		$bat = $this->StorageStatus();
-		$this->mainGridPower = round($demand - ( $supply + $bat),4);
-		$profilt = round($this->mainGridPower * $this->cost, 4);
+		$this->mainGridPower = round(( $supply + $bat) - $demand,4);
+		$price = $this->GetPrcie($time);
+		$profilt = round($this->mainGridPower * $price, 4);
 		return $profilt;
 	}
 	public function PowerShifting($actualHour, $shiftedHour, $energy, $sender)
@@ -184,6 +192,12 @@ class ems
 	//$sender = "F", "H"
 	public function UserFlexibility ($value, $sender)
 	{
+		$dbTable = "householddb";
+		if ($sender == "H")
+			$dbTable = $dbTable;
+		else
+			$dbTable = "commercialdb";
+		
 		$energyList =[
 			"energy"=>[],
 			"hour"=>[],
@@ -195,7 +209,7 @@ class ems
 			    ROUND(AVG(`energy`),4) AS avg_engery
 			    
 			FROM
-				 `householddb` 
+				 ". $dbTable ." 
 		";
 		$res = $this->db->executeQuery($sql);
 		$row = $res->fetch_assoc();
@@ -207,11 +221,11 @@ class ems
 		$sql = "
 			SELECT *
 			FROM
-				 `householddb`
+				 ". $dbTable ." 
 			WHERE energy < (SELECT
 			    				ROUND(AVG(`energy`),4) 
 							FROM
-			    				`householddb`
+			    				". $dbTable ." 
 			               )
 			ORDER BY energy ASC 
 		";
@@ -230,19 +244,111 @@ class ems
 	    	else{
 	    		$map_energy = round($map_energy - $energyList["energy"][$i],4);
 	    		$this->PowerShifting($peak_hour, $energyList["hour"][$i], $energyList["energy"][$i], $sender);
-	    		$avg = round($map_energy / (count($energyList["energy"]- ($i+1))),4);
+	    		$div = (count($energyList["energy"]) - ($i+1)) == 0 ? 1 : count($energyList["energy"]) - ($i+1);
+	    		$avg = round($map_energy /$div,4);
 	    	}
 	    }
 	}
+	public function DynamicPricingOld()
+	{
+		$file = "../data/priceNew.csv";
+		$handle = fopen($file, "r");
+		$priceList = [];
+		$dayCounter = 1;
+		$hour = 0;
+		for ($i=0; $i < 24 ; $i++)
+			$priceList[$i] = 0;
+		
+		while (($data = fgetcsv($handle, 0, ',')) !== FALSE) {
+			
+			$priceList[$hour] += (float)$data[1];
+
+			if($hour == 23){
+				$dayCounter++;
+			 	$hour = 0;
+			}
+			$hour++;
+		}
+
+		for ($i=0; $i < 24 ; $i++){
+			$priceList[$i] = round($priceList[$i] / $dayCounter, 4) * 1000;
+			$sql = "
+					INSERT INTO `dynamic_pricing` (hour, price) VALUES (". $i .",". $priceList[$i] .")
+				";
+			$result = $this->db->execute($sql);
+		}
+		fclose($handle);
+	}
+	public function DynamicPricing()
+	{
+		$nextDay = date('Y-m-d');
+		$nextDay = date("Y-m-d", strtotime('+1 days', strtotime($nextDay)));
+
+		$data = file_get_contents('https://www.epexspot.com/en/market-data/dayaheadauction/auction-table/'. $nextDay .'/DE_LU/24');
+
+		$dom = new domDocument;
+
+		@$dom->loadHTML($data);
+		$dom->preserveWhiteSpace = false;
+		$xpath = new DOMXpath($dom);
+		$tdlist = $xpath->query('//div[@id="tab_de_lu"]/table[3]//tr//td[9]');
+		$counter = 1;
+		$hour = 0;
+
+		$sql = " TRUNCATE TABLE `dynamic_pricing` ";
+		$this->db->execute($sql);
+
+		foreach ($tdlist as $td) {
+			if ($counter % 2 == 0){
+				$counter++;
+				continue;
+			}
+			$price = round((float)$td->nodeValue * 1000, 4);
+			$sql = "
+				INSERT INTO `dynamic_pricing` (hour, price) VALUES (". $hour .",". $price .")
+			";
+			$result = $this->db->execute($sql);
+
+			//echo $price . "<br>";
+			$counter++;
+			$hour++;
+			
+		}
+	}
+	public function GetPrcie($hour)
+	{
+		$sql = "
+			SELECT `price` 
+			FROM `dynamic_pricing` 
+			WHERE `hour` =". $hour ."
+		";
+		$result = $this->db->executeQuery($sql);
+		$row = $result->fetch_assoc();
+		$price = $row["price"];
+		return $price;
+	}
+	public function GetPrcieList()
+	{
+		$priceList = [];
+		$sql = "
+			SELECT *
+			FROM `dynamic_pricing` 
+		";
+		$result = $db->executeQuery($sql);
+	    while($row = $result->fetch_assoc()) 
+	    	array_push($priceList,$row["price"]);
+
+		return $priceList;
+	}
 
 }
-/*$obj = new ems();
-echo "Profilt : ". $obj->Profilt('2018-12-07', 9) . "<br>";
-echo "20% Felexibilty". "<br>";
-$obj->UserFlexibility(20, "H");
-echo "Profilt : ". $obj->Profilt('2018-12-07', 9). "<br>";
-echo "40% Felexibilty". "<br>";
-$obj->UserFlexibility(40, "H");
-echo "Profilt : ". $obj->Profilt('2018-12-07', 9). "<br>";
-*/
+$obj = new ems();
+$obj->DynamicPricing();
+//echo $obj->Profilt('2018-12-11', 18) . "<br>";
+//echo "---------------------------------------<br>";
+//echo "20% Felexibilty". "<br>";
+//$obj->UserFlexibility(50, "H");
+//$obj->UserFlexibility(50, "F");
+
+
 ?>

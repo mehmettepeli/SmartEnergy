@@ -81,6 +81,7 @@
 	    		array_push($tab["newEng"],$locRes);
 	    	}
 	    }
+	    $tab["newEng"][0] =  $tab["newEng"][1] * 10;
 	    for ($i=0; $i < count($tab["hour"]) ; $i++) { 
 	    	$sql = "UPDATE ". $tabeName ." SET energy =". $tab["newEng"][$i]. "WHERE hour = ".$i;
 	    	$db->execute($sql);

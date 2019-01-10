@@ -218,7 +218,7 @@ class ems
 		$map_energy = round(($row["peak_energy"] * $value ) / 100, 4);
 		$avg_engery = $row["avg_engery"];
 
-		$sql_old = "
+		/*$sql_old = "
 			SELECT *
 			FROM
 				 ". $dbTable ." 
@@ -228,7 +228,7 @@ class ems
 			    				". $dbTable ." 
 			               )
 			ORDER BY energy ASC 
-		";
+		";*/
 		$sql = "
 			SELECT 			db.*
 			FROM
@@ -355,10 +355,12 @@ class ems
 			SELECT *
 			FROM `dynamic_pricing` 
 		";
-		$result = $db->executeQuery($sql);
-	    while($row = $result->fetch_assoc()) 
+		
+		$result = $this->db->executeQuery($sql);
+	    while($row = $result->fetch_assoc()){
+			
 	    	array_push($priceList,$row["price"]);
-
+		}
 		return $priceList;
 	}
 
@@ -367,6 +369,9 @@ $obj = new ems();
 //$obj->DynamicPricing();
 $prices = $obj->GetPrcieList();
 print_r($prices);
+$priceList = $obj-> GetPrcieList();
+echo '<pre>'; print_r($priceList); echo '</pre>';
+//print_r( $priceList);
 //echo $obj->Profilt('2018-12-11', 18) . "<br>";
 //echo "---------------------------------------<br>";
 //echo "20% Felexibilty". "<br>";

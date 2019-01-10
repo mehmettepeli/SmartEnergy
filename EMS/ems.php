@@ -218,7 +218,7 @@ class ems
 		$map_energy = round(($row["peak_energy"] * $value ) / 100, 4);
 		$avg_engery = $row["avg_engery"];
 
-		$sql = "
+		$sql_old = "
 			SELECT *
 			FROM
 				 ". $dbTable ." 
@@ -229,15 +229,36 @@ class ems
 			               )
 			ORDER BY energy ASC 
 		";
+		$sql = "
+			SELECT 			db.*
+			FROM
+				 		   ". $dbTable ." db 
+            INNER JOIN     dynamic_pricing dp
+            ON dp.hour = db.hour
+			WHERE db.energy < (SELECT
+			    				ROUND(AVG(`energy`),4) 
+							FROM
+			    				". $dbTable ." 
+			               )
+			ORDER BY dp.price ASC
+		";
 		$res = $this->db->executeQuery($sql);
 		while($row = $res->fetch_assoc()) 
 	    {
 	    	array_push($energyList["energy"],  round($avg_engery - $row["energy"],4));
 	    	array_push($energyList["hour"],  $row["hour"]);
 	    }
-	    $avg = round($map_energy / count($energyList["energy"]),4);
+	    //$avg = round($map_energy / count($energyList["energy"]),4);
 	    for ($i=0; $i <count($energyList["energy"]) ; $i++) { 
-	    	if ($avg <= $energyList["energy"][$i]) {
+	    	if ($map_energy >= $energyList["energy"][$i]) {
+	    		$map_energy = $map_energy - $energyList["energy"][$i];
+	    		$this->PowerShifting($peak_hour, $energyList["hour"][$i], $energyList["energy"][$i], $sender);
+	    	}
+	    	elseif ($map_energy < $energyList["energy"][$i]) {
+	    		$this->PowerShifting($peak_hour, $energyList["hour"][$i], $map_energy, $sender);
+	    		break;
+	    	}
+	    	/*if ($avg <= $energyList["energy"][$i]) {
 	    		$map_energy = $map_energy - $avg;
 	    		$this->PowerShifting($peak_hour, $energyList["hour"][$i], $avg, $sender);
 	    	}
@@ -246,7 +267,7 @@ class ems
 	    		$this->PowerShifting($peak_hour, $energyList["hour"][$i], $energyList["energy"][$i], $sender);
 	    		$div = (count($energyList["energy"]) - ($i+1)) == 0 ? 1 : count($energyList["energy"]) - ($i+1);
 	    		$avg = round($map_energy /$div,4);
-	    	}
+	    	}*/
 	    }
 	}
 	public function DynamicPricingOld()
@@ -343,12 +364,14 @@ class ems
 
 }
 $obj = new ems();
-$obj->DynamicPricing();
+//$obj->DynamicPricing();
+$prices = $obj->GetPrcieList();
+print_r($prices);
 //echo $obj->Profilt('2018-12-11', 18) . "<br>";
 //echo "---------------------------------------<br>";
 //echo "20% Felexibilty". "<br>";
 //$obj->UserFlexibility(50, "H");
-//$obj->UserFlexibility(50, "F");
+$obj->UserFlexibility(50, "F");
 
 
 ?>

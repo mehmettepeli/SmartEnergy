@@ -14126,4 +14126,53 @@ INSERT INTO `winddb` (Date, Temp,ProducedEnergy)
 	 		   VALUES ('2018-12-28',18,-3.527,0.0112,'tomorrow') 
 	 		 INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
 	 		   VALUES ('2018-12-28',18,-3.527,1.2883,'tomorrow') 
+	 		 INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2019-01-10',10,0,0.4568,'today') 
+	 		 INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2019-01-10',10,0,1.2588,'today') 
+	 		 INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2019-01-11',10,-5.591,0.0488,'tomorrow') 
+	 		 INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2019-01-11',10,-5.591,1.2588,'tomorrow') 
+	 		 INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2019-01-10',10,0,0.4568,'today') 
+	 		 INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2019-01-10',10,0,1.2588,'today') 
+	 		 INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2019-01-11',10,-5.591,0.0488,'tomorrow') 
+	 		 INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2019-01-11',10,-5.591,1.2588,'tomorrow') 
+	 		 INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2019-01-10',11,0,0.3093,'today') 
+	 		 INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2019-01-10',11,0,1.2588,'today') 
+	 		 INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2019-01-11',11,-5.591,0.0488,'tomorrow') 
+	 		 INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2019-01-11',11,-5.591,1.2588,'tomorrow') 
 	 		 
+			SELECT `price` 
+			FROM `dynamic_pricing` 
+			WHERE `hour` =10
+		
+			SELECT *
+			FROM `dynamic_pricing` 
+		
+			SELECT *
+			FROM `dynamic_pricing` 
+		
+			SELECT *
+			FROM `dynamic_pricing` 
+		
+			SELECT *
+			FROM `dynamic_pricing` 
+		
+			SELECT *
+			FROM `dynamic_pricing` 
+		
+			SELECT *
+			FROM `dynamic_pricing` 
+		
+			SELECT *
+			FROM `dynamic_pricing` 
+		

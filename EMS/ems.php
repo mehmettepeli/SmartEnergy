@@ -302,36 +302,43 @@ class ems
 	}
 	public function DynamicPricing()
 	{
-		$nextDay = date('Y-m-d');
-		$nextDay = date("Y-m-d", strtotime('+1 days', strtotime($nextDay)));
+		$todayDay = date('Ymd');
+		$nextDay = date("Ymd", strtotime('+1 days', strtotime($todayDay)));
 
-		$data = file_get_contents('https://www.epexspot.com/en/market-data/dayaheadauction/auction-table/'. $nextDay .'/DE_LU/24');
+		//$data = file_get_contents('https://www.epexspot.com/en/market-data/dayaheadauction/auction-table/'. $nextDay .'/DE_LU/24');
+		$data = file_get_contents('https://transparency.entsoe.eu/api?securityToken=7932b44c-19d7-4cc3-9d7c-57a7773e11da&documentType=A44&in_Domain=10Y1001A1001A82H&out_Domain=10Y1001A1001A82H&periodStart='. $todayDay .'0000&periodEnd='. $nextDay .'0000');
 
-		$dom = new domDocument;
 
-		@$dom->loadHTML($data);
-		$dom->preserveWhiteSpace = false;
-		$xpath = new DOMXpath($dom);
-		$tdlist = $xpath->query('//div[@id="tab_de_lu"]/table[3]//tr//td[9]');
-		$counter = 1;
+		$xml = simplexml_load_string($data);
+		$tdlist = $xml->TimeSeries[count($xml->TimeSeries)-1]->Period->Point;
+		//echo '<pre>'; print_r($tdlist); echo '</pre>';
+
+		
+		//$dom = new domDocument;
+		//@$dom->loadHTML($data);
+		//$dom->preserveWhiteSpace = false;
+		//$xpath = new DOMXpath($dom);
+		//$tdlist = $xpath->query('//div[@id="tab_de_lu"]/table[3]//tr//td[9]');
+		//$counter = 1;
+
 		$hour = 0;
-
 		$sql = " TRUNCATE TABLE `dynamic_pricing` ";
 		$this->db->execute($sql);
 
 		foreach ($tdlist as $td) {
-			if ($counter % 2 == 0){
+			/*if ($counter % 2 == 0){
 				$counter++;
 				continue;
-			}
-			$price = round((float)$td->nodeValue * 1000, 4);
-			$sql = "
-				INSERT INTO `dynamic_pricing` (hour, price) VALUES (". $hour .",". $price .")
-			";
+			}*/
+			
+			$td = (array)$td;
+
+			$price = round((float)$td["price.amount"] / 1000, 4);
+			$sql = "INSERT INTO `dynamic_pricing` (hour, price) VALUES (". $hour .",". $price .") ";
 			$result = $this->db->execute($sql);
 
 			//echo $price . "<br>";
-			$counter++;
+			//$counter++;
 			$hour++;
 			
 		}
@@ -366,9 +373,9 @@ class ems
 
 }
 $obj = new ems();
-//$obj->DynamicPricing();
-$prices = $obj->GetPrcieList();
-print_r($prices);
+$obj->DynamicPricing();
+//$prices = $obj->GetPrcieList();
+//print_r($prices);
 $priceList = $obj-> GetPrcieList();
 echo '<pre>'; print_r($priceList); echo '</pre>';
 //print_r( $priceList);
@@ -376,7 +383,7 @@ echo '<pre>'; print_r($priceList); echo '</pre>';
 //echo "---------------------------------------<br>";
 //echo "20% Felexibilty". "<br>";
 //$obj->UserFlexibility(50, "H");
-$obj->UserFlexibility(50, "F");
+//$obj->UserFlexibility(50, "F");
 
 
 ?>

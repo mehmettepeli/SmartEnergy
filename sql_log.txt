@@ -1,0 +1,29 @@
+INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2019-01-11',09,-2.55,0.0623,'today') 
+	 		 INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2019-01-11',09,-2.55,1.2556,'today') 
+	 		 INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2019-01-12',09,-0.851,0.1505,'tomorrow') 
+	 		 INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2019-01-12',09,-0.851,1.2556,'tomorrow') 
+	 		 
+			SELECT *
+			FROM `dynamic_pricing` 
+		
+			SELECT *
+			FROM `dynamic_pricing` 
+		
+			SELECT *
+			FROM `dynamic_pricing` 
+		INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2019-01-13',23,7,4.1855,'today') 
+	 		 INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2019-01-13',23,7,1.2489,'today') 
+	 		 INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2019-01-14',23,1.715,0.7551,'tomorrow') 
+	 		 INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
+	 		   VALUES ('2019-01-14',23,1.715,1.2489,'tomorrow') 
+	 		 
+			SELECT *
+			FROM `dynamic_pricing` 
+		

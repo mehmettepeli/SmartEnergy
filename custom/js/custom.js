@@ -2,10 +2,10 @@ $(document).ready(function(){
 
   var i = 0;
   function LoadDataEveryHour() {
-      /*$.post("data_import/weather-data-import.php",{},
+      $.post("data_import/weather-data-import.php",{},
       function(data, status){
           console.log("Data: " + data + "\nStatus: " + status);
-      });*/
+      });
       i++;
       //console.log("call "+ i);
       setInterval(LoadDataEveryHour, 1000 * 60 * 60);

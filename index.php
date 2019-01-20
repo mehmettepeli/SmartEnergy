@@ -90,7 +90,7 @@
                     <div class="col-6" style=" border: 1px solid #dad5d5;">
                       <p style="padding-top: 20px; padding-left: 20px;"> 
                         <span> Roter Size: </span>
-                        <input type="text" name="" id="wind_roter_txt">
+                        <input type="text" name="" id="wind_roter_txt" value="1.8">
                         <span> Meter </span>
                       </p>
                       <p style="width: 54%; text-align: right;"><button id="wind_set_btn" type="button" class="btn btn-secondary">Setup</button></p>
@@ -111,7 +111,7 @@
                     <div class="col-6" style=" border: 1px solid #dad5d5;">
                       <p style="padding-top: 20px; padding-left: 20px;"> 
                         <span style=" margin-right: 8px;"> Panel Area:</span>
-                        <input type="text" name="" id="solar_panel_txt">
+                        <input type="text" name="" id="solar_panel_txt" value="1.3">
                         <span> M <sup> 2 </sup> </span>
                       </p>
                       <p style="padding-left: 20px;"> 
@@ -120,18 +120,18 @@
                           <option  value="0.05"> 5%</option>
                           <option  value="0.10"> 10%</option>
                           <option  value="0.15"> 15%</option>
-                          <option  value="0.20"> 20%</option>
+                          <option  value="0.20" selected> 20%</option>
                           <option  value="0.25"> 25%</option>
                         </select>
                       </p>
                       <p style="padding-left: 20px;">
                         <span> Panel Angle:</span>
                         <select id="solar_panel_angle" style=" width: 36%">
-                          <option  value="3.11"> 0&deg;</option>
-                          <option  value="3.47"> 33&deg;</option>
-                          <option  value="3.38"> 48&deg;</option>
-                          <option  value="3.40"> 63&deg;</option>
-                          <option  value="2.38"> 90&deg;</option>
+                          <option  value="3.11#0"> 0&deg;</option>
+                          <option  value="3.47#33" selected> 33&deg;</option>
+                          <option  value="3.38#48"> 48&deg;</option>
+                          <option  value="3.40#63"> 63&deg;</option>
+                          <option  value="2.38#90"> 90&deg;</option>
                         </select>
                       </p>
                       <p style="width: 54%; text-align: right;"><button id="solar_set_btn" type="button" class="btn btn-secondary">Setup</button></p>
@@ -157,12 +157,12 @@
                       </p>
                       <p style="padding-left: 20px;"> 
                         <span style="margin-right: 73px;"> Charging Rate: </span>
-                        <input type="number" name="" id="bat_max_charging" value="200">
+                        <input type="number" name="" id="bat_max_charging" value="20">
                         <span> KWH </span>
                       </p>
                       <p style="padding-left: 20px;"> 
                         <span style="margin-right: 55px;"> Discharging Rate: </span>
-                        <input type="number" name="" id="bat_max_discharging" value="200">
+                        <input type="number" name="" id="bat_max_discharging" value="20">
                         <span> KWH </span>
                       </p>
                       <p style="padding-left: 20px;"> 

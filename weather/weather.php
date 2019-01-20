@@ -71,9 +71,15 @@ class weather
 class windturbine extends weather
 {
     public $sweptArea;
+    public $windRoter = 1.8;
     function __construct()
     {
-        $this->sweptArea = round((3.14159 * 1.8 *1.8), 4);
+        $this->sweptArea = round((3.14159 * $this->windRoter * $this->windRoter), 4);
+    }
+    public function WindturbineSetup($windRoter)
+    {
+        $this->windRoter = $windRoter;
+        $this->sweptArea = round((3.14159 * $this->windRoter * $this->windRoter), 4);
     }
     public function DryAirDensity($air, $tempKelvin){
         $dryAirDen = round(($air*100)/(287.05*$tempKelvin),4);
@@ -170,6 +176,20 @@ class windturbine extends weather
  */
 class photovoltaic extends weather{
 
+    public $panelArea = 1.3;
+    public $panelYield = 0.20;
+    public $panelAngle = 33;
+    public $sHorizon = 3.48;
+
+    public function PhotovoltaicSetup($panelArea, $panelYield, $panelAngle, $sHorizon)
+    {
+
+        $this->panelArea = $panelArea;
+        $this->panelYield = $panelYield;
+        $this->panelAngle = $panelAngle;
+        $this->sHorizon = $sHorizon;
+    }
+
     public function TempLoss($currentTemp){
         $stTemp = 25;
         $res = 0;
@@ -188,11 +208,11 @@ class photovoltaic extends weather{
     }
     public function SModule(){
         $day = date('z') + 1;
-        $beta = 33; // degree
-        $fi = 33; // degree
+        $beta = $this->panelAngle; // degree
+        $fi = $this->panelAngle; // degree
         $sigma = 23.45 * sin(deg2rad(360/365)*(284+$day));
         $alpha = round((90 - $fi + $sigma), 2);
-        $sHorizon = 3.48; // for 33 yearly value in tilted surface
+        $sHorizon = $this->sHorizon; // for 33 yearly value in tilted surface
         $sIncident = round(($sHorizon / sin(deg2rad($alpha))), 4);
         $teta = $alpha + $beta;
         $sModule = round(($sIncident * sin(deg2rad($teta))), 4);
@@ -200,7 +220,7 @@ class photovoltaic extends weather{
     }
     public function SolarPanelEnergy($currentTemp){
         //E = A * r * PR *S
-        $sp = 1.3 * 0.20 * $this->TotalLoss($currentTemp) * $this->SModule();
+        $sp = $this->panelArea * $this->panelYield * $this->TotalLoss($currentTemp) * $this->SModule();
         return round($sp, 4);
     }
     public function CurrentSoloarEnergy()
@@ -224,6 +244,15 @@ class Battery
     public $effOfDischarging = 0.95;
     //public $initialState = 20; //kw
     public $stateOfBattey = 50;
+
+    public function BatterySetup($eMax, $chMax, $disMax, $effOfCharging, $effOfDischarging)
+    {
+        $this->eMax = $eMax;
+        $this->chMax = $chMax;
+        $this->disMax = $disMax;
+        $this->effOfCharging = $effOfCharging;
+        $this->effOfDischarging = $effOfDischarging;
+    }
 
     public function CurrentState(){
         return $this->stateOfBattey;

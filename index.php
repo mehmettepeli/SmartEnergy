@@ -54,10 +54,10 @@
           <h4 class="">Middle part</h4>
           <span class="loading loading_sty"> </span> 
           <div id="chart_overview" class="flex-dis">
-            <div class="col-4">
-
+            <div class="col-6">
+              <div id="chart_price_list" class=""></div>
             </div>
-            <div class="col-8">
+            <div class="">
               
             </div>
           </div>

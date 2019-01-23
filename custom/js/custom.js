@@ -1,12 +1,13 @@
 $(document).ready(function(){
   eventListener();
+  loadPriceList();
 
   var i = 0;
   function LoadDataEveryHour() {
-      $.post("data_import/weather-data-import.php",{},
+      /*$.post("data_import/weather-data-import.php",{},
       function(data, status){
           console.log("Data: " + data + "\nStatus: " + status);
-      });
+      });*/
       i++;
       //console.log("call "+ i);
       setInterval(LoadDataEveryHour, 1000 * 60 * 60);
@@ -22,6 +23,58 @@ LoadDataEveryHour();
 });
 
 /* start -- event handler for setup*/
+
+function loadPriceList() {
+  priceList = bb.generate({
+            bindto : '#chart_price_list',
+            data: {
+                //x : 'x',
+                columns: [],
+                type: 'bar',
+                
+                //onclick: common,
+            },
+            axis: {
+              x: {
+                  label:{
+                    text: "Hour",
+                    position: "outer-center"
+                }
+              },
+              y: {
+                label:{
+                  text: "KWh",
+                  position: "outer-middle"
+                }
+              }
+            },
+            legend: {
+              show: true
+            },
+            title: { 
+              text: 'Price List'
+            },
+            /*axis: {
+                x: {
+                    type: 'category',
+                    tick: {
+                        rotate: 0,
+                        multiline: true
+                    },
+                }
+            },*/
+            padding: {
+              bottom: 10
+            }
+        });
+    $.post("ems/processing.php", { "operation" : "priceList"}, function(result){
+      console.log(result["data_price_list"]);
+      priceList.load({
+        unload: true,
+        columns: [result["data_price_list"][1]]
+      });
+  });
+}
 
 function eventListener() {
 

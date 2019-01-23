@@ -1,6 +1,7 @@
 
 <?php
 
+	header('Content-Type: application/json; charset=utf-8');
 	include '../db_script/db-connection.php';
 	include '../weather/weather.php';
 
@@ -23,6 +24,7 @@
  			$sql = " INSERT INTO  setupdb (wind_roter) VALUES (". $wind_roter_txt .")";
  			$db->execute($sql);
  		}
+ 		$response ="success";
  	}
 
 
@@ -43,6 +45,8 @@
  			$sql = " INSERT INTO  setupdb (panel_area, panel_yield, panel_angle, sHorizon ) VALUES (". $solar_panel_area .",". $solar_panel_yield .", ". $solar_panel_angle .", ". $sHorizon .")";
  			$db->execute($sql);
  		}
+
+ 		$response ="success";
  	}
 
  	if ($operation == "BatterySetup" ) {
@@ -63,8 +67,23 @@
  			$sql = " INSERT INTO  setupdb (bat_max_cap, bat_max_charging, bat_max_discharging, bat_eff_charging, bat_eff_discharging ) VALUES (". $bat_max_cap .",". $bat_max_charging .", ". $bat_max_discharging .", ". $bat_eff_charging .", ". $bat_eff_discharging .")";
  			$db->execute($sql);
  		}
+ 		$response ="success";
  	}
- 	
-	echo "Success";
+
+ 	if ($operation == "priceList" ) {
+
+ 		$sql = "SELECT * FROM dynamic_pricing";
+ 		$result = $db->executeQuery($sql);
+ 		$hourList = ["x"];
+ 		$priceList = ["Price(€)"];
+ 		while($row = $result->fetch_assoc()) {
+			array_push($hourList, $row["hour"]);
+			array_push($priceList, $row["price"]);
+		}
+ 		$response["data_price_list"] = [$hourList, $priceList];
+ 	}
+
+	$response_json = json_encode($response);
+	echo $response_json;
 
 ?>

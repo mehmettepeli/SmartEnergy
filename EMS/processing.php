@@ -1,6 +1,5 @@
 
 <?php
-
 	header('Content-Type: application/json; charset=utf-8');
 	include '../db_script/db-connection.php';
 	include '../weather/weather.php';
@@ -82,6 +81,77 @@
 		}
  		$response["data_price_list"] = [$hourList, $priceList];
  	}
+ 	if ($operation == "dateDDL" ) {
+
+ 		$sql = "
+ 			SELECT * FROM `winddb` 
+			GROUP BY `Date`
+			ORDER BY Date ASC
+ 		";
+ 		$result = $db->executeQuery($sql);
+ 		$list = [];
+ 		$currentDay = date('Y-m-d');
+ 		while($row = $result->fetch_assoc()) {
+ 			if ($currentDay == $row["Date"])
+ 				break;
+			array_push($list, $row["Date"]);
+		}
+ 		$response["dateDDL"] = $list;
+ 	}
+
+ 	if ($operation == "chart_wind_history" ) {
+ 		$date = $_POST["date"];
+ 		if ($date == 0) {
+ 			$date = "(SELECT MIN(Date) FROM `winddb`)";
+ 		}
+ 		else
+ 			$date = "'". $date ."'";
+
+ 		$sql = "
+ 			SELECT * FROM `winddb` WHERE `Date` = ". $date ."
+ 		";
+ 		$result = $db->executeQuery($sql);
+ 		$list = ["Historical Data",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+ 		while($row = $result->fetch_assoc()) {
+ 			$list[$row["Hour"]+1] = $row["ProducedEnergy"];
+			//array_push($list, $row["ProducedEnergy"]);
+		}
+ 		$response["chart_wind_history"] = $list;
+ 	}
+
+ 	if ($operation == "chart_wind_current" ) {
+ 	
+ 		$date = "'". date('Y-m-d') ."'";
+
+ 		$sql = "
+ 			SELECT * FROM `winddb` WHERE `Date` = ". $date ."
+ 		";
+ 		$result = $db->executeQuery($sql);
+ 		$list = ["Current Data",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+ 		while($row = $result->fetch_assoc()) {
+ 			$list[$row["Hour"]+1] = $row["ProducedEnergy"];
+			//array_push($list, $row["ProducedEnergy"]);
+		}
+ 		$response["chart_wind_current"] = $list;
+ 	}
+
+ 	if ($operation == "chart_wind_forecast" ) {
+ 	
+ 		$nextDay = date('Y-m-d');
+        $date = "'". date("Y-m-d", strtotime('+1 days', strtotime($nextDay))). "'";
+
+ 		$sql = "
+ 			SELECT * FROM `winddb` WHERE `Date` = ". $date ."
+ 		";
+ 		$result = $db->executeQuery($sql);
+ 		$list = ["Forecast Data",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+ 		while($row = $result->fetch_assoc()) {
+ 			$list[$row["Hour"]+1] = $row["ProducedEnergy"];
+			//array_push($list, $row["ProducedEnergy"]);
+		}
+ 		$response["chart_wind_forecast"] = $list;
+ 	}
+
 
 	$response_json = json_encode($response);
 	echo $response_json;

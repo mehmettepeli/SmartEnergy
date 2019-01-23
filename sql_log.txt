@@ -1,35 +1,82 @@
-SELECT * FROM setupdb WHERE user_id = 1SELECT * FROM winddb WHERE Date ='2019-01-20' and hour =17SELECT * FROM solardb WHERE Date ='2019-01-20' and hour =17INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
-		 		   VALUES ('2019-01-20',17,-2.67,1.2185,'today') 
-		 		 SELECT * FROM winddb WHERE Date ='2019-01-21' and hour =17INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
-		 		   VALUES ('2019-01-21',17,-3.647,0.0183,'tomorrow') 
-		 		 SELECT * FROM solardb WHERE Date ='2019-01-21' and hour =17INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
-		 		   VALUES ('2019-01-21',17,-3.647,1.2185,'tomorrow') 
-		 		 SELECT * FROM setupdb WHERE user_id = 1SELECT * FROM winddb WHERE Date ='2019-01-20' and hour =17SELECT * FROM solardb WHERE Date ='2019-01-20' and hour =17SELECT * FROM winddb WHERE Date ='2019-01-21' and hour =17SELECT * FROM solardb WHERE Date ='2019-01-21' and hour =17SELECT * FROM setupdb WHERE user_id = 1SELECT * FROM winddb WHERE Date ='2019-01-20' and hour =17SELECT * FROM solardb WHERE Date ='2019-01-20' and hour =17SELECT * FROM winddb WHERE Date ='2019-01-21' and hour =17SELECT * FROM solardb WHERE Date ='2019-01-21' and hour =17SELECT * FROM setupdb WHERE user_id = 1SELECT * FROM winddb WHERE Date ='2019-01-20' and hour =17INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
-		 		   VALUES ('2019-01-20',17,-2.67,0.1171,'today') 
-		 		 SELECT * FROM solardb WHERE Date ='2019-01-20' and hour =17SELECT * FROM winddb WHERE Date ='2019-01-21' and hour =17INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
-		 		   VALUES ('2019-01-21',17,-3.647,0.0183,'tomorrow') 
-		 		 SELECT * FROM solardb WHERE Date ='2019-01-21' and hour =17SELECT * FROM setupdb WHERE user_id = 1SELECT * FROM winddb WHERE Date ='2019-01-20' and hour =17SELECT * FROM solardb WHERE Date ='2019-01-20' and hour =17SELECT * FROM winddb WHERE Date ='2019-01-21' and hour =17SELECT * FROM solardb WHERE Date ='2019-01-21' and hour =17SELECT * FROM setupdb WHERE user_id = 1SELECT * FROM winddb WHERE Date ='2019-01-20' and hour =17SELECT * FROM solardb WHERE Date ='2019-01-20' and hour =17SELECT * FROM winddb WHERE Date ='2019-01-21' and hour =17SELECT * FROM solardb WHERE Date ='2019-01-21' and hour =17SELECT * FROM setupdb WHERE user_id = 1SELECT * FROM winddb WHERE Date ='2019-01-20' and hour =17 UPDATE winddb SET Temp =-2.67, ProducedEnergy =0.1171, track ='today' WHERE Date ='2019-01-20' and hour =17SELECT * FROM solardb WHERE Date ='2019-01-20' and hour =17 UPDATE solardb SET Temp =-2.67, ProducedEnergy =1.2185, track ='today' WHERE Date ='2019-01-20' and hour =17SELECT * FROM winddb WHERE Date ='2019-01-21' and hour =17 UPDATE winddb SET Temp =-3.647, ProducedEnergy =0.0183, track ='tomorrow' WHERE Date ='2019-01-21' and hour =17SELECT * FROM solardb WHERE Date ='2019-01-21' and hour =17 UPDATE solardb SET Temp =-3.647, ProducedEnergy =1.2185, track ='tomorrow' WHERE Date ='2019-01-21' and hour =17SELECT * FROM setupdb WHERE user_id = 1SELECT * FROM winddb WHERE Date ='2019-01-21' and hour =19INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
-		 		   VALUES ('2019-01-21',19,-3.6799999999999,0.0621,'today') 
-		 		 SELECT * FROM solardb WHERE Date ='2019-01-21' and hour =19INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
-		 		   VALUES ('2019-01-21',19,-3.6799999999999,1.2144,'today') 
-		 		 SELECT * FROM winddb WHERE Date ='2019-01-22' and hour =19INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
-		 		   VALUES ('2019-01-22',19,-6.772,0.0076,'tomorrow') 
-		 		 SELECT * FROM solardb WHERE Date ='2019-01-22' and hour =19INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
-		 		   VALUES ('2019-01-22',19,-6.772,1.2144,'tomorrow') 
-		 		 SELECT * FROM setupdb WHERE user_id = 1SELECT * FROM winddb WHERE Date ='2019-01-21' and hour =20INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
-		 		   VALUES ('2019-01-21',20,-3.6799999999999,0.0008,'today') 
-		 		 SELECT * FROM solardb WHERE Date ='2019-01-21' and hour =20INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
-		 		   VALUES ('2019-01-21',20,-3.6799999999999,1.2144,'today') 
-		 		 SELECT * FROM winddb WHERE Date ='2019-01-22' and hour =20INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
-		 		   VALUES ('2019-01-22',20,-6.772,0.0076,'tomorrow') 
-		 		 SELECT * FROM solardb WHERE Date ='2019-01-22' and hour =20INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
-		 		   VALUES ('2019-01-22',20,-6.772,1.2144,'tomorrow') 
-		 		 SELECT * FROM setupdb WHERE user_id = 1SELECT * FROM winddb WHERE Date ='2019-01-21' and hour =21INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
-		 		   VALUES ('2019-01-21',21,-4.08,0.0227,'today') 
-		 		 SELECT * FROM solardb WHERE Date ='2019-01-21' and hour =21INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
-		 		   VALUES ('2019-01-21',21,-4.08,1.2144,'today') 
-		 		 SELECT * FROM winddb WHERE Date ='2019-01-22' and hour =21INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
-		 		   VALUES ('2019-01-22',21,-9.443,0.0114,'tomorrow') 
-		 		 SELECT * FROM solardb WHERE Date ='2019-01-22' and hour =21INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
-		 		   VALUES ('2019-01-22',21,-9.443,1.2144,'tomorrow') 
-		 		 SELECT * FROM setupdb WHERE user_id = 1SELECT * FROM winddb WHERE Date ='2019-01-21' and hour =21 UPDATE winddb SET Temp =-4.08, ProducedEnergy =0.0227, track ='today' WHERE Date ='2019-01-21' and hour =21SELECT * FROM solardb WHERE Date ='2019-01-21' and hour =21 UPDATE solardb SET Temp =-4.08, ProducedEnergy =1.2144, track ='today' WHERE Date ='2019-01-21' and hour =21SELECT * FROM winddb WHERE Date ='2019-01-22' and hour =21 UPDATE winddb SET Temp =-9.443, ProducedEnergy =0.0114, track ='tomorrow' WHERE Date ='2019-01-22' and hour =21SELECT * FROM solardb WHERE Date ='2019-01-22' and hour =21 UPDATE solardb SET Temp =-9.443, ProducedEnergy =1.2144, track ='tomorrow' WHERE Date ='2019-01-22' and hour =21SELECT * FROM setupdb WHERE user_id = 1SELECT * FROM winddb WHERE Date ='2019-01-21' and hour =21 UPDATE winddb SET Temp =-4.08, ProducedEnergy =0.0227, track ='today' WHERE Date ='2019-01-21' and hour =21SELECT * FROM solardb WHERE Date ='2019-01-21' and hour =21 UPDATE solardb SET Temp =-4.08, ProducedEnergy =1.2144, track ='today' WHERE Date ='2019-01-21' and hour =21SELECT * FROM winddb WHERE Date ='2019-01-22' and hour =21 UPDATE winddb SET Temp =-9.443, ProducedEnergy =0.0114, track ='tomorrow' WHERE Date ='2019-01-22' and hour =21SELECT * FROM solardb WHERE Date ='2019-01-22' and hour =21 UPDATE solardb SET Temp =-9.443, ProducedEnergy =1.2144, track ='tomorrow' WHERE Date ='2019-01-22' and hour =21SELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricingSELECT * FROM dynamic_pricing
+
+ 			SELECT * FROM `winddb` 
+			GROUP BY `Date`
+			ORDER BY Date ASC
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-23'
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
+ 		SELECT * FROM dynamic_pricing
+			GROUP BY `Date`
+			ORDER BY Date ASC
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-23'
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-19'
+ 		
+ 			SELECT * FROM `winddb` 
+			GROUP BY `Date`
+			ORDER BY Date ASC
+ 		SELECT * FROM dynamic_pricing
+ 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-23'
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
+ 		SELECT * FROM setupdb WHERE user_id = 1SELECT * FROM winddb WHERE Date ='2019-01-23' and hour =22INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
+		 		   VALUES ('2019-01-23',22,-4.14,0.1963,'today') 
+		 		 SELECT * FROM solardb WHERE Date ='2019-01-23' and hour =22INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
+		 		   VALUES ('2019-01-23',22,-4.14,1.2056,'today') 
+		 		 SELECT * FROM winddb WHERE Date ='2019-01-24' and hour =22INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
+		 		   VALUES ('2019-01-24',22,-6.247,0.0144,'tomorrow') 
+		 		 SELECT * FROM solardb WHERE Date ='2019-01-24' and hour =22INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
+		 		   VALUES ('2019-01-24',22,-6.247,1.2056,'tomorrow') 
+		 		 SELECT * FROM dynamic_pricing
+ 			SELECT * FROM `winddb` 
+			GROUP BY `Date`
+			ORDER BY Date ASC
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-23'
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
+ 		SELECT * FROM setupdb WHERE user_id = 1SELECT * FROM winddb WHERE Date ='2019-01-23' and hour =22 UPDATE winddb SET Temp =-4.14, ProducedEnergy =0.1963, track ='today' WHERE Date ='2019-01-23' and hour =22SELECT * FROM solardb WHERE Date ='2019-01-23' and hour =22 UPDATE solardb SET Temp =-4.14, ProducedEnergy =1.2056, track ='today' WHERE Date ='2019-01-23' and hour =22SELECT * FROM winddb WHERE Date ='2019-01-24' and hour =22 UPDATE winddb SET Temp =-6.247, ProducedEnergy =0.0144, track ='tomorrow' WHERE Date ='2019-01-24' and hour =22SELECT * FROM solardb WHERE Date ='2019-01-24' and hour =22 UPDATE solardb SET Temp =-6.247, ProducedEnergy =1.2056, track ='tomorrow' WHERE Date ='2019-01-24' and hour =22SELECT * FROM dynamic_pricing
+ 			SELECT * FROM `winddb` 
+			GROUP BY `Date`
+			ORDER BY Date ASC
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-23'
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
+ 		SELECT * FROM setupdb WHERE user_id = 1SELECT * FROM winddb WHERE Date ='2019-01-23' and hour =22 UPDATE winddb SET Temp =-4.14, ProducedEnergy =0.1963, track ='today' WHERE Date ='2019-01-23' and hour =22SELECT * FROM solardb WHERE Date ='2019-01-23' and hour =22 UPDATE solardb SET Temp =-4.14, ProducedEnergy =1.2056, track ='today' WHERE Date ='2019-01-23' and hour =22SELECT * FROM winddb WHERE Date ='2019-01-24' and hour =22 UPDATE winddb SET Temp =-6.247, ProducedEnergy =0.0144, track ='tomorrow' WHERE Date ='2019-01-24' and hour =22SELECT * FROM solardb WHERE Date ='2019-01-24' and hour =22 UPDATE solardb SET Temp =-6.247, ProducedEnergy =1.2056, track ='tomorrow' WHERE Date ='2019-01-24' and hour =22
+ 			SELECT * FROM `winddb` 
+			GROUP BY `Date`
+			ORDER BY Date ASC
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-23'
+ 		SELECT * FROM setupdb WHERE user_id = 1
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
+ 		SELECT * FROM winddb WHERE Date ='2019-01-23' and hour =22 UPDATE winddb SET Temp =-4.14, ProducedEnergy =0.1963, track ='today' WHERE Date ='2019-01-23' and hour =22SELECT * FROM solardb WHERE Date ='2019-01-23' and hour =22 UPDATE solardb SET Temp =-4.14, ProducedEnergy =1.2056, track ='today' WHERE Date ='2019-01-23' and hour =22SELECT * FROM winddb WHERE Date ='2019-01-24' and hour =22 UPDATE winddb SET Temp =-6.247, ProducedEnergy =0.0144, track ='tomorrow' WHERE Date ='2019-01-24' and hour =22SELECT * FROM solardb WHERE Date ='2019-01-24' and hour =22 UPDATE solardb SET Temp =-6.247, ProducedEnergy =1.2056, track ='tomorrow' WHERE Date ='2019-01-24' and hour =22SELECT * FROM dynamic_pricing
+ 			SELECT * FROM `winddb` 
+			GROUP BY `Date`
+			ORDER BY Date ASC
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-23'
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
+ 		SELECT * FROM setupdb WHERE user_id = 1SELECT * FROM winddb WHERE Date ='2019-01-23' and hour =22 UPDATE winddb SET Temp =-4.14, ProducedEnergy =0.1963, track ='today' WHERE Date ='2019-01-23' and hour =22SELECT * FROM solardb WHERE Date ='2019-01-23' and hour =22 UPDATE solardb SET Temp =-4.14, ProducedEnergy =1.2056, track ='today' WHERE Date ='2019-01-23' and hour =22SELECT * FROM winddb WHERE Date ='2019-01-24' and hour =22 UPDATE winddb SET Temp =-6.247, ProducedEnergy =0.0144, track ='tomorrow' WHERE Date ='2019-01-24' and hour =22SELECT * FROM solardb WHERE Date ='2019-01-24' and hour =22 UPDATE solardb SET Temp =-6.247, ProducedEnergy =1.2056, track ='tomorrow' WHERE Date ='2019-01-24' and hour =22
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-20'
+ 		

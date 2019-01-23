@@ -1,13 +1,17 @@
 $(document).ready(function(){
   eventListener();
   loadPriceList();
+  loadDateDDL();
+  loadWindHistory();
+  loadWindCurrent();
+  loadWindForecast();
 
   var i = 0;
   function LoadDataEveryHour() {
-      /*$.post("data_import/weather-data-import.php",{},
+      $.post("data_import/weather-data-import.php",{},
       function(data, status){
           console.log("Data: " + data + "\nStatus: " + status);
-      });*/
+      });
       i++;
       //console.log("call "+ i);
       setInterval(LoadDataEveryHour, 1000 * 60 * 60);
@@ -68,12 +72,179 @@ function loadPriceList() {
             }
         });
     $.post("ems/processing.php", { "operation" : "priceList"}, function(result){
-      console.log(result["data_price_list"]);
+      //console.log(result["data_price_list"]);
       priceList.load({
         unload: true,
         columns: [result["data_price_list"][1]]
       });
+    });
+}
+
+function loadDateDDL() {
+  $.post("ems/processing.php", { "operation" : "dateDDL"}, function(result){
+      console.log(result["dateDDL"]);
+      var dateList = result["dateDDL"];
+      var html = "";
+      for (var i = 0; i < dateList.length; i++) {
+        html+= "<option value='"+ dateList[i] +"'>"+ dateList[i] +"</option>";
+      }
+      $("#dateDDL").html();
+      $("#dateDDL").append(html);
   });
+}
+function loadWindHistory() {
+    chart_wind_history = bb.generate({
+            bindto : '#chart_wind_history',
+            data: {
+                //x : 'x',
+                columns: [],
+                type: 'line',
+                
+                //onclick: common,
+            },
+            axis: {
+              x: {
+                  label:{
+                    text: "Hour",
+                    position: "outer-center"
+                }
+              },
+              y: {
+                label:{
+                  text: "KWh",
+                  position: "outer-middle"
+                }
+              }
+            },
+            legend: {
+              show: true
+            },
+            title: { 
+              text: 'Historical Energy'
+            },
+            /*axis: {
+                x: {
+                    type: 'category',
+                    tick: {
+                        rotate: 0,
+                        multiline: true
+                    },
+                }
+            },*/
+            padding: {
+              bottom: 10
+            }
+        });
+    $.post("ems/processing.php", { "operation" : "chart_wind_history", "date" : 0 }, function(result){
+      //console.log(result["data_price_list"]);
+      chart_wind_history.load({
+        unload: true,
+        columns: [result["chart_wind_history"]]
+      });
+    });
+}
+function loadWindCurrent(){
+    chart_wind_current = bb.generate({
+            bindto : '#chart_wind_current',
+            data: {
+                //x : 'x',
+                columns: [],
+                type: 'line',
+                
+                //onclick: common,
+            },
+            axis: {
+              x: {
+                  label:{
+                    text: "Hour",
+                    position: "outer-center"
+                }
+              },
+              y: {
+                label:{
+                  text: "KWh",
+                  position: "outer-middle"
+                }
+              }
+            },
+            legend: {
+              show: true
+            },
+            title: { 
+              text: 'Current Energy'
+            },
+            /*axis: {
+                x: {
+                    type: 'category',
+                    tick: {
+                        rotate: 0,
+                        multiline: true
+                    },
+                }
+            },*/
+            padding: {
+              bottom: 10
+            }
+        });
+    $.post("ems/processing.php", { "operation" : "chart_wind_current", "date" : 0 }, function(result){
+      //console.log(result["data_price_list"]);
+      chart_wind_current.load({
+        unload: true,
+        columns: [result["chart_wind_current"]]
+      });
+    });
+}
+
+function loadWindForecast(){
+    chart_wind_forecast = bb.generate({
+            bindto : '#chart_wind_forecast',
+            data: {
+                //x : 'x',
+                columns: [],
+                type: 'line',
+                
+                //onclick: common,
+            },
+            axis: {
+              x: {
+                  label:{
+                    text: "Hour",
+                    position: "outer-center"
+                }
+              },
+              y: {
+                label:{
+                  text: "KWh",
+                  position: "outer-middle"
+                }
+              }
+            },
+            legend: {
+              show: true
+            },
+            title: { 
+              text: 'Forecast Energy'
+            },
+            /*axis: {
+                x: {
+                    type: 'category',
+                    tick: {
+                        rotate: 0,
+                        multiline: true
+                    },
+                }
+            },*/
+            padding: {
+              bottom: 10
+            }
+        });
+    $.post("ems/processing.php", { "operation" : "chart_wind_forecast", "date" : 0 }, function(result){
+      //console.log(result["data_price_list"]);
+      chart_wind_forecast.load({
+        unload: true,
+        columns: [result["chart_wind_forecast"]]
+      });
+    });
 }
 
 function eventListener() {
@@ -118,6 +289,15 @@ function eventListener() {
           console.log("Data: " + data + "\nStatus: " + status);
       }); 
     }
+  });
+  $("#dateDDL").change(function(){
+    var dateValue = $(this).val();
+    $.post("ems/processing.php", { "operation" : "chart_wind_history", "date" : dateValue }, function(result){
+      chart_wind_history.load({
+        unload: true,
+        columns: [result["chart_wind_history"]]
+      });
+    });
   });
 }
 

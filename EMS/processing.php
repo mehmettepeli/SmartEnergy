@@ -152,6 +152,70 @@
  		$response["chart_wind_forecast"] = $list;
  	}
 
+ 	if ($operation == "chart_solar_history" ) {
+ 		$date = $_POST["date"];
+ 		if ($date == 0) {
+ 			$date = "(SELECT MIN(Date) FROM `solardb`)";
+ 		}
+ 		else
+ 			$date = "'". $date ."'";
+
+ 		$sql = "
+ 			SELECT * FROM `solardb` WHERE `Date` = ". $date ."
+ 		";
+ 		$result = $db->executeQuery($sql);
+ 		$list = ["Historical Data",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+ 		while($row = $result->fetch_assoc()) {
+ 			$list[$row["Hour"]+1] = $row["ProducedEnergy"];
+			//array_push($list, $row["ProducedEnergy"]);
+		}
+ 		$response["chart_solar_history"] = $list;
+ 	}
+
+ 	if ($operation == "chart_solar_current" ) {
+ 	
+ 		$date = "'". date('Y-m-d') ."'";
+
+ 		$sql = "
+ 			SELECT * FROM `solardb` WHERE `Date` = ". $date ."
+ 		";
+ 		$result = $db->executeQuery($sql);
+ 		$list = ["Current Data",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+ 		while($row = $result->fetch_assoc()) {
+ 			$list[$row["Hour"]+1] = $row["ProducedEnergy"];
+			//array_push($list, $row["ProducedEnergy"]);
+		}
+ 		$response["chart_solar_current"] = $list;
+ 	}
+
+ 	if ($operation == "chart_solar_forecast" ) {
+ 	
+ 		$nextDay = date('Y-m-d');
+        $date = "'". date("Y-m-d", strtotime('+1 days', strtotime($nextDay))). "'";
+
+ 		$sql = "
+ 			SELECT * FROM `solardb` WHERE `Date` = ". $date ."
+ 		";
+ 		$result = $db->executeQuery($sql);
+ 		$list = ["Forecast Data",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+ 		while($row = $result->fetch_assoc()) {
+ 			$list[$row["Hour"]+1] = $row["ProducedEnergy"];
+			//array_push($list, $row["ProducedEnergy"]);
+		}
+ 		$response["chart_solar_forecast"] = $list;
+ 	}
+
+ 	if ($operation == "chart_battery_data" ) {
+ 	
+ 		$sql = "
+ 			SELECT * FROM `setupdb` WHERE user_id = 1
+ 		";
+ 		$result = $db->executeQuery($sql);
+ 		$row = $result->fetch_assoc();
+ 		$list = [ "bat_max_cap" => $row["bat_max_cap"], "battery_storage" => $row["battery_storage"]];
+ 		$response["chart_battery_data"] = $list;
+ 	}
+
 
 	$response_json = json_encode($response);
 	echo $response_json;

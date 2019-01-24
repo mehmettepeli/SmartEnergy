@@ -69,7 +69,7 @@
               <a class="nav-link active" data-toggle="tab" href="#windTurbineData" role="tab" aria-controls="windTurbineData">Wind Turbine Data</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#solarPanelData" role="tab" aria-controls="solarPanelData">Solar Panel Data</a>
+              <a class="nav-link solar_panel_content" data-toggle="tab" href="#solarPanelData" role="tab" aria-controls="solarPanelData">Solar Panel Data</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" data-toggle="tab" href="#batteryData" role="tab" aria-controls="batteryData">Battery Data</a>
@@ -83,7 +83,7 @@
                 <div class="pd_top_10">
                   <div id="" class="flex-dis" style="max-height: auto !important; padding-bottom: 20px;">
                     <div class="col-4" >
-                      <select id="dateDDL" class="form-control">
+                      <select id="" class="dateDDL form-control">
                       </select>
                       <div id="chart_wind_history" class=""></div>
                     </div>
@@ -102,12 +102,14 @@
                 <div class="pd_top_10">
                   <div id="" class=" flex-dis" style=" padding-bottom: 20px;">
                     <div class="col-4">
-                      <div id="chart_wind_history" class=""></div>
+                      <select id="" class="dateDDL_solar form-control">
+                      </select>
+                      <div id="chart_solar_history" class=""></div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4" style="margin-top: 43px">
                       <div id="chart_solar_current" class=""></div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4" style="margin-top: 43px">
                       <div id="chart_solar_forecast" class=""></div>
                     </div>
                   </div>
@@ -118,11 +120,8 @@
               <div class="col mgr_sty">
                 <div class="pd_top_10"> 
                   <div id="" class="flex-dis" style="padding-bottom: 20px;">
-                    <div class="col-6" style=" border: 1px solid #dad5d5;">
-                      
-                    </div>
-                    <div class="col-6" style="text-align: center; border: 1px solid #dad5d5;">
-                      
+                    <div class="col-12" style=" border: 1px solid #dad5d5;">
+                      <div id="chart_battery_data"></div>
                     </div>
                   </div>
                 </div>

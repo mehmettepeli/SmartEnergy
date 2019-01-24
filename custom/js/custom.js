@@ -3,15 +3,15 @@ $(document).ready(function(){
   loadPriceList();
   loadDateDDL();
   loadWindHistory();
-  loadWindCurrent();
-  loadWindForecast();
+  loadSolarWholeData();
+  loadBatteryData();
 
   var i = 0;
   function LoadDataEveryHour() {
-      $.post("data_import/weather-data-import.php",{},
+      /*$.post("data_import/weather-data-import.php",{},
       function(data, status){
           console.log("Data: " + data + "\nStatus: " + status);
-      });
+      });*/
       i++;
       //console.log("call "+ i);
       setInterval(LoadDataEveryHour, 1000 * 60 * 60);
@@ -82,16 +82,19 @@ function loadPriceList() {
 
 function loadDateDDL() {
   $.post("ems/processing.php", { "operation" : "dateDDL"}, function(result){
-      console.log(result["dateDDL"]);
+      //console.log(result["dateDDL"]);
       var dateList = result["dateDDL"];
       var html = "";
       for (var i = 0; i < dateList.length; i++) {
         html+= "<option value='"+ dateList[i] +"'>"+ dateList[i] +"</option>";
       }
-      $("#dateDDL").html();
-      $("#dateDDL").append(html);
+      $('.dateDDL').empty()
+      $(".dateDDL").append(html);
+      $('.dateDDL_solar').empty()
+      $(".dateDDL_solar").append(html);
   });
 }
+
 function loadWindHistory() {
     chart_wind_history = bb.generate({
             bindto : '#chart_wind_history',
@@ -141,6 +144,7 @@ function loadWindHistory() {
         unload: true,
         columns: [result["chart_wind_history"]]
       });
+      loadWindCurrent();
     });
 }
 function loadWindCurrent(){
@@ -192,9 +196,9 @@ function loadWindCurrent(){
         unload: true,
         columns: [result["chart_wind_current"]]
       });
+      loadWindForecast();
     });
 }
-
 function loadWindForecast(){
     chart_wind_forecast = bb.generate({
             bindto : '#chart_wind_forecast',
@@ -247,6 +251,199 @@ function loadWindForecast(){
     });
 }
 
+function loadSolarHistory() {
+    chart_solar_history = bb.generate({
+            bindto : '#chart_solar_history',
+            data: {
+                //x : 'x',
+                columns: [],
+                type: 'line',
+                
+                //onclick: common,
+            },
+            axis: {
+              x: {
+                  label:{
+                    text: "Hour",
+                    position: "outer-center"
+                }
+              },
+              y: {
+                label:{
+                  text: "KWh",
+                  position: "outer-middle"
+                }
+              }
+            },
+            legend: {
+              show: true
+            },
+            title: { 
+              text: 'Historical Energy'
+            },
+            /*axis: {
+                x: {
+                    type: 'category',
+                    tick: {
+                        rotate: 0,
+                        multiline: true
+                    },
+                }
+            },*/
+            padding: {
+              bottom: 10
+            }
+        });
+    chart_solar_history.load({
+        unload: true,
+        columns: [solar_history]
+      });
+}
+function loadSolarCurrent(){
+    chart_solar_current = bb.generate({
+            bindto : '#chart_solar_current',
+            data: {
+                //x : 'x',
+                columns: [],
+                type: 'line',
+                
+                //onclick: common,
+            },
+            axis: {
+              x: {
+                  label:{
+                    text: "Hour",
+                    position: "outer-center"
+                }
+              },
+              y: {
+                label:{
+                  text: "KWh",
+                  position: "outer-middle"
+                }
+              }
+            },
+            legend: {
+              show: true
+            },
+            title: { 
+              text: 'Current Energy'
+            },
+            /*axis: {
+                x: {
+                    type: 'category',
+                    tick: {
+                        rotate: 0,
+                        multiline: true
+                    },
+                }
+            },*/
+            padding: {
+              bottom: 10
+            }
+        });
+    chart_solar_current.load({
+        unload: true,
+        columns: [solar_current]
+      });
+}
+function loadSolarForecast(){
+    chart_solar_forecast = bb.generate({
+            bindto : '#chart_solar_forecast',
+            data: {
+                //x : 'x',
+                columns: [],
+                type: 'line',
+                
+                //onclick: common,
+            },
+            axis: {
+              x: {
+                  label:{
+                    text: "Hour",
+                    position: "outer-center"
+                }
+              },
+              y: {
+                label:{
+                  text: "KWh",
+                  position: "outer-middle"
+                }
+              }
+            },
+            legend: {
+              show: true
+            },
+            title: { 
+              text: 'Forecast Energy'
+            },
+            /*axis: {
+                x: {
+                    type: 'category',
+                    tick: {
+                        rotate: 0,
+                        multiline: true
+                    },
+                }
+            },*/
+            padding: {
+              bottom: 10
+            }
+        });
+    chart_solar_forecast.load({
+        unload: true,
+        columns: [solar_forecast]
+      });
+}
+
+function loadSolarWholeData(){
+
+    $.post("ems/processing.php", { "operation" : "chart_solar_history", "date" : 0 }, function(result){
+      solar_history =   result["chart_solar_history"];
+    });
+
+    $.post("ems/processing.php", { "operation" : "chart_solar_current", "date" : 0 }, function(result){
+      solar_current =  result["chart_solar_current"];
+    });
+
+    $.post("ems/processing.php", { "operation" : "chart_solar_forecast", "date" : 0 }, function(result){
+      solar_forecast =  result["chart_solar_forecast"];
+    });
+}
+
+function loadBatteryData(){
+
+   $.post("ems/processing.php", { "operation" : "chart_battery_data", "date" : 0 }, function(result){
+      var data =  result["chart_battery_data"];
+      console.log(parseFloat(data["bat_max_cap"]));
+      var max = parseFloat(data["bat_max_cap"]);
+      var currentPercentage = 100 * parseFloat(data["battery_storage"]) / max ;
+      battery_data = bb.generate({
+        data: {
+          columns: [
+            ["Battery Status", currentPercentage]
+          ],
+          type: "gauge"
+        },
+        title: { 
+          text: 'Battery Status'
+        },
+        gauge: {
+          label: {
+            format: function (value, ratio) { 
+              value = value * max / 100;
+              return value + " KWh"; 
+            },
+            extents: function (value, isMax) { return (isMax ? "Max:" : "Min:") + value + "%"; }
+          }
+        },
+        bindto: "#chart_battery_data"
+      });
+    });
+  // Script
+  
+}
+
 function eventListener() {
 
   $("#wind_set_btn").click(function () {
@@ -290,7 +487,7 @@ function eventListener() {
       }); 
     }
   });
-  $("#dateDDL").change(function(){
+  $(".dateDDL").change(function(){
     var dateValue = $(this).val();
     $.post("ems/processing.php", { "operation" : "chart_wind_history", "date" : dateValue }, function(result){
       chart_wind_history.load({
@@ -298,6 +495,24 @@ function eventListener() {
         columns: [result["chart_wind_history"]]
       });
     });
+  });
+
+  $(".dateDDL_solar").change(function(){
+    var dateValue = $(this).val();
+    $.post("ems/processing.php", { "operation" : "chart_solar_history", "date" : dateValue }, function(result){
+      chart_solar_history.load({
+        unload: true,
+        columns: [result["chart_solar_history"]]
+      });
+    });
+  });
+  $(".solar_panel_content").click(function(){
+      setTimeout(function(){ 
+        loadSolarHistory();
+        loadSolarCurrent(); 
+        loadSolarForecast();
+      }, 300);
+      loadDateDDL();
   });
 }
 

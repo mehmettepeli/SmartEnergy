@@ -46,11 +46,11 @@
 	{
 		global $db;
 
-		$sql = "SELECT * FROM winddb WHERE Date ='". $date ."' and hour =". $time ."";
+		$sql = "SELECT * FROM winddb WHERE Date ='". $date ."' and hour =". $time ." and track ='". $track ."'";
 		$res = $db->executeQuery($sql);
 
 		if (mysqli_num_rows($res) > 0) {
-			$sql = " UPDATE winddb SET Temp =". $temp .", ProducedEnergy =". $energy .", track ='". $track ."' WHERE Date ='". $date ."' and hour =". $time ."";
+			$sql = " UPDATE winddb SET Temp =". $temp .", ProducedEnergy =". $energy .", track ='". $track ."' WHERE Date ='". $date ."' and hour =". $time ." and track ='". $track ."'";
 			$db->executeQuery($sql);
 		}
 		else {
@@ -59,16 +59,17 @@
 		 		 ";
 		 	$db->executeQuery($sql);
 		}
+		//echo $track ." ". $energy. "<br>";
 	}
 	function SolarDataLoad($date, $time, $temp, $energy, $track)
 	{
 		global $db;
 
-		$sql = "SELECT * FROM solardb WHERE Date ='". $date ."' and hour =". $time ."";
+		$sql = "SELECT * FROM solardb WHERE Date ='". $date ."' and hour =". $time ." and track ='". $track ."'";
 		$res = $db->executeQuery($sql);
 
 		if (mysqli_num_rows($res) > 0) {
-			$sql = " UPDATE solardb SET Temp =". $temp .", ProducedEnergy =". $energy .", track ='". $track ."' WHERE Date ='". $date ."' and hour =". $time ."";
+			$sql = " UPDATE solardb SET Temp =". $temp .", ProducedEnergy =". $energy .", track ='". $track ."' WHERE Date ='". $date ."' and hour =". $time ." and track ='". $track ."'";
 			$db->executeQuery($sql);
 		}
 		else {
@@ -77,6 +78,7 @@
 		 		 ";
 		 	$db->executeQuery($sql);
 	    }
+	    //echo $track ." ".  "<br>";
 	}
 
 	echo "Success";

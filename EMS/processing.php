@@ -215,7 +215,46 @@
  		$list = [ "bat_max_cap" => $row["bat_max_cap"], "battery_storage" => $row["battery_storage"]];
  		$response["chart_battery_data"] = $list;
  	}
+ 	if ($operation == "chart_total_supply" ) {
 
+ 		$toDay = date('Y-m-d');
+        $hour = (int)date('H');
+ 		$sql = "
+ 			SELECT (t1.ProducedEnergy + t2.ProducedEnergy + t3.battery_storage) total_supply FROM
+				(SELECT IFNULL(`ProducedEnergy`, 0) AS ProducedEnergy FROM `winddb` WHERE `Date`  = '". $toDay ."' AND Hour = ". $hour .") t1,
+				(SELECT IFNULL(`ProducedEnergy`, 0) AS ProducedEnergy FROM `solardb` WHERE `Date`  = '". $toDay ."' AND Hour = ". $hour .") t2,
+				(SELECT IFNULL(`battery_storage`, 0) AS battery_storage FROM `setupdb` WHERE user_id = 1) t3
+ 		";
+ 		$result = $db->executeQuery($sql);
+ 		$row = $result->fetch_assoc();
+ 		$list = [ "max_supply" => 400, "total_supply" => $row["total_supply"]];
+ 		$response["chart_total_supply"] = $list;
+ 	}
+
+ 	if ($operation == "chart_total_demand" ) {
+
+ 		$toDay = date('Y-m-d');
+        $hour = (int)date('H');
+ 		$sql = "
+ 			SELECT tt1.shifted_energy + tt2.house_energy + tt2.commercial_energy - tt1.actual_energy AS total_demand, tt2.house_energy + tt2.commercial_energy + tt.avg_house_eng + tt.avg_commercial_eng AS max_demand   FROM
+
+			(SELECT t1.shifted_energy + t3.shifted_energy AS shifted_energy, t2.shifted_energy + t4.shifted_energy AS actual_energy FROM 
+			(SELECT  IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` =  ". $hour ." AND `sender` = 'H') t1,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = ". $hour ." AND `sender` = 'H')t2,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` = ". $hour ." AND `sender` = 'F') t3,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = ". $hour ." AND `sender` = 'F')t4)tt1,
+
+			(SELECT  h.energy AS house_energy, c.energy AS commercial_energy FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour AND c.hour = ". $hour .") tt2,
+
+			(SELECT  AVG(h.energy) AS avg_house_eng, AVG(c.energy) AS avg_commercial_eng FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour)tt
+ 		";
+ 		$result = $db->executeQuery($sql);
+ 		$row = $result->fetch_assoc();
+ 		$list = [ "max_demand" => $row["max_demand"], "total_demand" => $row["total_demand"]];
+ 		$response["chart_total_demand"] = $list;
+ 	}
 
 	$response_json = json_encode($response);
 	echo $response_json;

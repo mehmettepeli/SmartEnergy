@@ -1,17 +1,23 @@
 $(document).ready(function(){
   eventListener();
+  //loadTotalSupplyData(); // every hour
+  //loadTotalDemandData(); // every hour
   loadPriceList();
   loadDateDDL();
   loadWindHistory();
-  loadSolarWholeData();
   loadBatteryData();
 
   var i = 0;
   function LoadDataEveryHour() {
-      /*$.post("data_import/weather-data-import.php",{},
+      $.post("data_import/weather-data-import.php",{},
       function(data, status){
-          console.log("Data: " + data + "\nStatus: " + status);
-      });*/
+        console.log("Data: " + data + "\nStatus: " + status);
+        loadTotalSupplyData();
+        loadTotalDemandData();
+        loadWindCurrent();
+        loadWindForecast();
+        loadSolarWholeData()
+      });
       i++;
       //console.log("call "+ i);
       setInterval(LoadDataEveryHour, 1000 * 60 * 60);
@@ -144,7 +150,6 @@ function loadWindHistory() {
         unload: true,
         columns: [result["chart_wind_history"]]
       });
-      loadWindCurrent();
     });
 }
 function loadWindCurrent(){
@@ -196,7 +201,6 @@ function loadWindCurrent(){
         unload: true,
         columns: [result["chart_wind_current"]]
       });
-      loadWindForecast();
     });
 }
 function loadWindForecast(){
@@ -438,6 +442,73 @@ function loadBatteryData(){
           }
         },
         bindto: "#chart_battery_data"
+      });
+    });
+  // Script
+  
+}
+
+function loadTotalSupplyData(){
+
+   $.post("ems/processing.php", { "operation" : "chart_total_supply", "date" : 0 }, function(result){
+      var data =  result["chart_total_supply"];
+      //console.log(parseFloat(data["bat_max_cap"]));
+      var max = parseFloat(data["max_supply"]);
+      var currentPercentage = 100 * parseFloat(data["total_supply"]) / max ;
+      chart_total_supply = bb.generate({
+        data: {
+          columns: [
+            ["Battery Status", currentPercentage.toFixed(2)]
+          ],
+          type: "gauge"
+        },
+        title: { 
+          text: 'Supply(H)'
+        },
+        gauge: {
+          label: {
+            format: function (value, ratio) { 
+              value = value * max / 100;
+              return value.toFixed(2) + " KWh"; 
+            },
+            extents: function (value, isMax) { return (isMax ? "Max:" : "Min:") + value + "%"; }
+          }
+        },
+        bindto: "#chart_total_supply"
+      });
+    });
+  // Script
+  
+}
+function loadTotalDemandData(){
+
+   $.post("ems/processing.php", { "operation" : "chart_total_demand", "date" : 0 }, function(result){
+      var data =  result["chart_total_demand"];
+      
+      var max = parseFloat(data["max_demand"]);
+      var currentPercentage = 100 * parseFloat(data["total_demand"]) / max ;
+      console.log("currentPercentage " + currentPercentage + " max "+ max);
+
+      chart_total_demand = bb.generate({
+        data: {
+          columns: [
+            ["Battery Status", currentPercentage.toFixed(2)]
+          ],
+          type: "gauge"
+        },
+        title: { 
+          text: 'Demand(H)'
+        },
+        gauge: {
+          label: {
+            format: function (value, ratio) { 
+              value = value * max / 100;
+              return value.toFixed(2) + " KWh"; 
+            },
+            extents: function (value, isMax) { return (isMax ? "Max:" : "Min:") + value + "%"; }
+          }
+        },
+        bindto: "#chart_total_demand"
       });
     });
   // Script

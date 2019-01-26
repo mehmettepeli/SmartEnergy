@@ -1,614 +1,494 @@
 
+ 			SELECT (t1.ProducedEnergy + t2.ProducedEnergy + t3.battery_storage) total_supply FROM
+				(SELECT `ProducedEnergy` FROM `winddb` WHERE `Date`  = '2019-01-26' AND Hour = 14) t1,
+				(SELECT `ProducedEnergy` FROM `solardb` WHERE `Date`  = '2019-01-26' AND Hour = 14) t2,
+				(SELECT `battery_storage` FROM `setupdb` WHERE user_id = 1) t3
+ 		
+ 			SELECT tt1.shifted_energy + tt2.house_energy + tt2.commercial_energy - tt1.actual_energy AS total_demand, tt2.house_energy + tt2.commercial_energy + tt.avg_house_eng + tt.avg_commercial_eng AS max_demand   FROM
+
+			(SELECT t1.shifted_energy + t3.shifted_energy AS shifted_energy, t2.shifted_energy + t4.shifted_energy AS actual_energy FROM 
+			(SELECT  IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` = Hour = 14 AND `sender` = 'H') t1,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = Hour = 14 AND `sender` = 'H')t2,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` = Hour = 14 AND `sender` = 'F') t3,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = Hour = 14 AND `sender` = 'F')t4)tt1,
+
+			(SELECT  h.energy AS house_energy, c.energy AS commercial_energy FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour AND c.hour = Hour = 14) tt2,
+
+			(SELECT  AVG(h.energy) AS avg_house_eng, AVG(c.energy) AS avg_commercial_eng FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour)tt
+ 		SELECT * FROM dynamic_pricing
+ 			SELECT * FROM `winddb` 
+			GROUP BY `Date`
+			ORDER BY Date ASC
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
+ 				
+ 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-26'
+ 		
+ 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-27'
+ 		
+ 			SELECT * FROM `setupdb` WHERE user_id = 1
+ 		
+ 			SELECT (t1.ProducedEnergy + t2.ProducedEnergy + t3.battery_storage) total_supply FROM
+				(SELECT `ProducedEnergy` FROM `winddb` WHERE `Date`  = '2019-01-26' AND Hour = 14) t1,
+				(SELECT `ProducedEnergy` FROM `solardb` WHERE `Date`  = '2019-01-26' AND Hour = 14) t2,
+				(SELECT `battery_storage` FROM `setupdb` WHERE user_id = 1) t3
+ 		
+ 			SELECT tt1.shifted_energy + tt2.house_energy + tt2.commercial_energy - tt1.actual_energy AS total_demand, tt2.house_energy + tt2.commercial_energy + tt.avg_house_eng + tt.avg_commercial_eng AS max_demand   FROM
+
+			(SELECT t1.shifted_energy + t3.shifted_energy AS shifted_energy, t2.shifted_energy + t4.shifted_energy AS actual_energy FROM 
+			(SELECT  IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` = Hour = 14 AND `sender` = 'H') t1,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = Hour = 14 AND `sender` = 'H')t2,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` = Hour = 14 AND `sender` = 'F') t3,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = Hour = 14 AND `sender` = 'F')t4)tt1,
+
+			(SELECT  h.energy AS house_energy, c.energy AS commercial_energy FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour AND c.hour = Hour = 14) tt2,
+
+			(SELECT  AVG(h.energy) AS avg_house_eng, AVG(c.energy) AS avg_commercial_eng FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour)tt
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-26'
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-27'
+ 		
+ 			SELECT (t1.ProducedEnergy + t2.ProducedEnergy + t3.battery_storage) total_supply FROM
+				(SELECT `ProducedEnergy` FROM `winddb` WHERE `Date`  = '2019-01-26' AND Hour = 14) t1,
+				(SELECT `ProducedEnergy` FROM `solardb` WHERE `Date`  = '2019-01-26' AND Hour = 14) t2,
+				(SELECT `battery_storage` FROM `setupdb` WHERE user_id = 1) t3
+ 		
+ 			SELECT tt1.shifted_energy + tt2.house_energy + tt2.commercial_energy - tt1.actual_energy AS total_demand, tt2.house_energy + tt2.commercial_energy + tt.avg_house_eng + tt.avg_commercial_eng AS max_demand   FROM
+
+			(SELECT t1.shifted_energy + t3.shifted_energy AS shifted_energy, t2.shifted_energy + t4.shifted_energy AS actual_energy FROM 
+			(SELECT  IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` =  14 AND `sender` = 'H') t1,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 14 AND `sender` = 'H')t2,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` = 14 AND `sender` = 'F') t3,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 14 AND `sender` = 'F')t4)tt1,
+
+			(SELECT  h.energy AS house_energy, c.energy AS commercial_energy FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour AND c.hour = 14) tt2,
+
+			(SELECT  AVG(h.energy) AS avg_house_eng, AVG(c.energy) AS avg_commercial_eng FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour)tt
+ 		SELECT * FROM dynamic_pricing
  			SELECT * FROM `winddb` 
 			GROUP BY `Date`
 			ORDER BY Date ASC
  		
  			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
  		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-23'
+ 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
  		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
+ 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-26'
+ 		
+ 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-27'
+ 		
+ 			SELECT * FROM `setupdb` WHERE user_id = 1
+ 		
+ 			SELECT (t1.ProducedEnergy + t2.ProducedEnergy + t3.battery_storage) total_supply FROM
+				(SELECT `ProducedEnergy` FROM `winddb` WHERE `Date`  = '2019-01-26' AND Hour = 14) t1,
+				(SELECT `ProducedEnergy` FROM `solardb` WHERE `Date`  = '2019-01-26' AND Hour = 14) t2,
+				(SELECT `battery_storage` FROM `setupdb` WHERE user_id = 1) t3
+ 		
+ 			SELECT tt1.shifted_energy + tt2.house_energy + tt2.commercial_energy - tt1.actual_energy AS total_demand, tt2.house_energy + tt2.commercial_energy + tt.avg_house_eng + tt.avg_commercial_eng AS max_demand   FROM
+
+			(SELECT t1.shifted_energy + t3.shifted_energy AS shifted_energy, t2.shifted_energy + t4.shifted_energy AS actual_energy FROM 
+			(SELECT  IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` =  14 AND `sender` = 'H') t1,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 14 AND `sender` = 'H')t2,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` = 14 AND `sender` = 'F') t3,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 14 AND `sender` = 'F')t4)tt1,
+
+			(SELECT  h.energy AS house_energy, c.energy AS commercial_energy FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour AND c.hour = 14) tt2,
+
+			(SELECT  AVG(h.energy) AS avg_house_eng, AVG(c.energy) AS avg_commercial_eng FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour)tt
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-26'
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-27'
+ 		
+ 			SELECT (t1.ProducedEnergy + t2.ProducedEnergy + t3.battery_storage) total_supply FROM
+				(SELECT IFNULL(`ProducedEnergy`, 0) AS ProducedEnergy FROM `winddb` WHERE `Date`  = '2019-01-26' AND Hour = 13) t1,
+				(SELECT IFNULL(`ProducedEnergy`, 0) AS ProducedEnergy FROM `solardb` WHERE `Date`  = '2019-01-26' AND Hour = 13) t2,
+				(SELECT IFNULL(`battery_storage`, 0) AS battery_storage FROM `setupdb` WHERE user_id = 1) t3
+ 		
+ 			SELECT tt1.shifted_energy + tt2.house_energy + tt2.commercial_energy - tt1.actual_energy AS total_demand, tt2.house_energy + tt2.commercial_energy + tt.avg_house_eng + tt.avg_commercial_eng AS max_demand   FROM
+
+			(SELECT t1.shifted_energy + t3.shifted_energy AS shifted_energy, t2.shifted_energy + t4.shifted_energy AS actual_energy FROM 
+			(SELECT  IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` =  14 AND `sender` = 'H') t1,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 14 AND `sender` = 'H')t2,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` = 14 AND `sender` = 'F') t3,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 14 AND `sender` = 'F')t4)tt1,
+
+			(SELECT  h.energy AS house_energy, c.energy AS commercial_energy FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour AND c.hour = 14) tt2,
+
+			(SELECT  AVG(h.energy) AS avg_house_eng, AVG(c.energy) AS avg_commercial_eng FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour)tt
+ 		SELECT * FROM dynamic_pricing
+ 			SELECT * FROM `winddb` 
+			GROUP BY `Date`
+			ORDER BY Date ASC
+ 		
+ 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
+ 		
+ 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-26'
+ 		
+ 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-27'
+ 		
+ 			SELECT * FROM `setupdb` WHERE user_id = 1
+ 		
+ 			SELECT (t1.ProducedEnergy + t2.ProducedEnergy + t3.battery_storage) total_supply FROM
+				(SELECT IFNULL(`ProducedEnergy`, 0) AS ProducedEnergy FROM `winddb` WHERE `Date`  = '2019-01-26' AND Hour = 13) t1,
+				(SELECT IFNULL(`ProducedEnergy`, 0) AS ProducedEnergy FROM `solardb` WHERE `Date`  = '2019-01-26' AND Hour = 13) t2,
+				(SELECT IFNULL(`battery_storage`, 0) AS battery_storage FROM `setupdb` WHERE user_id = 1) t3
+ 		
+ 			SELECT tt1.shifted_energy + tt2.house_energy + tt2.commercial_energy - tt1.actual_energy AS total_demand, tt2.house_energy + tt2.commercial_energy + tt.avg_house_eng + tt.avg_commercial_eng AS max_demand   FROM
+
+			(SELECT t1.shifted_energy + t3.shifted_energy AS shifted_energy, t2.shifted_energy + t4.shifted_energy AS actual_energy FROM 
+			(SELECT  IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` =  14 AND `sender` = 'H') t1,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 14 AND `sender` = 'H')t2,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` = 14 AND `sender` = 'F') t3,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 14 AND `sender` = 'F')t4)tt1,
+
+			(SELECT  h.energy AS house_energy, c.energy AS commercial_energy FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour AND c.hour = 14) tt2,
+
+			(SELECT  AVG(h.energy) AS avg_house_eng, AVG(c.energy) AS avg_commercial_eng FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour)tt
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-26'
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-27'
+ 		
+ 			SELECT tt1.shifted_energy + tt2.house_energy + tt2.commercial_energy - tt1.actual_energy AS total_demand, tt2.house_energy + tt2.commercial_energy + tt.avg_house_eng + tt.avg_commercial_eng AS max_demand   FROM
+
+			(SELECT t1.shifted_energy + t3.shifted_energy AS shifted_energy, t2.shifted_energy + t4.shifted_energy AS actual_energy FROM 
+			(SELECT  IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` =  14 AND `sender` = 'H') t1,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 14 AND `sender` = 'H')t2,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` = 14 AND `sender` = 'F') t3,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 14 AND `sender` = 'F')t4)tt1,
+
+			(SELECT  h.energy AS house_energy, c.energy AS commercial_energy FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour AND c.hour = 14) tt2,
+
+			(SELECT  AVG(h.energy) AS avg_house_eng, AVG(c.energy) AS avg_commercial_eng FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour)tt
+ 		SELECT * FROM dynamic_pricing
+ 			SELECT * FROM `winddb` 
+			GROUP BY `Date`
+			ORDER BY Date ASC
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
+ 		
+ 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
+ 		
+ 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-26'
+ 		
+ 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-27'
+ 		
+ 			SELECT * FROM `setupdb` WHERE user_id = 1
+ 		
+ 			SELECT (t1.ProducedEnergy + t2.ProducedEnergy + t3.battery_storage) total_supply FROM
+				(SELECT IFNULL(`ProducedEnergy`, 0) AS ProducedEnergy FROM `winddb` WHERE `Date`  = '2019-01-26' AND Hour = 12) t1,
+				(SELECT IFNULL(`ProducedEnergy`, 0) AS ProducedEnergy FROM `solardb` WHERE `Date`  = '2019-01-26' AND Hour = 12) t2,
+				(SELECT IFNULL(`battery_storage`, 0) AS battery_storage FROM `setupdb` WHERE user_id = 1) t3
+ 		
+ 			SELECT tt1.shifted_energy + tt2.house_energy + tt2.commercial_energy - tt1.actual_energy AS total_demand, tt2.house_energy + tt2.commercial_energy + tt.avg_house_eng + tt.avg_commercial_eng AS max_demand   FROM
+
+			(SELECT t1.shifted_energy + t3.shifted_energy AS shifted_energy, t2.shifted_energy + t4.shifted_energy AS actual_energy FROM 
+			(SELECT  IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` =  14 AND `sender` = 'H') t1,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 14 AND `sender` = 'H')t2,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` = 14 AND `sender` = 'F') t3,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 14 AND `sender` = 'F')t4)tt1,
+
+			(SELECT  h.energy AS house_energy, c.energy AS commercial_energy FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour AND c.hour = 14) tt2,
+
+			(SELECT  AVG(h.energy) AS avg_house_eng, AVG(c.energy) AS avg_commercial_eng FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour)tt
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-26'
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-27'
+ 		
+ 			SELECT (t1.ProducedEnergy + t2.ProducedEnergy + t3.battery_storage) total_supply FROM
+				(SELECT IFNULL(`ProducedEnergy`, 0) AS ProducedEnergy FROM `winddb` WHERE `Date`  = '2019-01-26' AND Hour = 12) t1,
+				(SELECT IFNULL(`ProducedEnergy`, 0) AS ProducedEnergy FROM `solardb` WHERE `Date`  = '2019-01-26' AND Hour = 12) t2,
+				(SELECT IFNULL(`battery_storage`, 0) AS battery_storage FROM `setupdb` WHERE user_id = 1) t3
+ 		
+ 			SELECT tt1.shifted_energy + tt2.house_energy + tt2.commercial_energy - tt1.actual_energy AS total_demand, tt2.house_energy + tt2.commercial_energy + tt.avg_house_eng + tt.avg_commercial_eng AS max_demand   FROM
+
+			(SELECT t1.shifted_energy + t3.shifted_energy AS shifted_energy, t2.shifted_energy + t4.shifted_energy AS actual_energy FROM 
+			(SELECT  IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` =  14 AND `sender` = 'H') t1,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 14 AND `sender` = 'H')t2,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` = 14 AND `sender` = 'F') t3,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 14 AND `sender` = 'F')t4)tt1,
+
+			(SELECT  h.energy AS house_energy, c.energy AS commercial_energy FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour AND c.hour = 14) tt2,
+
+			(SELECT  AVG(h.energy) AS avg_house_eng, AVG(c.energy) AS avg_commercial_eng FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour)tt
+ 		
+ 			SELECT * FROM `winddb` 
+			GROUP BY `Date`
+			ORDER BY Date ASC
+ 		SELECT * FROM dynamic_pricing
+ 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
+ 		
+ 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
+ 		
+ 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-26'
+ 		
+ 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-27'
+ 		
+ 			SELECT (t1.ProducedEnergy + t2.ProducedEnergy + t3.battery_storage) total_supply FROM
+				(SELECT IFNULL(`ProducedEnergy`, 0) AS ProducedEnergy FROM `winddb` WHERE `Date`  = '2019-01-26' AND Hour = 12) t1,
+				(SELECT IFNULL(`ProducedEnergy`, 0) AS ProducedEnergy FROM `solardb` WHERE `Date`  = '2019-01-26' AND Hour = 12) t2,
+				(SELECT IFNULL(`battery_storage`, 0) AS battery_storage FROM `setupdb` WHERE user_id = 1) t3
+ 		
+ 			SELECT * FROM `setupdb` WHERE user_id = 1
+ 		
+ 			SELECT tt1.shifted_energy + tt2.house_energy + tt2.commercial_energy - tt1.actual_energy AS total_demand, tt2.house_energy + tt2.commercial_energy + tt.avg_house_eng + tt.avg_commercial_eng AS max_demand   FROM
+
+			(SELECT t1.shifted_energy + t3.shifted_energy AS shifted_energy, t2.shifted_energy + t4.shifted_energy AS actual_energy FROM 
+			(SELECT  IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` =  14 AND `sender` = 'H') t1,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 14 AND `sender` = 'H')t2,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` = 14 AND `sender` = 'F') t3,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 14 AND `sender` = 'F')t4)tt1,
+
+			(SELECT  h.energy AS house_energy, c.energy AS commercial_energy FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour AND c.hour = 14) tt2,
+
+			(SELECT  AVG(h.energy) AS avg_house_eng, AVG(c.energy) AS avg_commercial_eng FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour)tt
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-26'
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-27'
+ 		
+ 			SELECT (t1.ProducedEnergy + t2.ProducedEnergy + t3.battery_storage) total_supply FROM
+				(SELECT IFNULL(`ProducedEnergy`, 0) AS ProducedEnergy FROM `winddb` WHERE `Date`  = '2019-01-26' AND Hour = 12) t1,
+				(SELECT IFNULL(`ProducedEnergy`, 0) AS ProducedEnergy FROM `solardb` WHERE `Date`  = '2019-01-26' AND Hour = 12) t2,
+				(SELECT IFNULL(`battery_storage`, 0) AS battery_storage FROM `setupdb` WHERE user_id = 1) t3
+ 		
+ 			SELECT tt1.shifted_energy + tt2.house_energy + tt2.commercial_energy - tt1.actual_energy AS total_demand, tt2.house_energy + tt2.commercial_energy + tt.avg_house_eng + tt.avg_commercial_eng AS max_demand   FROM
+
+			(SELECT t1.shifted_energy + t3.shifted_energy AS shifted_energy, t2.shifted_energy + t4.shifted_energy AS actual_energy FROM 
+			(SELECT  IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` =  14 AND `sender` = 'H') t1,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 14 AND `sender` = 'H')t2,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` = 14 AND `sender` = 'F') t3,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 14 AND `sender` = 'F')t4)tt1,
+
+			(SELECT  h.energy AS house_energy, c.energy AS commercial_energy FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour AND c.hour = 14) tt2,
+
+			(SELECT  AVG(h.energy) AS avg_house_eng, AVG(c.energy) AS avg_commercial_eng FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour)tt
+ 		
+ 			SELECT * FROM `winddb` 
+			GROUP BY `Date`
+			ORDER BY Date ASC
+ 		SELECT * FROM dynamic_pricing
+ 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
+ 		
+ 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-26'
+ 		
+ 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-27'
+ 		
+ 			SELECT * FROM `setupdb` WHERE user_id = 1
+ 		
+ 			SELECT (t1.ProducedEnergy + t2.ProducedEnergy + t3.battery_storage) total_supply FROM
+				(SELECT IFNULL(`ProducedEnergy`, 0) AS ProducedEnergy FROM `winddb` WHERE `Date`  = '2019-01-26' AND Hour = 12) t1,
+				(SELECT IFNULL(`ProducedEnergy`, 0) AS ProducedEnergy FROM `solardb` WHERE `Date`  = '2019-01-26' AND Hour = 12) t2,
+				(SELECT IFNULL(`battery_storage`, 0) AS battery_storage FROM `setupdb` WHERE user_id = 1) t3
+ 		
+ 			SELECT tt1.shifted_energy + tt2.house_energy + tt2.commercial_energy - tt1.actual_energy AS total_demand, tt2.house_energy + tt2.commercial_energy + tt.avg_house_eng + tt.avg_commercial_eng AS max_demand   FROM
+
+			(SELECT t1.shifted_energy + t3.shifted_energy AS shifted_energy, t2.shifted_energy + t4.shifted_energy AS actual_energy FROM 
+			(SELECT  IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` =  14 AND `sender` = 'H') t1,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 14 AND `sender` = 'H')t2,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` = 14 AND `sender` = 'F') t3,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 14 AND `sender` = 'F')t4)tt1,
+
+			(SELECT  h.energy AS house_energy, c.energy AS commercial_energy FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour AND c.hour = 14) tt2,
+
+			(SELECT  AVG(h.energy) AS avg_house_eng, AVG(c.energy) AS avg_commercial_eng FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour)tt
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-26'
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-27'
+ 		
+ 			SELECT (t1.ProducedEnergy + t2.ProducedEnergy + t3.battery_storage) total_supply FROM
+				(SELECT IFNULL(`ProducedEnergy`, 0) AS ProducedEnergy FROM `winddb` WHERE `Date`  = '2019-01-26' AND Hour = 12) t1,
+				(SELECT IFNULL(`ProducedEnergy`, 0) AS ProducedEnergy FROM `solardb` WHERE `Date`  = '2019-01-26' AND Hour = 12) t2,
+				(SELECT IFNULL(`battery_storage`, 0) AS battery_storage FROM `setupdb` WHERE user_id = 1) t3
+ 		
+ 			SELECT tt1.shifted_energy + tt2.house_energy + tt2.commercial_energy - tt1.actual_energy AS total_demand, tt2.house_energy + tt2.commercial_energy + tt.avg_house_eng + tt.avg_commercial_eng AS max_demand   FROM
+
+			(SELECT t1.shifted_energy + t3.shifted_energy AS shifted_energy, t2.shifted_energy + t4.shifted_energy AS actual_energy FROM 
+			(SELECT  IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` =  14 AND `sender` = 'H') t1,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 14 AND `sender` = 'H')t2,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` = 14 AND `sender` = 'F') t3,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 14 AND `sender` = 'F')t4)tt1,
+
+			(SELECT  h.energy AS house_energy, c.energy AS commercial_energy FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour AND c.hour = 14) tt2,
+
+			(SELECT  AVG(h.energy) AS avg_house_eng, AVG(c.energy) AS avg_commercial_eng FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour)tt
+ 		
+ 			SELECT * FROM `winddb` 
+			GROUP BY `Date`
+			ORDER BY Date ASC
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
+ 		
+ 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
+ 		
+ 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-26'
+ 		
+ 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-27'
+ 		
+ 			SELECT * FROM `setupdb` WHERE user_id = 1
+ 		
+ 			SELECT (t1.ProducedEnergy + t2.ProducedEnergy + t3.battery_storage) total_supply FROM
+				(SELECT IFNULL(`ProducedEnergy`, 0) AS ProducedEnergy FROM `winddb` WHERE `Date`  = '2019-01-26' AND Hour = 12) t1,
+				(SELECT IFNULL(`ProducedEnergy`, 0) AS ProducedEnergy FROM `solardb` WHERE `Date`  = '2019-01-26' AND Hour = 12) t2,
+				(SELECT IFNULL(`battery_storage`, 0) AS battery_storage FROM `setupdb` WHERE user_id = 1) t3
+ 		
+ 			SELECT tt1.shifted_energy + tt2.house_energy + tt2.commercial_energy - tt1.actual_energy AS total_demand, tt2.house_energy + tt2.commercial_energy + tt.avg_house_eng + tt.avg_commercial_eng AS max_demand   FROM
+
+			(SELECT t1.shifted_energy + t3.shifted_energy AS shifted_energy, t2.shifted_energy + t4.shifted_energy AS actual_energy FROM 
+			(SELECT  IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` =  14 AND `sender` = 'H') t1,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 14 AND `sender` = 'H')t2,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` = 14 AND `sender` = 'F') t3,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 14 AND `sender` = 'F')t4)tt1,
+
+			(SELECT  h.energy AS house_energy, c.energy AS commercial_energy FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour AND c.hour = 14) tt2,
+
+			(SELECT  AVG(h.energy) AS avg_house_eng, AVG(c.energy) AS avg_commercial_eng FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour)tt
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-26'
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-27'
+ 		
+ 			SELECT (t1.ProducedEnergy + t2.ProducedEnergy + t3.battery_storage) total_supply FROM
+				(SELECT IFNULL(`ProducedEnergy`, 0) AS ProducedEnergy FROM `winddb` WHERE `Date`  = '2019-01-26' AND Hour = 12) t1,
+				(SELECT IFNULL(`ProducedEnergy`, 0) AS ProducedEnergy FROM `solardb` WHERE `Date`  = '2019-01-26' AND Hour = 12) t2,
+				(SELECT IFNULL(`battery_storage`, 0) AS battery_storage FROM `setupdb` WHERE user_id = 1) t3
+ 		
+ 			SELECT tt1.shifted_energy + tt2.house_energy + tt2.commercial_energy - tt1.actual_energy AS total_demand, tt2.house_energy + tt2.commercial_energy + tt.avg_house_eng + tt.avg_commercial_eng AS max_demand   FROM
+
+			(SELECT t1.shifted_energy + t3.shifted_energy AS shifted_energy, t2.shifted_energy + t4.shifted_energy AS actual_energy FROM 
+			(SELECT  IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` =  14 AND `sender` = 'H') t1,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 14 AND `sender` = 'H')t2,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` = 14 AND `sender` = 'F') t3,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 14 AND `sender` = 'F')t4)tt1,
+
+			(SELECT  h.energy AS house_energy, c.energy AS commercial_energy FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour AND c.hour = 14) tt2,
+
+			(SELECT  AVG(h.energy) AS avg_house_eng, AVG(c.energy) AS avg_commercial_eng FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour)tt
  		SELECT * FROM dynamic_pricing
 			GROUP BY `Date`
 			ORDER BY Date ASC
  		
  			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
  		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-23'
+ 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
  		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
+ 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-27'
  		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-19'
+ 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-26'
+ 		
+ 			SELECT (t1.ProducedEnergy + t2.ProducedEnergy + t3.battery_storage) total_supply FROM
+				(SELECT IFNULL(`ProducedEnergy`, 0) AS ProducedEnergy FROM `winddb` WHERE `Date`  = '2019-01-26' AND Hour = 12) t1,
+				(SELECT IFNULL(`ProducedEnergy`, 0) AS ProducedEnergy FROM `solardb` WHERE `Date`  = '2019-01-26' AND Hour = 12) t2,
+				(SELECT IFNULL(`battery_storage`, 0) AS battery_storage FROM `setupdb` WHERE user_id = 1) t3
+ 		
+ 			SELECT * FROM `setupdb` WHERE user_id = 1
+ 		
+ 			SELECT tt1.shifted_energy + tt2.house_energy + tt2.commercial_energy - tt1.actual_energy AS total_demand, tt2.house_energy + tt2.commercial_energy + tt.avg_house_eng + tt.avg_commercial_eng AS max_demand   FROM
+
+			(SELECT t1.shifted_energy + t3.shifted_energy AS shifted_energy, t2.shifted_energy + t4.shifted_energy AS actual_energy FROM 
+			(SELECT  IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` =  14 AND `sender` = 'H') t1,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 14 AND `sender` = 'H')t2,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` = 14 AND `sender` = 'F') t3,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 14 AND `sender` = 'F')t4)tt1,
+
+			(SELECT  h.energy AS house_energy, c.energy AS commercial_energy FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour AND c.hour = 14) tt2,
+
+			(SELECT  AVG(h.energy) AS avg_house_eng, AVG(c.energy) AS avg_commercial_eng FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour)tt
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-26'
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-27'
  		
  			SELECT * FROM `winddb` 
 			GROUP BY `Date`
 			ORDER BY Date ASC
  		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-23'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		SELECT * FROM setupdb WHERE user_id = 1SELECT * FROM winddb WHERE Date ='2019-01-23' and hour =22INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
-		 		   VALUES ('2019-01-23',22,-4.14,0.1963,'today') 
-		 		 SELECT * FROM solardb WHERE Date ='2019-01-23' and hour =22INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
-		 		   VALUES ('2019-01-23',22,-4.14,1.2056,'today') 
-		 		 SELECT * FROM winddb WHERE Date ='2019-01-24' and hour =22INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
-		 		   VALUES ('2019-01-24',22,-6.247,0.0144,'tomorrow') 
-		 		 SELECT * FROM solardb WHERE Date ='2019-01-24' and hour =22INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
-		 		   VALUES ('2019-01-24',22,-6.247,1.2056,'tomorrow') 
-		 		 SELECT * FROM dynamic_pricing
  			SELECT * FROM `winddb` 
 			GROUP BY `Date`
 			ORDER BY Date ASC
  		
  			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
  		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-23'
+ 			SELECT * FROM `setupdb` WHERE user_id = 1
+ 		SELECT * FROM setupdb WHERE user_id = 1SELECT * FROM winddb WHERE Date ='2019-01-26' and hour =14 and track ='today'INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
+		 		   VALUES ('2019-01-26',14,4.33,13.7556,'today') 
+		 		 SELECT * FROM solardb WHERE Date ='2019-01-26' and hour =14 and track ='today'INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
+		 		   VALUES ('2019-01-26',14,4.33,9.1707,'today') 
+		 		 SELECT * FROM winddb WHERE Date ='2019-01-27' and hour =14 and track ='tomorrow'INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
+		 		   VALUES ('2019-01-27',14,5.661,85.4908,'tomorrow') 
+		 		 SELECT * FROM solardb WHERE Date ='2019-01-27' and hour =14 and track ='tomorrow'INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
+		 		   VALUES ('2019-01-27',14,5.661,9.1707,'tomorrow') 
+		 		 
+ 			SELECT tt1.shifted_energy + tt2.house_energy + tt2.commercial_energy - tt1.actual_energy AS total_demand, tt2.house_energy + tt2.commercial_energy + tt.avg_house_eng + tt.avg_commercial_eng AS max_demand   FROM
+
+			(SELECT t1.shifted_energy + t3.shifted_energy AS shifted_energy, t2.shifted_energy + t4.shifted_energy AS actual_energy FROM 
+			(SELECT  IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` =  14 AND `sender` = 'H') t1,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 14 AND `sender` = 'H')t2,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` = 14 AND `sender` = 'F') t3,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 14 AND `sender` = 'F')t4)tt1,
+
+			(SELECT  h.energy AS house_energy, c.energy AS commercial_energy FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour AND c.hour = 14) tt2,
+
+			(SELECT  AVG(h.energy) AS avg_house_eng, AVG(c.energy) AS avg_commercial_eng FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour)tt
  		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		SELECT * FROM setupdb WHERE user_id = 1SELECT * FROM winddb WHERE Date ='2019-01-23' and hour =22 UPDATE winddb SET Temp =-4.14, ProducedEnergy =0.1963, track ='today' WHERE Date ='2019-01-23' and hour =22SELECT * FROM solardb WHERE Date ='2019-01-23' and hour =22 UPDATE solardb SET Temp =-4.14, ProducedEnergy =1.2056, track ='today' WHERE Date ='2019-01-23' and hour =22SELECT * FROM winddb WHERE Date ='2019-01-24' and hour =22 UPDATE winddb SET Temp =-6.247, ProducedEnergy =0.0144, track ='tomorrow' WHERE Date ='2019-01-24' and hour =22SELECT * FROM solardb WHERE Date ='2019-01-24' and hour =22 UPDATE solardb SET Temp =-6.247, ProducedEnergy =1.2056, track ='tomorrow' WHERE Date ='2019-01-24' and hour =22SELECT * FROM dynamic_pricing
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-26'
+ 		
+ 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
+ 		
+ 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-26'
+ 		
+ 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-27'
+ 		
  			SELECT * FROM `winddb` 
 			GROUP BY `Date`
 			ORDER BY Date ASC
  		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-23'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		SELECT * FROM setupdb WHERE user_id = 1SELECT * FROM winddb WHERE Date ='2019-01-23' and hour =22 UPDATE winddb SET Temp =-4.14, ProducedEnergy =0.1963, track ='today' WHERE Date ='2019-01-23' and hour =22SELECT * FROM solardb WHERE Date ='2019-01-23' and hour =22 UPDATE solardb SET Temp =-4.14, ProducedEnergy =1.2056, track ='today' WHERE Date ='2019-01-23' and hour =22SELECT * FROM winddb WHERE Date ='2019-01-24' and hour =22 UPDATE winddb SET Temp =-6.247, ProducedEnergy =0.0144, track ='tomorrow' WHERE Date ='2019-01-24' and hour =22SELECT * FROM solardb WHERE Date ='2019-01-24' and hour =22 UPDATE solardb SET Temp =-6.247, ProducedEnergy =1.2056, track ='tomorrow' WHERE Date ='2019-01-24' and hour =22
  			SELECT * FROM `winddb` 
 			GROUP BY `Date`
 			ORDER BY Date ASC
  		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-23'
- 		SELECT * FROM setupdb WHERE user_id = 1
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		SELECT * FROM winddb WHERE Date ='2019-01-23' and hour =22 UPDATE winddb SET Temp =-4.14, ProducedEnergy =0.1963, track ='today' WHERE Date ='2019-01-23' and hour =22SELECT * FROM solardb WHERE Date ='2019-01-23' and hour =22 UPDATE solardb SET Temp =-4.14, ProducedEnergy =1.2056, track ='today' WHERE Date ='2019-01-23' and hour =22SELECT * FROM winddb WHERE Date ='2019-01-24' and hour =22 UPDATE winddb SET Temp =-6.247, ProducedEnergy =0.0144, track ='tomorrow' WHERE Date ='2019-01-24' and hour =22SELECT * FROM solardb WHERE Date ='2019-01-24' and hour =22 UPDATE solardb SET Temp =-6.247, ProducedEnergy =1.2056, track ='tomorrow' WHERE Date ='2019-01-24' and hour =22SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-23'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		SELECT * FROM setupdb WHERE user_id = 1SELECT * FROM winddb WHERE Date ='2019-01-23' and hour =22 UPDATE winddb SET Temp =-4.14, ProducedEnergy =0.1963, track ='today' WHERE Date ='2019-01-23' and hour =22SELECT * FROM solardb WHERE Date ='2019-01-23' and hour =22 UPDATE solardb SET Temp =-4.14, ProducedEnergy =1.2056, track ='today' WHERE Date ='2019-01-23' and hour =22SELECT * FROM winddb WHERE Date ='2019-01-24' and hour =22 UPDATE winddb SET Temp =-6.247, ProducedEnergy =0.0144, track ='tomorrow' WHERE Date ='2019-01-24' and hour =22SELECT * FROM solardb WHERE Date ='2019-01-24' and hour =22 UPDATE solardb SET Temp =-6.247, ProducedEnergy =1.2056, track ='tomorrow' WHERE Date ='2019-01-24' and hour =22
  			SELECT * FROM `winddb` WHERE `Date` = '2019-01-20'
  		
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		SELECT * FROM setupdb WHERE user_id = 1SELECT * FROM winddb WHERE Date ='2019-01-24' and hour =19INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
-		 		   VALUES ('2019-01-24',19,-4.55,0.0067,'today') 
-		 		 SELECT * FROM solardb WHERE Date ='2019-01-24' and hour =19INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
-		 		   VALUES ('2019-01-24',19,-4.55,1.2012,'today') 
-		 		 SELECT * FROM winddb WHERE Date ='2019-01-25' and hour =19INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
-		 		   VALUES ('2019-01-25',19,-7.913,0.046,'tomorrow') 
-		 		 SELECT * FROM solardb WHERE Date ='2019-01-25' and hour =19INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
-		 		   VALUES ('2019-01-25',19,-7.913,1.2012,'tomorrow') 
-		 		 SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		SELECT * FROM setupdb WHERE user_id = 1SELECT * FROM winddb WHERE Date ='2019-01-24' and hour =19 UPDATE winddb SET Temp =-4.55, ProducedEnergy =0.0067, track ='today' WHERE Date ='2019-01-24' and hour =19SELECT * FROM solardb WHERE Date ='2019-01-24' and hour =19 UPDATE solardb SET Temp =-4.55, ProducedEnergy =1.2012, track ='today' WHERE Date ='2019-01-24' and hour =19SELECT * FROM winddb WHERE Date ='2019-01-25' and hour =19 UPDATE winddb SET Temp =-7.913, ProducedEnergy =0.046, track ='tomorrow' WHERE Date ='2019-01-25' and hour =19SELECT * FROM solardb WHERE Date ='2019-01-25' and hour =19 UPDATE solardb SET Temp =-7.913, ProducedEnergy =1.2012, track ='tomorrow' WHERE Date ='2019-01-25' and hour =19SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		SELECT * FROM setupdb WHERE user_id = 1SELECT * FROM winddb WHERE Date ='2019-01-24' and hour =20INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
-		 		   VALUES ('2019-01-24',20,-4,0.0225,'today') 
-		 		 SELECT * FROM solardb WHERE Date ='2019-01-24' and hour =20INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
-		 		   VALUES ('2019-01-24',20,-4,1.2012,'today') 
-		 		 SELECT * FROM winddb WHERE Date ='2019-01-25' and hour =20INSERT INTO `winddb` (Date, hour, Temp, ProducedEnergy, track) 
-		 		   VALUES ('2019-01-25',20,-7.913,0.046,'tomorrow') 
-		 		 SELECT * FROM solardb WHERE Date ='2019-01-25' and hour =20INSERT INTO `solardb` (Date, hour, Temp, ProducedEnergy, track) 
-		 		   VALUES ('2019-01-25',20,-7.913,1.2012,'tomorrow') 
-		 		 SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		SELECT * FROM setupdb WHERE user_id = 1SELECT * FROM winddb WHERE Date ='2019-01-24' and hour =20 UPDATE winddb SET Temp =-4, ProducedEnergy =0.0225, track ='today' WHERE Date ='2019-01-24' and hour =20SELECT * FROM solardb WHERE Date ='2019-01-24' and hour =20 UPDATE solardb SET Temp =-4, ProducedEnergy =1.2012, track ='today' WHERE Date ='2019-01-24' and hour =20SELECT * FROM winddb WHERE Date ='2019-01-25' and hour =20 UPDATE winddb SET Temp =-7.913, ProducedEnergy =0.046, track ='tomorrow' WHERE Date ='2019-01-25' and hour =20SELECT * FROM solardb WHERE Date ='2019-01-25' and hour =20 UPDATE solardb SET Temp =-7.913, ProducedEnergy =1.2012, track ='tomorrow' WHERE Date ='2019-01-25' and hour =20SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		SELECT * FROM setupdb WHERE user_id = 1SELECT * FROM winddb WHERE Date ='2019-01-24' and hour =20 UPDATE winddb SET Temp =-4, ProducedEnergy =0.0225, track ='today' WHERE Date ='2019-01-24' and hour =20SELECT * FROM solardb WHERE Date ='2019-01-24' and hour =20 UPDATE solardb SET Temp =-4, ProducedEnergy =1.2012, track ='today' WHERE Date ='2019-01-24' and hour =20SELECT * FROM winddb WHERE Date ='2019-01-25' and hour =20 UPDATE winddb SET Temp =-7.913, ProducedEnergy =0.046, track ='tomorrow' WHERE Date ='2019-01-25' and hour =20SELECT * FROM solardb WHERE Date ='2019-01-25' and hour =20 UPDATE solardb SET Temp =-7.913, ProducedEnergy =1.2012, track ='tomorrow' WHERE Date ='2019-01-25' and hour =20SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		SELECT * FROM setupdb WHERE user_id = 1SELECT * FROM winddb WHERE Date ='2019-01-24' and hour =20 UPDATE winddb SET Temp =-4, ProducedEnergy =0.0225, track ='today' WHERE Date ='2019-01-24' and hour =20SELECT * FROM solardb WHERE Date ='2019-01-24' and hour =20 UPDATE solardb SET Temp =-4, ProducedEnergy =1.2012, track ='today' WHERE Date ='2019-01-24' and hour =20SELECT * FROM winddb WHERE Date ='2019-01-25' and hour =20 UPDATE winddb SET Temp =-7.913, ProducedEnergy =0.046, track ='tomorrow' WHERE Date ='2019-01-25' and hour =20SELECT * FROM solardb WHERE Date ='2019-01-25' and hour =20 UPDATE solardb SET Temp =-7.913, ProducedEnergy =1.2012, track ='tomorrow' WHERE Date ='2019-01-25' and hour =20
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		SELECT * FROM winddb WHERE Date ='2019-01-24' and hour =20 UPDATE winddb SET Temp =-4, ProducedEnergy =0.0225, track ='today' WHERE Date ='2019-01-24' and hour =20SELECT * FROM solardb WHERE Date ='2019-01-24' and hour =20 UPDATE solardb SET Temp =-4, ProducedEnergy =1.2012, track ='today' WHERE Date ='2019-01-24' and hour =20SELECT * FROM winddb WHERE Date ='2019-01-25' and hour =20 UPDATE winddb SET Temp =-7.913, ProducedEnergy =0.046, track ='tomorrow' WHERE Date ='2019-01-25' and hour =20SELECT * FROM solardb WHERE Date ='2019-01-25' and hour =20 UPDATE solardb SET Temp =-7.913, ProducedEnergy =1.2012, track ='tomorrow' WHERE Date ='2019-01-25' and hour =20SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		SELECT * FROM dynamic_pricing
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		SELECT * FROM dynamic_pricing
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
  			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
  		
  			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
@@ -616,568 +496,8 @@
  			SELECT * FROM `winddb` 
 			GROUP BY `Date`
 			ORDER BY Date ASC
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-19'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-22'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-17'
- 		
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-18'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-19'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-20'
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-18'
  		
  			SELECT * FROM `solardb` WHERE `Date` = '2019-01-19'
  		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-20'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-21'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-20'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-18'
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
  			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-19'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-22'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-20'
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		SELECT * FROM dynamic_pricing
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-19'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-21'
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-19'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-20'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-22'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-19'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-17'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-20'
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-17'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-19'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-19'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-20'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-17'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-19'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-19'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-19'
- 		
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-21'
- 		
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-21'
- 		
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		SELECT * FROM dynamic_pricing
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		SELECT * FROM dynamic_pricing
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `setupdb` WHERE user_id = 1
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `setupdb` WHERE user_id = 1
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `setupdb` WHERE user_id = 1
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `setupdb` WHERE user_id = 1
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		SELECT * FROM dynamic_pricing
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `setupdb` WHERE user_id = 1
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `setupdb` WHERE user_id = 1
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
- 		SELECT * FROM dynamic_pricing
- 			SELECT * FROM `winddb` 
-			GROUP BY `Date`
-			ORDER BY Date ASC
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `solardb` WHERE `Date` = '2019-01-25'
- 		
- 			SELECT * FROM `setupdb` WHERE user_id = 1
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-24'
- 		
- 			SELECT * FROM `winddb` WHERE `Date` = '2019-01-25'
  		

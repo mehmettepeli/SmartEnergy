@@ -5,10 +5,14 @@
 
 class weather 
 {
-    public $jsonurl = "http://api.openweathermap.org/data/2.5/weather?APPID=87edff00832715a2e419b5184ce0b243&q=Stuttgart,de";
-    public $forcastUrl = "http://api.openweathermap.org/data/2.5/forecast?q=Stuttgart,de&appid=87edff00832715a2e419b5184ce0b243";
+    public $jsonurl = "http://api.openweathermap.org/data/2.5/weather?APPID=e1588f5e07c47cff203a52a7ac900c1f&q=Stuttgart,de";
+    public $forcastUrl = "http://api.openweathermap.org/data/2.5/forecast?q=Stuttgart,de&appid=e1588f5e07c47cff203a52a7ac900c1f";
 
     // c0c4a4b4047b97ebc5948ac9c48c0559 key expired
+
+    //87edff00832715a2e419b5184ce0b243 key expired
+
+    
 
     public $dateFcast;   
     public $temCelFcast;

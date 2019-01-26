@@ -30,18 +30,16 @@
       <div class="card row">
         <div class="col mgr_sty dt_padding">
           <h4 class="">Smart Energy System</h4>
-          <span class="loading loading_sty"> </span> 
-          <div id="chart_overview" class="flex-dis">
+          <div id="" class="flex-dis mgr_top_40">
             <div class="col-4">
-              <div id="overview-text" class="mgr_top_40">
-              </div>
-              <div class="mgr_top_40">
-                <span class="txt_18_bold"></span>
-                <div id="temp-view">
-                </div>
-              </div>
+              <div id="chart_total_supply"></div>
             </div>
-            <div class="col-8" id="weather-chart"></div>
+            <div class="col-4">
+              <div id="chart_total_demand"></div>
+            </div>
+            <div class="col-4">
+              <div id="chart_total_view"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -49,8 +47,7 @@
       <div class="card row">
         <div class="col mgr_sty dt_padding">
           <h4 class="">Middle part</h4>
-          <span class="loading loading_sty"> </span> 
-          <div id="chart_overview" class="flex-dis">
+          <div id="" class="flex-dis">
             <div class="col-6">
               <div id="chart_price_list" class=""></div>
             </div>

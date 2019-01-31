@@ -9,6 +9,8 @@ $(document).ready(function(){
 
   var i = 0;
   function LoadDataEveryHour() {
+
+        overviewTextData();
         loadTotalSupplyData();
         loadTotalDemandData();
         loadWindCurrent();
@@ -18,6 +20,7 @@ $(document).ready(function(){
       /*$.post("data_import/weather-data-import.php",{},
       function(data, status){
         console.log("Data: " + data + "\nStatus: " + status);
+        overviewTextData();
         loadTotalSupplyData();
         loadTotalDemandData();
         loadWindCurrent();
@@ -550,6 +553,16 @@ function loadTotalViewData(){
     });
   // Script
   
+}
+
+function overviewTextData(){
+   $.post("ems/processing.php", { "operation" : "overview_text_data", "date" : 0 }, function(result){
+    var data =  result["overview_text_data"];
+    $(".temperature").html(data["temperature"] + " &deg;C");
+    $(".windSpeed").html(data["windSpeed"] + " m/s");
+    $(".humidity").html(data["humidity"] + " %");
+    $(".airPressure").html(data["airPressure"] + " mb");
+  });
 }
 
 function eventListener() {

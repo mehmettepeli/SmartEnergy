@@ -372,12 +372,12 @@ class ems
 	}
 
 }
-$obj = new ems();
-$obj->DynamicPricing();
+//$obj = new ems();
+//$obj->DynamicPricing();
 //$prices = $obj->GetPrcieList();
 //print_r($prices);
-$priceList = $obj-> GetPrcieList();
-echo '<pre>'; print_r($priceList); echo '</pre>';
+//$priceList = $obj-> GetPrcieList();
+//echo '<pre>'; print_r($priceList); echo '</pre>';
 //print_r( $priceList);
 //echo $obj->Profilt('2018-12-11', 18) . "<br>";
 //echo "---------------------------------------<br>";

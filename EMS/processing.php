@@ -1,11 +1,16 @@
 
 <?php
+	  if(!isset($_SESSION)) 
+	    session_start();
 	header('Content-Type: application/json; charset=utf-8');
-	include '../db_script/db-connection.php';
-	include '../weather/weather.php';
+	//include '../db_script/db-connection.php';
+	//include '../weather/weather.php';
+	include '../ems/ems.php';
 
-	$db = new DB();
-	$db->connectDB();
+	//$db = new DB();
+	//$db->connectDB();
+	$obj = new ems();
+	$db = $obj->db;
 
  	$operation = $_POST["operation"];
 
@@ -70,6 +75,9 @@
  	}
 
  	if ($operation == "priceList" ) {
+
+		
+		$obj->DynamicPricing();
 
  		$sql = "SELECT * FROM dynamic_pricing";
  		$result = $db->executeQuery($sql);
@@ -254,6 +262,75 @@
         }
  		$response["chart_total_view"] = $list;
  	}
+
+ 	if ($operation ==  "overview_text_data") {
+ 		$list["temperature"] = round($_SESSION["temperature"],2);
+		$list["windSpeed"] = $_SESSION["windSpeed"];
+		$list["humidity"] =	$_SESSION["humidity"];
+		$list["airPressure"] = $_SESSION["airPressure"];
+		$response["overview_text_data"]  = $list;
+ 	}
+
+ 	/** User Dashboard **/
+ 	if ($operation == "user_house_list" ) {
+
+ 		$sql = "SELECT * FROM householddb";
+ 		$result = $db->executeQuery($sql);
+ 		$energyList = ["Energy(KWh)"];
+ 		while($row = $result->fetch_assoc()) {
+			array_push($energyList, $row["energy"]);
+		}
+ 		$response["user_house_list"] = [$energyList];
+ 	} 
+
+ 	if ($operation == "user_house_list_shifted" ) {
+ 		$sql = "SELECT * FROM householddb";
+ 		$result = $db->executeQuery($sql);
+ 		$energyList = ["Energy(KWh)"];
+ 		while($row = $result->fetch_assoc()) {
+ 			$sql1 = "SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = ". $row["hour"] ." AND `sender` = 'H'";
+ 			$res1 = $db->executeQuery($sql1);
+ 			$val1 = $res1->fetch_assoc()["shifted_energy"];
+
+ 			$sql2 = "SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = ". $row["hour"] ." AND `sender` = 'H'";
+ 			$res2 = $db->executeQuery($sql2);
+ 			$val2 = $res2->fetch_assoc()["shifted_energy"];
+			array_push($energyList, $row["energy"]- $val1 + $val2);
+		}
+ 		$response["user_house_list_shifted"] = [$energyList];
+ 			
+ 		}	
+ 	
+
+ 	if ($operation == "user_commercial_list" ) {
+
+ 		$sql = "SELECT * FROM commercialdb";
+ 		$result = $db->executeQuery($sql);
+ 		$energyList = ["Energy(KWh)"];
+ 		while($row = $result->fetch_assoc()) {
+			array_push($energyList, $row["energy"]);
+		}
+ 		$response["user_commercial_list"] = [$energyList];
+ 	}
+
+
+ 	if ($operation == "user_commercial_list_shifted" ) {
+ 		$sql = "SELECT * FROM commercialdb";
+ 		$result = $db->executeQuery($sql);
+ 		$energyList = ["Energy(KWh)"];
+ 		while($row = $result->fetch_assoc()) {
+ 			$sql1 = "SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = ". $row["hour"] ." AND `sender` = 'F'";
+ 			$res1 = $db->executeQuery($sql1);
+ 			$val1 = $res1->fetch_assoc()["shifted_energy"];
+
+ 			$sql2 = "SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = ". $row["hour"] ." AND `sender` = 'F'";
+ 			$res2 = $db->executeQuery($sql2);
+ 			$val2 = $res2->fetch_assoc()["shifted_energy"];
+			array_push($energyList, $row["energy"]- $val1 + $val2);
+		}
+ 		$response["user_commercial_list_shifted"] = [$energyList];
+ 			
+ 		}
 
 	$response_json = json_encode($response);
 	echo $response_json;

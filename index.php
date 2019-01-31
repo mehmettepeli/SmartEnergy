@@ -34,8 +34,28 @@
             <div class="col-6">
               <div id="chart_price_list" class=""></div>
             </div>
-            <div class="">
-              
+            <div class="col-6" style="border: 1px solid #8080803b;">
+              <div class="row" style=" text-align: center;"> <h3 style="width: 100%"> General Info </h3></div>
+              <div class="row flex-dis">
+                <div class="col-6 txt-rt"><b>Date: </b></div>
+                <div class="col-6 date"> <?php  echo  date('Y-m-d H:m:s');?></div>
+              </div>
+              <div class="row flex-dis">
+                <div class="col-6 txt-rt"><b>Windspeed:</b> </div>
+                <div class="col-6 windSpeed"></div>
+              </div>
+              <div class="row flex-dis">
+                <div class="col-6 txt-rt"><b>Temperature: </b></div>
+                <div class="col-6 temperature"></div>
+              </div>
+              <div class="row flex-dis">
+                <div class="col-6 txt-rt"><b>Humidity: </b></div>
+                <div class="col-6 humidity"></div>
+              </div>
+              <div class="row flex-dis">
+                <div class="col-6 txt-rt"><b>Air pressure: </b></div>
+                <div class="col-6 airPressure"></div>
+              </div>
             </div>
           </div>
         </div>

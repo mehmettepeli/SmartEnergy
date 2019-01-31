@@ -202,3 +202,7 @@ table.dataTable tbody td {
     min-width: 1316px;
 }
 }
+
+.txt-rt{
+    text-align: right;
+}

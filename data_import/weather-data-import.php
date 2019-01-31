@@ -1,4 +1,6 @@
 <?php
+	  if(!isset($_SESSION)) 
+	    session_start();
 
 	include '../db_script/db-connection.php';
 	include '../weather/weather.php';
@@ -14,6 +16,11 @@
 	$windturbine = new windturbine();
 	$windturbine->init();
 	$battery = new Battery();
+
+	$_SESSION["temperature"] = $windturbine->temCel;
+	$_SESSION["windSpeed"] = $windturbine->windSpeed;
+	$_SESSION["humidity"] = $windturbine->humidity;
+	$_SESSION["airPressure"] = $windturbine->airPressure;
 
 	if (mysqli_num_rows($res) > 0) {
 		$row = $res->fetch_assoc();

@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Smart Energy</title>
+  <title>Manager Dashboard</title>
   <!-- css file-->
   <link href="lib/bootstrap/css/bootstrap.v4.min.css" rel="stylesheet" type="text/css">
   <link href="lib/chart/css/billboard.css" rel="stylesheet" type="text/css">
@@ -29,7 +29,21 @@
       <!-- Overview -->
       <div class="card row">
         <div class="col mgr_sty dt_padding">
-          <h4 class="">Smart Energy System</h4>
+          <h4 class="">System Overview</h4>
+          <div id="" class="flex-dis">
+            <div class="col-6">
+              <div id="chart_price_list" class=""></div>
+            </div>
+            <div class="">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- middle part -->
+      <div class="card row">
+        <div class="col mgr_sty dt_padding">
+          <h4 class="">Energy Overview</h4>
           <div id="" class="flex-dis mgr_top_40">
             <div class="col-4">
               <div id="chart_total_supply"></div>
@@ -43,20 +57,7 @@
           </div>
         </div>
       </div>
-      <!-- middle part -->
-      <div class="card row">
-        <div class="col mgr_sty dt_padding">
-          <h4 class="">Middle part</h4>
-          <div id="" class="flex-dis">
-            <div class="col-6">
-              <div id="chart_price_list" class=""></div>
-            </div>
-            <div class="">
-              
-            </div>
-          </div>
-        </div>
-      </div>
+
       <!-- tab for solar, wind, battery data -->
       <div class="card row">
         <div class="main-box-normal">

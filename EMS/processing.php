@@ -207,19 +207,64 @@
 
  	if ($operation == "chart_battery_data" ) {
  	
- 		$sql = "
- 			SELECT * FROM `setupdb` WHERE user_id = 1
- 		";
- 		$result = $db->executeQuery($sql);
- 		$row = $result->fetch_assoc();
- 		$list = [ "bat_max_cap" => $row["bat_max_cap"], "battery_storage" => $row["battery_storage"]];
- 		$response["chart_battery_data"] = $list;
+ 		$response["chart_battery_data"] = TotalBattery();
  	}
  	if ($operation == "chart_total_supply" ) {
 
  		$toDay = date('Y-m-d');
         $hour = (int)date('H');
- 		$sql = "
+ 		$response["chart_total_supply"] =  TotalSpply($toDay, $hour);
+ 	}
+
+ 	if ($operation == "chart_total_demand" ) {
+
+ 		$toDay = date('Y-m-d');
+        $hour = (int)date('H');
+ 		$response["chart_total_demand"] = TotalDemand($toDay, $hour);
+ 	}
+
+ 	if ($operation == "chart_total_view" ) {
+
+ 		$toDay = date('Y-m-d');
+        $hour = (int)date('H');
+        $demand = TotalDemand($toDay, $hour);
+        $supply = TotalSpply($toDay, $hour);
+        $battery = TotalBattery();
+        $cal = round($supply["total_supply"] - $demand["total_demand"],2);
+
+        $list[] = ["Supply[".round( $supply["total_supply"],2) ."]", round($supply["total_supply"],2)];
+        $list[] = ["Demand[". round($demand["total_demand"],2) ."]", round($demand["total_demand"],2)];
+
+        if ($cal > 0) {
+        	$batVal =  round($battery["bat_max_cap"] - $battery["battery_storage"], 2); 
+        	if ($cal <= $batVal ) {
+        		$list[] = ["Battery[". $batVal ."]", $batVal];
+        		$list[] = ["Grid[0]", 0];
+        	}
+        	else {
+        		$net  =  $cal - $batVal;
+        		$list[] = ["Battery[". $batVal ."]", $batVal];
+        		$list[] = ["Sell To Grid[". $net ."]", $net];
+        	}
+        	
+        }
+        else{
+        	$list[] = ["Battery[0]", 0];
+        	$list[] = ["Borrow From Grid[". -$cal ."]", -$cal];
+        }
+ 		$response["chart_total_view"] = $list;
+ 	}
+
+	$response_json = json_encode($response);
+	echo $response_json;
+
+
+
+
+	function TotalSpply($toDay, $hour)
+	{
+		global $db;
+		$sql = "
  			SELECT (t1.ProducedEnergy + t2.ProducedEnergy + t3.battery_storage) total_supply FROM
 				(SELECT IFNULL(`ProducedEnergy`, 0) AS ProducedEnergy FROM `winddb` WHERE `Date`  = '". $toDay ."' AND Hour = ". $hour .") t1,
 				(SELECT IFNULL(`ProducedEnergy`, 0) AS ProducedEnergy FROM `solardb` WHERE `Date`  = '". $toDay ."' AND Hour = ". $hour .") t2,
@@ -228,13 +273,13 @@
  		$result = $db->executeQuery($sql);
  		$row = $result->fetch_assoc();
  		$list = [ "max_supply" => 400, "total_supply" => $row["total_supply"]];
- 		$response["chart_total_supply"] = $list;
- 	}
 
- 	if ($operation == "chart_total_demand" ) {
+ 		return $list;
 
- 		$toDay = date('Y-m-d');
-        $hour = (int)date('H');
+	}
+	function TotalDemand($toDay, $hour){
+		global $db;
+
  		$sql = "
  			SELECT tt1.shifted_energy + tt2.house_energy + tt2.commercial_energy - tt1.actual_energy AS total_demand, tt2.house_energy + tt2.commercial_energy + tt.avg_house_eng + tt.avg_commercial_eng AS max_demand   FROM
 
@@ -253,10 +298,18 @@
  		$result = $db->executeQuery($sql);
  		$row = $result->fetch_assoc();
  		$list = [ "max_demand" => $row["max_demand"], "total_demand" => $row["total_demand"]];
- 		$response["chart_total_demand"] = $list;
- 	}
+ 		return $list;
+	}
+	function TotalBattery() {
 
-	$response_json = json_encode($response);
-	echo $response_json;
+		global $db;
+ 		$sql = "
+ 			SELECT * FROM `setupdb` WHERE user_id = 1
+ 		";
+ 		$result = $db->executeQuery($sql);
+ 		$row = $result->fetch_assoc();
+ 		$list = [ "bat_max_cap" => $row["bat_max_cap"], "battery_storage" => $row["battery_storage"]];
+ 		return $list;
+	}
 
 ?>

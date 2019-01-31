@@ -9,15 +9,22 @@ $(document).ready(function(){
 
   var i = 0;
   function LoadDataEveryHour() {
-      $.post("data_import/weather-data-import.php",{},
+        loadTotalSupplyData();
+        loadTotalDemandData();
+        loadWindCurrent();
+        loadWindForecast();
+        loadSolarWholeData();
+        loadTotalViewData();
+      /*$.post("data_import/weather-data-import.php",{},
       function(data, status){
         console.log("Data: " + data + "\nStatus: " + status);
         loadTotalSupplyData();
         loadTotalDemandData();
         loadWindCurrent();
         loadWindForecast();
-        loadSolarWholeData()
-      });
+        loadSolarWholeData();
+        loadTotalViewData();
+      });*/
       i++;
       //console.log("call "+ i);
       setInterval(LoadDataEveryHour, 1000 * 60 * 60);
@@ -510,6 +517,36 @@ function loadTotalDemandData(){
         },
         bindto: "#chart_total_demand"
       });
+    });
+  // Script
+  
+}
+
+
+function loadTotalViewData(){
+
+   chart_total_view = bb.generate({
+        data: {
+          columns: [],
+          type: "donut"
+        },
+        title: { 
+          text: 'Overall'
+        },
+        legend: {
+          position: "right"
+        },
+        bindto: "#chart_total_view"
+    });
+
+   $.post("ems/processing.php", { "operation" : "chart_total_view", "date" : 0 }, function(result){
+      var data =  result["chart_total_view"];
+      console.log(data);
+      chart_total_view.load({
+        unload: true,
+        columns: data
+      });
+      
     });
   // Script
   

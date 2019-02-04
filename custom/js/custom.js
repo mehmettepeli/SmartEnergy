@@ -17,8 +17,9 @@ $(document).ready(function(){
         loadWindForecast();
         loadSolarWholeData();
         loadTotalViewData();
+
       /*$.post("data_import/weather-data-import.php",{},
-      function(data, status){
+      function(data, status) {
         console.log("Data: " + data + "\nStatus: " + status);
         overviewTextData();
         loadTotalSupplyData();
@@ -63,7 +64,7 @@ function loadPriceList() {
               },
               y: {
                 label:{
-                  text: "KWh",
+                  text: "Price(€)",
                   position: "outer-middle"
                 }
               }
@@ -468,7 +469,7 @@ function loadTotalSupplyData(){
       chart_total_supply = bb.generate({
         data: {
           columns: [
-            ["Battery Status", currentPercentage.toFixed(2)]
+            ["Supply Data", currentPercentage.toFixed(2)]
           ],
           type: "gauge"
         },
@@ -502,7 +503,7 @@ function loadTotalDemandData(){
       chart_total_demand = bb.generate({
         data: {
           columns: [
-            ["Battery Status", currentPercentage.toFixed(2)]
+            ["Demand Data", currentPercentage.toFixed(2)]
           ],
           type: "gauge"
         },
@@ -593,7 +594,6 @@ function eventListener() {
       }); 
     }
   });
-
   $("#battery_set_btn").click(function () {
     var bat_max_cap = $("#bat_max_cap").val();
     var bat_max_charging = $("#bat_max_charging").val();
@@ -634,6 +634,9 @@ function eventListener() {
         loadSolarForecast();
       }, 300);
       loadDateDDL();
+  });
+  $(".batteryDataClick").click(function () {
+    loadBatteryData();
   });
 }
 

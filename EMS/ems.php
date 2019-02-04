@@ -198,7 +198,7 @@ class ems
 		else
 			$dbTable = "commercialdb";
 		
-		$energyList =[
+		$energyList = [
 			"energy"=>[],
 			"hour"=>[],
 		];

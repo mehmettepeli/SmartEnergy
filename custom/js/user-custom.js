@@ -35,7 +35,7 @@ function loadPriceList() {
               },
               y: {
                 label:{
-                  text: "KWh",
+                  text: "Price(€)",
                   position: "outer-middle"
                 }
               }
@@ -264,13 +264,23 @@ function loadCommercialShiftedList() {
 
 function eventListener() {
 
-  $("#wind_set_btn").click(function () {
-    var wind_roter_txt = $("#wind_roter_txt").val();
-    if (confirm("Do you want to setup Wind Roter: " + wind_roter_txt + "?" )) {
-      $.post("ems/processing.php", { "operation" : "WindSetup", "wind_roter_txt" : wind_roter_txt},
+  $("#btn_house_flexi").click(function () {
+    var houseFlexibility = $("#houseFlexibility").val();
+    if (confirm("Do you want to " + houseFlexibility + "% flexibility?" )) {
+      $.post("ems/processing.php", { "operation" : "house_flexi", "rate" : houseFlexibility, "indicator" : "H"},
         function(data, status){
-          alert("Successfully setup");
-          console.log("Data: " + data + "\nStatus: " + status);
+          loadHouseShiftedList();
+          alert("Successfully submitted");
+      });
+    }
+  });
+  $("#btn_firma_flexi").click(function () {
+    var firmaFlexibility = $("#firmaFlexibility").val();
+    if (confirm("Do you want to " + firmaFlexibility + "% flexibility?" )) {
+      $.post("ems/processing.php", { "operation" : "firma_flexi", "rate" : firmaFlexibility, "indicator" : "F"},
+        function(data, status){
+          loadCommercialShiftedList();
+          alert("Successfully submitted");
       }); 
     }
   });

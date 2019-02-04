@@ -244,13 +244,16 @@
         $list[] = ["Demand[". round($demand["total_demand"],2) ."]", round($demand["total_demand"],2)];
 
         if ($cal > 0) {
-        	$batVal =  round($battery["bat_max_cap"] - $battery["battery_storage"], 2); 
+        	$batVal =  round($battery["bat_max_cap"] - 0, 2); // $battery["battery_storage"]
         	if ($cal <= $batVal ) {
-        		$list[] = ["Battery[". $batVal ."]", $batVal];
+        		
+        		BatteryUpdate($cal);
+        		$list[] = ["Battery[". $cal ."]", $cal];
         		$list[] = ["Grid[0]", 0];
         	}
         	else {
         		$net  =  $cal - $batVal;
+        		BatteryUpdate($batVal);
         		$list[] = ["Battery[". $batVal ."]", $batVal];
         		$list[] = ["Sell To Grid[". $net ."]", $net];
         	}
@@ -258,6 +261,7 @@
         }
         else{
         	$list[] = ["Battery[0]", 0];
+        	BatteryUpdate(0);
         	$list[] = ["Borrow From Grid[". -$cal ."]", -$cal];
         }
  		$response["chart_total_view"] = $list;
@@ -330,13 +334,33 @@
 		}
  		$response["user_commercial_list_shifted"] = [$energyList];
  			
- 		}
+ 	}
+ 	if ($operation == "house_flexi" ) {
+ 		$rate = $_POST["rate"];
+ 		$indicator = $_POST["indicator"];
+
+ 		$obj->UserFlexibility($rate, $indicator);
+ 		$response["success"] = "Success";
+ 	}
+
+ 	if ($operation == "firma_flexi" ) {
+ 		$rate = $_POST["rate"];
+ 		$indicator = $_POST["indicator"];
+
+ 		$obj->UserFlexibility($rate, $indicator);
+ 		$response["success"] = "Success";
+ 	}
 
 	$response_json = json_encode($response);
 	echo $response_json;
 
 
-
+	function BatteryUpdate($value)
+	{
+		global $db;
+		$sql = "UPDATE setupdb SET battery_storage =". $value ."  WHERE user_id = 1";
+		$db->executeQuery($sql);
+	}
 
 	function TotalSpply($toDay, $hour)
 	{

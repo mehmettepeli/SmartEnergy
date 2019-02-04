@@ -24,9 +24,10 @@
 
 <body>
 
-    <div class="container" style="margin-top: 60px">
+    <div class="container" style="margin-top: 10px">
 
       <!-- Overview -->
+      <div style="text-align: right;"><a href="user.php" type="button" class="btn btn-info">User View</a></div>
       <div class="card row">
         <div class="col mgr_sty dt_padding">
           <h4 class="">System Overview</h4>
@@ -90,7 +91,7 @@
               <a class="nav-link solar_panel_content" data-toggle="tab" href="#solarPanelData" role="tab" aria-controls="solarPanelData">Solar Panel Data</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#batteryData" role="tab" aria-controls="batteryData">Battery Data</a>
+              <a class="nav-link batteryDataClick" data-toggle="tab" href="#batteryData" role="tab" aria-controls="batteryData">Battery Data</a>
             </li>
           </ul>
           <!-- Tab Items End-->

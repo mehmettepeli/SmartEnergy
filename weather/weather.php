@@ -292,12 +292,15 @@ echo "Forecast Wind Turbine Energy: ". $windturbine->WindTurbineForecastEnergy()
 echo "<hr>";
 echo "Solar Panel Current Energy : ". $photovoltaic->CurrentSoloarEnergy(). " kw"."<br>";
 echo "Solar Panel Forecast Energy : ". $photovoltaic->ForecastSoloarEnergy(). " kw"."<br>";
-
+*/
+/*$battery = new Battery();
 echo "<hr>";
 echo "Current State Of Battery : ". $battery->CurrentState(). " kw"."<br>";
-$battery->Charging();
-$battery->Charging();
 echo "Charging....". "<br>";
+$battery->Charging();
+
+echo "Current State Of Battery : ". $battery->CurrentState(). " kw"."<br>";
+$battery->Charging();
 echo "Charging....". "<br>";
 echo "Current State Of Battery : ". $battery->CurrentState(). " kw"."<br>";
 $battery->Discharging();

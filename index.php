@@ -27,7 +27,7 @@
     <div class="container" style="margin-top: 10px">
 
       <!-- Overview -->
-      <div style="text-align: right;"><a href="user.php" type="button" class="btn btn-info">User View</a></div>
+      <div style="text-align: right;"><a href="user.php" type="button" class="btn btn-info">User View >></a></div>
       <div class="card row">
         <div class="col mgr_sty dt_padding">
           <h4 class="">System Overview</h4>

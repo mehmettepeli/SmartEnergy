@@ -26,11 +26,11 @@
 
     <div class="container" style="margin-top: 10px">
 
-      <div><a href="index.php" type="button" class="btn btn-info">Manager View</a></div>
+      <div><a href="index.php" type="button" class="btn btn-info"><< Manager View</a></div>
       <!-- Overview -->
       <div class="card row">
         <div class="col mgr_sty dt_padding">
-          <h4 class="">System Overview</h4>
+          <h4 class="">Overview</h4>
           <div id="" class="flex-dis">
             <div class="col-6">
               <div id="user_price_list" class=""></div>

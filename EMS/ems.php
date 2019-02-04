@@ -192,6 +192,12 @@ class ems
 	//$sender = "F", "H"
 	public function UserFlexibility ($value, $sender)
 	{
+
+		$sql = "
+			DELETE FROM shifted_energydb WHERE sender = '". $sender ."'
+		";
+		$this->db->executeQuery($sql);
+
 		$dbTable = "householddb";
 		if ($sender == "H")
 			$dbTable = $dbTable;

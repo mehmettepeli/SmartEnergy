@@ -6088,4 +6088,814 @@
 				(SELECT IFNULL(`battery_storage`, 0) AS battery_storage FROM `setupdb` WHERE user_id = 1) t3
  		
  			SELECT * FROM `setupdb` WHERE user_id = 1
- 		UPDATE setupdb SET battery_storage =0  WHERE user_id = 1
+ 		UPDATE setupdb SET battery_storage =0  WHERE user_id = 1SELECT * FROM dynamic_pricingSELECT * FROM householddbSELECT * FROM commercialdbSELECT * FROM householddbSELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 0 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 0 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 1 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 1 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 2 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 2 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 3 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 3 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 4 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 4 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 5 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 5 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 6 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 6 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 7 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 7 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 8 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 8 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 9 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 9 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 10 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 10 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 11 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 11 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 12 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 12 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 13 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 13 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 14 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 14 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 15 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 15 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 16 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 16 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 17 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 17 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 18 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 18 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 19 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 19 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 20 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 20 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 21 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 21 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 22 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 22 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 23 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 23 AND `sender` = 'H'SELECT * FROM commercialdbSELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 0 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 0 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 1 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 1 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 2 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 2 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 3 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 3 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 4 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 4 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 5 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 5 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 6 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 6 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 7 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 7 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 8 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 8 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 9 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 9 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 10 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 10 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 11 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 11 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 12 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 12 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 13 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 13 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 14 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 14 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 15 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 15 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 16 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 16 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 17 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 17 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 18 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 18 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 19 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 19 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 20 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 20 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 21 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 21 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 22 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 22 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 23 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 23 AND `sender` = 'F'
+			SELECT 
+				hour,
+			    MAX(`energy`) AS peak_energy,
+			    ROUND(AVG(`energy`),4) AS avg_engery
+			    
+			FROM
+				 commercialdb 
+		
+			SELECT 			db.*
+			FROM
+				 		   commercialdb db 
+            INNER JOIN     dynamic_pricing dp
+            ON dp.hour = db.hour
+			WHERE db.energy < (SELECT
+			    				ROUND(AVG(`energy`),4) 
+							FROM
+			    				commercialdb 
+			               )
+			ORDER BY dp.price ASC
+		
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =1 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 41.0904
+				WHERE `shifted_hour` =1 
+				AND `actual_hour` = 0
+				AND `sender` = 'F'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =2 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 41.219
+				WHERE `shifted_hour` =2 
+				AND `actual_hour` = 0
+				AND `sender` = 'F'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =3 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 41.7964
+				WHERE `shifted_hour` =3 
+				AND `actual_hour` = 0
+				AND `sender` = 'F'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =4 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 41.3565
+				WHERE `shifted_hour` =4 
+				AND `actual_hour` = 0
+				AND `sender` = 'F'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =5 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 41.7577
+				WHERE `shifted_hour` =5 
+				AND `actual_hour` = 0
+				AND `sender` = 'F'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =23 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 34.6265
+				WHERE `shifted_hour` =23 
+				AND `actual_hour` = 0
+				AND `sender` = 'F'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =22 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '22', '33.774', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =6 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 41.3236
+				WHERE `shifted_hour` =6 
+				AND `actual_hour` = 0
+				AND `sender` = 'F'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =21 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '21', '33.0526', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =7 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '7', '41.7915', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =20 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '20', '30.0845', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =8 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '8', '21.6211', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '9', '13.9814', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =19 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '19', '19.499', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =11 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '11', '2.7916', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =10 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '10', '17.7917', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =18 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '18', '2.6618', '0', 'F')SELECT * FROM commercialdbSELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 0 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 0 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 1 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 1 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 2 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 2 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 3 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 3 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 4 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 4 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 5 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 5 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 6 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 6 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 7 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 7 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 8 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 8 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 9 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 9 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 10 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 10 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 11 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 11 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 12 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 12 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 13 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 13 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 14 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 14 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 15 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 15 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 16 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 16 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 17 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 17 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 18 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 18 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 19 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 19 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 20 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 20 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 21 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 21 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 22 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 22 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 23 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 23 AND `sender` = 'F'
+			SELECT 
+				hour,
+			    MAX(`energy`) AS peak_energy,
+			    ROUND(AVG(`energy`),4) AS avg_engery
+			    
+			FROM
+				 commercialdb 
+		
+			SELECT 			db.*
+			FROM
+				 		   commercialdb db 
+            INNER JOIN     dynamic_pricing dp
+            ON dp.hour = db.hour
+			WHERE db.energy < (SELECT
+			    				ROUND(AVG(`energy`),4) 
+							FROM
+			    				commercialdb 
+			               )
+			ORDER BY dp.price ASC
+		
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =1 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 41.0904
+				WHERE `shifted_hour` =1 
+				AND `actual_hour` = 0
+				AND `sender` = 'F'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =2 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 41.219
+				WHERE `shifted_hour` =2 
+				AND `actual_hour` = 0
+				AND `sender` = 'F'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =3 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 41.7964
+				WHERE `shifted_hour` =3 
+				AND `actual_hour` = 0
+				AND `sender` = 'F'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =4 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 41.3565
+				WHERE `shifted_hour` =4 
+				AND `actual_hour` = 0
+				AND `sender` = 'F'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =5 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 35.3561
+				WHERE `shifted_hour` =5 
+				AND `actual_hour` = 0
+				AND `sender` = 'F'
+			SELECT * FROM commercialdbSELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 0 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 0 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 1 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 1 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 2 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 2 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 3 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 3 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 4 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 4 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 5 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 5 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 6 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 6 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 7 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 7 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 8 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 8 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 9 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 9 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 10 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 10 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 11 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 11 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 12 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 12 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 13 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 13 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 14 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 14 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 15 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 15 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 16 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 16 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 17 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 17 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 18 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 18 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 19 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 19 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 20 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 20 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 21 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 21 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 22 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 22 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 23 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 23 AND `sender` = 'F'
+			SELECT 
+				hour,
+			    MAX(`energy`) AS peak_energy,
+			    ROUND(AVG(`energy`),4) AS avg_engery
+			    
+			FROM
+				 commercialdb 
+		
+			SELECT 			db.*
+			FROM
+				 		   commercialdb db 
+            INNER JOIN     dynamic_pricing dp
+            ON dp.hour = db.hour
+			WHERE db.energy < (SELECT
+			    				ROUND(AVG(`energy`),4) 
+							FROM
+			    				commercialdb 
+			               )
+			ORDER BY dp.price ASC
+		
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =1 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 41.0904
+				WHERE `shifted_hour` =1 
+				AND `actual_hour` = 0
+				AND `sender` = 'F'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =2 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 41.219
+				WHERE `shifted_hour` =2 
+				AND `actual_hour` = 0
+				AND `sender` = 'F'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =3 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 41.7964
+				WHERE `shifted_hour` =3 
+				AND `actual_hour` = 0
+				AND `sender` = 'F'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =4 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 41.3565
+				WHERE `shifted_hour` =4 
+				AND `actual_hour` = 0
+				AND `sender` = 'F'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =5 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 41.7577
+				WHERE `shifted_hour` =5 
+				AND `actual_hour` = 0
+				AND `sender` = 'F'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =23 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 34.6265
+				WHERE `shifted_hour` =23 
+				AND `actual_hour` = 0
+				AND `sender` = 'F'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =22 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 9.1765
+				WHERE `shifted_hour` =22 
+				AND `actual_hour` = 0
+				AND `sender` = 'F'
+			SELECT * FROM commercialdbSELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 0 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 0 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 1 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 1 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 2 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 2 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 3 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 3 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 4 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 4 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 5 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 5 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 6 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 6 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 7 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 7 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 8 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 8 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 9 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 9 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 10 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 10 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 11 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 11 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 12 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 12 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 13 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 13 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 14 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 14 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 15 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 15 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 16 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 16 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 17 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 17 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 18 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 18 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 19 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 19 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 20 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 20 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 21 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 21 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 22 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 22 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 23 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 23 AND `sender` = 'F'
+			SELECT 
+				hour,
+			    MAX(`energy`) AS peak_energy,
+			    ROUND(AVG(`energy`),4) AS avg_engery
+			    
+			FROM
+				 commercialdb 
+		
+			SELECT 			db.*
+			FROM
+				 		   commercialdb db 
+            INNER JOIN     dynamic_pricing dp
+            ON dp.hour = db.hour
+			WHERE db.energy < (SELECT
+			    				ROUND(AVG(`energy`),4) 
+							FROM
+			    				commercialdb 
+			               )
+			ORDER BY dp.price ASC
+		
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =1 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 41.0904
+				WHERE `shifted_hour` =1 
+				AND `actual_hour` = 0
+				AND `sender` = 'F'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =2 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 41.219
+				WHERE `shifted_hour` =2 
+				AND `actual_hour` = 0
+				AND `sender` = 'F'
+			
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =3 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				UPDATE `shifted_energydb` 
+				SET `shifted_energy` = 18.0998
+				WHERE `shifted_hour` =3 
+				AND `actual_hour` = 0
+				AND `sender` = 'F'
+			SELECT * FROM commercialdbSELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 0 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 0 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 1 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 1 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 2 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 2 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 3 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 3 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 4 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 4 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 5 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 5 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 6 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 6 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 7 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 7 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 8 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 8 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 9 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 9 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 10 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 10 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 11 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 11 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 12 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 12 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 13 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 13 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 14 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 14 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 15 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 15 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 16 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 16 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 17 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 17 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 18 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 18 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 19 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 19 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 20 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 20 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 21 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 21 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 22 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 22 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 23 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 23 AND `sender` = 'F'SELECT * FROM dynamic_pricing
+ 			SELECT * FROM `winddb` 
+			GROUP BY `Date`
+			ORDER BY Date ASC
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = (SELECT MIN(Date) FROM `winddb`)
+ 		
+ 			SELECT * FROM `setupdb` WHERE user_id = 1
+ 		SELECT * FROM setupdb WHERE user_id = 1SELECT * FROM winddb WHERE Date ='2019-02-04' and hour =19 and track ='today' UPDATE winddb SET Temp =-0.56, ProducedEnergy =1.9105, track ='today' WHERE Date ='2019-02-04' and hour =19 and track ='today'SELECT * FROM solardb WHERE Date ='2019-02-04' and hour =19 and track ='today' UPDATE solardb SET Temp =-0.56, ProducedEnergy =16.9332, track ='today' WHERE Date ='2019-02-04' and hour =19 and track ='today'SELECT * FROM winddb WHERE Date ='2019-02-05' and hour =19 and track ='tomorrow' UPDATE winddb SET Temp =-3, ProducedEnergy =0.3528, track ='tomorrow' WHERE Date ='2019-02-05' and hour =19 and track ='tomorrow'SELECT * FROM solardb WHERE Date ='2019-02-05' and hour =19 and track ='tomorrow' UPDATE solardb SET Temp =-3, ProducedEnergy =16.9332, track ='tomorrow' WHERE Date ='2019-02-05' and hour =19 and track ='tomorrow'
+ 			SELECT (t1.ProducedEnergy + t2.ProducedEnergy + t3.battery_storage) total_supply FROM
+				(SELECT IFNULL(`ProducedEnergy`, 0) AS ProducedEnergy FROM `winddb` WHERE `Date`  = '2019-02-04' AND Hour = 19) t1,
+				(SELECT IFNULL(`ProducedEnergy`, 0) AS ProducedEnergy FROM `solardb` WHERE `Date`  = '2019-02-04' AND Hour = 19) t2,
+				(SELECT IFNULL(`battery_storage`, 0) AS battery_storage FROM `setupdb` WHERE user_id = 1) t3
+ 		
+ 			SELECT tt1.shifted_energy + tt2.house_energy + tt2.commercial_energy - tt1.actual_energy AS total_demand, tt2.house_energy + tt2.commercial_energy + tt.avg_house_eng + tt.avg_commercial_eng AS max_demand   FROM
+
+			(SELECT t1.shifted_energy + t3.shifted_energy AS shifted_energy, t2.shifted_energy + t4.shifted_energy AS actual_energy FROM 
+			(SELECT  IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` =  19 AND `sender` = 'H') t1,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 19 AND `sender` = 'H')t2,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` = 19 AND `sender` = 'F') t3,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 19 AND `sender` = 'F')t4)tt1,
+
+			(SELECT  h.energy AS house_energy, c.energy AS commercial_energy FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour AND c.hour = 19) tt2,
+
+			(SELECT  AVG(h.energy) AS avg_house_eng, AVG(c.energy) AS avg_commercial_eng FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour)tt
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-02-04'
+ 		
+ 			SELECT * FROM `winddb` WHERE `Date` = '2019-02-05'
+ 		
+ 			SELECT * FROM `solardb` WHERE `Date` = (SELECT MIN(Date) FROM `solardb`)
+ 		
+ 			SELECT * FROM `solardb` WHERE `Date` = '2019-02-04'
+ 		
+ 			SELECT * FROM `solardb` WHERE `Date` = '2019-02-05'
+ 		
+ 			SELECT tt1.shifted_energy + tt2.house_energy + tt2.commercial_energy - tt1.actual_energy AS total_demand, tt2.house_energy + tt2.commercial_energy + tt.avg_house_eng + tt.avg_commercial_eng AS max_demand   FROM
+
+			(SELECT t1.shifted_energy + t3.shifted_energy AS shifted_energy, t2.shifted_energy + t4.shifted_energy AS actual_energy FROM 
+			(SELECT  IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` =  19 AND `sender` = 'H') t1,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 19 AND `sender` = 'H')t2,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `shifted_hour` = 19 AND `sender` = 'F') t3,
+			(SELECT IFNULL(SUM(shifted_energy), 0) AS shifted_energy FROM `shifted_energydb` WHERE `actual_hour` = 19 AND `sender` = 'F')t4)tt1,
+
+			(SELECT  h.energy AS house_energy, c.energy AS commercial_energy FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour AND c.hour = 19) tt2,
+
+			(SELECT  AVG(h.energy) AS avg_house_eng, AVG(c.energy) AS avg_commercial_eng FROM householddb h, commercialdb c
+			WHERE h.hour = c.hour)tt
+ 		
+ 			SELECT (t1.ProducedEnergy + t2.ProducedEnergy + t3.battery_storage) total_supply FROM
+				(SELECT IFNULL(`ProducedEnergy`, 0) AS ProducedEnergy FROM `winddb` WHERE `Date`  = '2019-02-04' AND Hour = 19) t1,
+				(SELECT IFNULL(`ProducedEnergy`, 0) AS ProducedEnergy FROM `solardb` WHERE `Date`  = '2019-02-04' AND Hour = 19) t2,
+				(SELECT IFNULL(`battery_storage`, 0) AS battery_storage FROM `setupdb` WHERE user_id = 1) t3
+ 		
+ 			SELECT * FROM `setupdb` WHERE user_id = 1
+ 		UPDATE setupdb SET battery_storage =0  WHERE user_id = 1SELECT * FROM dynamic_pricingSELECT * FROM householddbSELECT * FROM commercialdbSELECT * FROM householddbSELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 0 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 0 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 1 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 1 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 2 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 2 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 3 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 3 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 4 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 4 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 5 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 5 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 6 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 6 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 7 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 7 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 8 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 8 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 9 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 9 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 10 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 10 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 11 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 11 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 12 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 12 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 13 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 13 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 14 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 14 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 15 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 15 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 16 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 16 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 17 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 17 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 18 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 18 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 19 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 19 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 20 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 20 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 21 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 21 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 22 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 22 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 23 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 23 AND `sender` = 'H'SELECT * FROM commercialdbSELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 0 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 0 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 1 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 1 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 2 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 2 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 3 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 3 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 4 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 4 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 5 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 5 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 6 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 6 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 7 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 7 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 8 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 8 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 9 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 9 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 10 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 10 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 11 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 11 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 12 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 12 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 13 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 13 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 14 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 14 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 15 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 15 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 16 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 16 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 17 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 17 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 18 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 18 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 19 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 19 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 20 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 20 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 21 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 21 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 22 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 22 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 23 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 23 AND `sender` = 'F'
+			DELETE FROM shifted_energydb WHERE sender = 'F'
+		
+			SELECT 
+				hour,
+			    MAX(`energy`) AS peak_energy,
+			    ROUND(AVG(`energy`),4) AS avg_engery
+			    
+			FROM
+				 commercialdb 
+		
+			SELECT 			db.*
+			FROM
+				 		   commercialdb db 
+            INNER JOIN     dynamic_pricing dp
+            ON dp.hour = db.hour
+			WHERE db.energy < (SELECT
+			    				ROUND(AVG(`energy`),4) 
+							FROM
+			    				commercialdb 
+			               )
+			ORDER BY dp.price ASC
+		
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =1 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '1', '41.0904', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =2 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '2', '41.219', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =3 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '3', '18.0998', '0', 'F')SELECT * FROM commercialdbSELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 0 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 0 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 1 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 1 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 2 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 2 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 3 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 3 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 4 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 4 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 5 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 5 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 6 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 6 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 7 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 7 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 8 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 8 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 9 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 9 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 10 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 10 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 11 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 11 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 12 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 12 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 13 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 13 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 14 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 14 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 15 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 15 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 16 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 16 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 17 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 17 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 18 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 18 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 19 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 19 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 20 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 20 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 21 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 21 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 22 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 22 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 23 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 23 AND `sender` = 'F'
+			DELETE FROM shifted_energydb WHERE sender = 'F'
+		
+			SELECT 
+				hour,
+			    MAX(`energy`) AS peak_energy,
+			    ROUND(AVG(`energy`),4) AS avg_engery
+			    
+			FROM
+				 commercialdb 
+		
+			SELECT 			db.*
+			FROM
+				 		   commercialdb db 
+            INNER JOIN     dynamic_pricing dp
+            ON dp.hour = db.hour
+			WHERE db.energy < (SELECT
+			    				ROUND(AVG(`energy`),4) 
+							FROM
+			    				commercialdb 
+			               )
+			ORDER BY dp.price ASC
+		
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =1 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '1', '41.0904', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =2 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '2', '41.219', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =3 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '3', '41.7964', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =4 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '4', '41.3565', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =5 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '5', '41.7577', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =23 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '23', '34.6265', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =22 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '22', '33.774', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =6 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '6', '41.3236', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =21 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '21', '33.0526', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =7 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '7', '41.7915', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =20 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '20', '30.0845', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =8 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '8', '21.6211', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =9 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '9', '13.9814', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =19 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '19', '19.499', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =11 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '11', '2.7916', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =10 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '10', '17.7917', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =18 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '18', '2.6618', '0', 'F')SELECT * FROM commercialdbSELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 0 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 0 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 1 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 1 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 2 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 2 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 3 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 3 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 4 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 4 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 5 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 5 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 6 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 6 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 7 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 7 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 8 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 8 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 9 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 9 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 10 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 10 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 11 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 11 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 12 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 12 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 13 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 13 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 14 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 14 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 15 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 15 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 16 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 16 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 17 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 17 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 18 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 18 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 19 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 19 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 20 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 20 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 21 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 21 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 22 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 22 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 23 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 23 AND `sender` = 'F'
+			DELETE FROM shifted_energydb WHERE sender = 'F'
+		
+			SELECT 
+				hour,
+			    MAX(`energy`) AS peak_energy,
+			    ROUND(AVG(`energy`),4) AS avg_engery
+			    
+			FROM
+				 commercialdb 
+		
+			SELECT 			db.*
+			FROM
+				 		   commercialdb db 
+            INNER JOIN     dynamic_pricing dp
+            ON dp.hour = db.hour
+			WHERE db.energy < (SELECT
+			    				ROUND(AVG(`energy`),4) 
+							FROM
+			    				commercialdb 
+			               )
+			ORDER BY dp.price ASC
+		
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =1 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '1', '41.0904', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =2 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '2', '41.219', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =3 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '3', '41.7964', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =4 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '4', '41.3565', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =5 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '5', '41.7577', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =23 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '23', '34.6265', '0', 'F')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =22 
+			AND `actual_hour` = 0
+			AND `sender` = 'F'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '22', '9.1765', '0', 'F')SELECT * FROM commercialdbSELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 0 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 0 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 1 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 1 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 2 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 2 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 3 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 3 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 4 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 4 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 5 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 5 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 6 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 6 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 7 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 7 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 8 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 8 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 9 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 9 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 10 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 10 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 11 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 11 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 12 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 12 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 13 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 13 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 14 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 14 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 15 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 15 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 16 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 16 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 17 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 17 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 18 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 18 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 19 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 19 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 20 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 20 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 21 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 21 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 22 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 22 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 23 AND `sender` = 'F'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 23 AND `sender` = 'F'
+			DELETE FROM shifted_energydb WHERE sender = 'H'
+		
+			SELECT 
+				hour,
+			    MAX(`energy`) AS peak_energy,
+			    ROUND(AVG(`energy`),4) AS avg_engery
+			    
+			FROM
+				 householddb 
+		
+			SELECT 			db.*
+			FROM
+				 		   householddb db 
+            INNER JOIN     dynamic_pricing dp
+            ON dp.hour = db.hour
+			WHERE db.energy < (SELECT
+			    				ROUND(AVG(`energy`),4) 
+							FROM
+			    				householddb 
+			               )
+			ORDER BY dp.price ASC
+		
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =0 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '0', '3.1325', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =1 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '1', '4.0649', '0', 'H')
+			SELECT * 
+			FROM `shifted_energydb` 
+			WHERE `shifted_hour` =2 
+			AND `actual_hour` = 0
+			AND `sender` = 'H'
+		
+				INSERT INTO `shifted_energydb` (`shifted_hour`, `shifted_energy`, `actual_hour`, `sender`)
+				VALUES ( '2', '4.9735', '0', 'H')SELECT * FROM householddbSELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 0 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 0 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 1 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 1 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 2 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 2 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 3 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 3 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 4 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 4 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 5 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 5 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 6 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 6 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 7 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 7 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 8 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 8 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 9 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 9 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 10 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 10 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 11 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 11 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 12 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 12 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 13 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 13 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 14 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 14 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 15 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 15 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 16 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 16 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 17 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 17 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 18 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 18 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 19 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 19 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 20 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 20 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 21 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 21 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 22 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 22 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `actual_hour` = 23 AND `sender` = 'H'SELECT IFNULL(SUM(`shifted_energy`),0) AS shifted_energy  FROM `shifted_energydb` WHERE  `shifted_hour` = 23 AND `sender` = 'H'

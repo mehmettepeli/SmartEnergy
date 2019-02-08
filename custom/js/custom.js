@@ -1,7 +1,5 @@
 $(document).ready(function(){
   eventListener();
-  //loadTotalSupplyData(); // every hour
-  //loadTotalDemandData(); // every hour
   loadPriceList();
   loadDateDDL();
   loadWindHistory();
@@ -9,14 +7,6 @@ $(document).ready(function(){
 
   var i = 0;
   function LoadDataEveryHour() {
-
-        /*overviewTextData();
-        loadTotalSupplyData();
-        loadTotalDemandData();
-        loadWindCurrent();
-        loadWindForecast();
-        loadSolarWholeData();
-        loadTotalViewData();*/
 
       $.post("data_import/weather-data-import.php",{},
       function(data, status) {

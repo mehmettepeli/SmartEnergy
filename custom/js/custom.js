@@ -10,15 +10,15 @@ $(document).ready(function(){
   var i = 0;
   function LoadDataEveryHour() {
 
-        overviewTextData();
+        /*overviewTextData();
         loadTotalSupplyData();
         loadTotalDemandData();
         loadWindCurrent();
         loadWindForecast();
         loadSolarWholeData();
-        loadTotalViewData();
+        loadTotalViewData();*/
 
-      /*$.post("data_import/weather-data-import.php",{},
+      $.post("data_import/weather-data-import.php",{},
       function(data, status) {
         console.log("Data: " + data + "\nStatus: " + status);
         overviewTextData();
@@ -28,7 +28,7 @@ $(document).ready(function(){
         loadWindForecast();
         loadSolarWholeData();
         loadTotalViewData();
-      });*/
+      });
       i++;
       //console.log("call "+ i);
       setInterval(LoadDataEveryHour, 1000 * 60 * 60);
